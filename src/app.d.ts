@@ -10,7 +10,8 @@ declare global {
 		// interface PageData {}
 		// interface Platform {}
 	}
-	const prisma: PrismaClient
+	// eslint-disable-next-line no-var
+	var prisma: PrismaClient
 }
 
 export {};
