@@ -2,11 +2,17 @@
 	  import { enhance, type SubmitFunction } from '$app/forms';
     import { page } from '$app/stores';
     import Icon from '@iconify/svelte';
+	  import { onMount } from 'svelte';
 
     //export let profile = "/images/profile.jpg";
     let search: string;
 
     $: showSearch = false;
+    let ready = false
+
+    onMount(() => {
+      ready = true
+    })
 
     const submitUpdateTheme: SubmitFunction = ({ action }) => {
       const theme = action.searchParams.get('theme')
@@ -37,23 +43,26 @@
       <form class={showSearch? "form-control" : "hidden form-control"} action="/search/{search}">
         <input type="text" placeholder="Search" class="input input-bordered input-secondary w-20 md:w-64 max-w-xs" bind:value={search}/>   
       </form>
-      <button class="btn " on:click={() => showSearch = !showSearch}>
-        <Icon icon="material-symbols:search" class="header-icon"/>
-      </button>
-      <button class="btn dropdown dropdown-end z-50">
-        <Icon icon="solar:pallete-2-bold" class="header-icon"/>
-        <ul class="dropdown-content menu p-2 shadow bg-base-100 rounded-box mt-4 border border-primary-content">
-          <form method="POST" use:enhance={submitUpdateTheme}>
-            {#each themes as theme} 
-              <li>
-                <button class="btn mt-2" formaction="/?/setTheme&theme={theme}&redirectTo={$page.url.pathname}">
-                  {theme}
-                </button>
-              </li>
-            {/each}
-          </form>
-        </ul>
-      </button>
+      {#if ready}
+        <button class="btn " on:click={() => showSearch = !showSearch}>
+          <Icon icon="material-symbols:search" class="header-icon"/>
+        </button>
+      
+        <button class="btn dropdown dropdown-end z-50">
+          <Icon icon="solar:pallete-2-bold" class="header-icon"/>
+          <ul class="dropdown-content menu p-2 shadow bg-base-100 rounded-box mt-4 border border-primary-content">
+            <form method="POST" use:enhance={submitUpdateTheme}>
+              {#each themes as theme} 
+                <li>
+                  <button class="btn mt-2" formaction="/?/setTheme&theme={theme}&redirectTo={$page.url.pathname}">
+                    {theme}
+                  </button>
+                </li>
+              {/each}
+            </form>
+          </ul>
+        </button>
+      {/if}
       <div class="dropdown dropdown-end">
         <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
         <label tabindex="0" class="btn btn-ghost btn-circle avatar" for="">
