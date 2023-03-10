@@ -14,8 +14,9 @@
             <p class="border-2 border-gray-300 p-2 w-full rounded-b-md">
                 {post.content}
             </p>
-            <form action="?/deletePost&id={post.id}" method="POST" class="py-2">
+            <form action="?/deletePost&id={post.id}" method="POST" class="py-2 flex-row">
                 <button type="submit" class="px-3 py-1 bg-red-400 text-white rounded">Delete</button>
+                <button class="px-3 py-1 bg-blue-400 text-white rounded"><a href="/{post.id}">Update</a></button>
             </form>
         {/each}
     </div>
