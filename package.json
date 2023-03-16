@@ -34,6 +34,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@prisma/client": "^4.11.0"
+		"@prisma/client": "^4.11.0",
+		"daisyui": "^2.51.5"
 	}
 }
