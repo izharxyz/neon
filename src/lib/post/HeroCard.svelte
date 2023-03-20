@@ -1,0 +1,32 @@
+<script lang="ts">
+    export let title = "An Amazing Post";
+    export let thumbnail = "/images/sky.jpg";
+    export let excerpt = "An amazing post which is a must read!";
+    export let author = "Zed";
+    export let avatar = "https://picsum.photos/id/55/4608/3072";
+    // export let time: number = 5;
+</script>
+
+<div class="card w-full bg-base-100 shadow-xl border border-primary-content">
+    <figure><img src={thumbnail} alt="Shoes" /></figure>
+    <div class="card-body">
+      <h2 class="card-title">
+        {title}
+        <div class="badge badge-secondary">NEW</div>
+      </h2>
+      <p>{excerpt}</p>
+      <div class="card-actions justify-between">
+        <div class="flex flex-row items-center">
+            <div class="avatar">
+                <div class="w-12 rounded-full">
+                  <img src={avatar} alt="avatar" />
+                </div>
+            </div>
+            <h3 class="ml-4">
+                {author}
+            </h3>
+        </div> 
+        <button class="btn btn-primary">Read more</button>
+      </div>
+    </div>
+  </div>
