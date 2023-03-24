@@ -3,7 +3,7 @@
     export let thumbnail = "/images/sky.jpg";
     export let excerpt = "An amazing post which is a must read!";
     export let author = "Zed";
-    export let avatar = "https://picsum.photos/id/55/4608/3072";
+    export let avatar = "/images/profile.jpg";
     // export let time: number = 5;
 </script>
 
