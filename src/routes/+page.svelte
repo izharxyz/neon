@@ -3,6 +3,7 @@
     import HeroCard from "$lib/post/HeroCard.svelte";
     import PostCard from "$lib/post/PostCard.svelte";
     import Categories from "$lib/sidebar/Categories.svelte";
+    import Popular from "$lib/sidebar/Popular.svelte";
     import Carousel from "$lib/post/Carousel.svelte";
 
     export let data: PageData
@@ -26,5 +27,6 @@
     </div>
     <div class="col-span-1 md:col-span-3 w-full">
         <Categories/>
+        <Popular/>
     </div>
 </div>
