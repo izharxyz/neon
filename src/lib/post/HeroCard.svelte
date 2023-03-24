@@ -10,9 +10,9 @@
 <div class="card w-full bg-base-100 shadow-xl border border-primary-content">
     <figure><img src={thumbnail} alt="Shoes" /></figure>
     <div class="card-body">
-      <h2 class="card-title">
+      <h2 class="card-title hover:text-primary-focus transition duration-150">
         {title}
-        <div class="badge badge-secondary">NEW</div>
+        <div class="badge badge-secondary">FEATURED</div>
       </h2>
       <p>{excerpt}</p>
       <div class="card-actions justify-between">

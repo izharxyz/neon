@@ -3,6 +3,7 @@
     import HeroCard from "$lib/post/HeroCard.svelte";
     import PostCard from "$lib/post/PostCard.svelte";
     import Categories from "$lib/sidebar/Categories.svelte";
+    import Carousel from "$lib/post/Carousel.svelte";
 
     export let data: PageData
     $: ({ posts } = data)
@@ -11,6 +12,10 @@
 </script>
 
 <div class="grid grid-cols-1 md:grid-cols-11 gap-6">
+    <div class="col-span-1 md:col-span-11">
+        <h1 class="mb-2 text-bold text-md text-primary">Trending posts</h1>
+        <Carousel/>
+    </div>
     <div class="col-span-1 md:col-span-8">
         <HeroCard/>
         <div class="col-span-1 md:col-span-8">
