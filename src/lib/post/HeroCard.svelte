@@ -18,7 +18,7 @@
       <div class="card-actions justify-between">
         <div class="flex flex-row items-center">
             <div class="avatar">
-                <div class="w-12 rounded-full">
+                <div class="w-10 rounded-full">
                   <img src={avatar} alt="avatar" />
                 </div>
             </div>
@@ -26,7 +26,7 @@
                 {author}
             </h3>
         </div> 
-        <button class="btn btn-primary">Read more</button>
+        <button class="btn btn-primary btn-sm">Read more</button>
       </div>
     </div>
   </div>

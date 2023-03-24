@@ -5,11 +5,11 @@
     // export let time: number = 5;
 </script>
 
-<div class="card card-side bg-base-100 mt-6">
-    <figure class="rounded-2xl"><img src={thumbnail} alt="Post" class="w-64 h-64"/></figure>
-    <div class="card-body">
-      <h2 class="card-title">{title}</h2>
-      <p>{excerpt}</p>
+<div class="card md:card-side bg-base-100 mt-6">
+    <figure class="md:rounded-2xl"><img src={thumbnail} alt="Post" class="object-cover rounded-2xl md:w-64 md:h-64"/></figure>
+    <div class="ml-2 md:ml-0 md:card-body">
+      <h2 class="mt-6 text-xl font-bold md:card-title">{title}</h2>
+      <p class="mt-2">{excerpt}</p>
       <div class="card-actions justify-end">
       </div>
     </div>
