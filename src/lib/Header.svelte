@@ -4,11 +4,11 @@
 
 <div class="navbar bg-base-100">
     <div class="flex-1">
-      <a href="/" class="btn btn-ghost normal-case text-3xl tracking-wide text-primary">LOGO</a>
+      <a href="/" class="normal-case text-3xl font-bold cursor-pointer tracking-wide text-primary hover:text-primary-focus transition duration-150">LOGO</a>
     </div>
     <div class="flex-none gap-2">
       <div class="form-control">
-        <input type="text" placeholder="Search" class="input input-bordered input-sm rounded-full px-5 h-10 w-20 md:w-40" />
+        <input type="text" placeholder="Search" class="input input-bordered input-sm rounded-full px-3 md:px-5 h-10 w-20 md:w-40" />
       </div>
       <div class="dropdown dropdown-end">
         <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
