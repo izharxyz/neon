@@ -1,4 +1,4 @@
-<div class="grid grid-cols-1 md:grid-cols-3 p-5 md:p-20 border border-primary-content rounded-3xl gap-12">
+<div class="card grid grid-cols-1 md:grid-cols-3 p-5 md:p-20 border border-primary-content gap-12">
    <div class="col-span-1">
         <div class="text-3xl font-bold tracking-wide text-primary hover:text-primary-focus transition duration-150 cursor-pointer">
             ZEDCODES
