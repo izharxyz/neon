@@ -30,7 +30,7 @@
         </form>
    </div>
    <div class="col-span-1 md:col-span-3 border-t border-primary-content flex flex-row justify-between pt-5 md:pt-20 md:mt-5">
-        <h3>View source on <span class="text-primary hover:text-primary-focus transition duration-150 cursor-pointer">Github</span></h3>
+        <p>View source on <span class="text-primary hover:text-primary-focus transition duration-150 cursor-pointer">Github</span></p>
         <div class="flex flex-row">
             <p>SOCIAL</p>
             <p class="ml-4">SOCIAL</p>
