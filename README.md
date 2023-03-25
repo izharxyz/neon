@@ -1,4 +1,5 @@
 # sveltekit is amazing!
 
-This is a standalone web app which will use Sveltekit, Prisma, Lucia and Cockroachdb
-to be deployed on Vercel
+This is a standalone web app (development in progress) which is using Sveltekit, Tailwindcss, DaisyUI, Prisma, Lucia and Cockroachdb (Postgres) deployed on Vercel.
+
+Documentation in progress.
