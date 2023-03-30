@@ -7,11 +7,11 @@
 <div class="card grid grid-cols-1 md:grid-cols-3 p-5 md:p-20 border border-primary-content gap-12">
    <div class="col-span-1">
         <div>
-            <a href="/" class="normal-case text-3xl font-bold cursor-pointer tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary transition duration-150">
+            <a href="/" class="normal-case text-3xl font-bold cursor-pointer tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
                 ZEDCODES
             </a> 
         </div>
-        <p class="mt-2">
+        <p class="mt-3">
             When an unknown prnoto sans took a galley and scrambled it to make specimen
             book not only five When an unknown prnoto sans took a galley and scrambled it to five centurie.
         </p>
