@@ -26,7 +26,7 @@
                 {author}
             </h3>
         </div> 
-        <button class="btn btn-primary btn-sm">Read more</button>
+        <button class="btn bg-gradient-to-r from-primary to-secondary btn-sm">Read more</button>
       </div>
     </div>
   </div>

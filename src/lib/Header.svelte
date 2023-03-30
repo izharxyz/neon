@@ -5,7 +5,7 @@
 
 <div class="navbar bg-base-100">
     <div class="flex-1">
-      <a href="/" class="normal-case text-3xl font-bold cursor-pointer tracking-wide text-primary hover:text-primary-focus transition duration-150">ZEDCODES</a>
+      <a href="/" class="normal-case text-3xl font-bold cursor-pointer tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary transition duration-150">ZEDCODES</a>
     </div>
     <div class="flex-none gap-2">
       <form class="hidden md:block form-control" action="/search/{search}">

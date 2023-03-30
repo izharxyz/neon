@@ -6,8 +6,10 @@
 
 <div class="card grid grid-cols-1 md:grid-cols-3 p-5 md:p-20 border border-primary-content gap-12">
    <div class="col-span-1">
-        <div class="text-3xl font-bold tracking-wide text-primary hover:text-primary-focus transition duration-150 cursor-pointer">
-            ZEDCODES
+        <div>
+            <a href="/" class="normal-case text-3xl font-bold cursor-pointer tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary transition duration-150">
+                ZEDCODES
+            </a> 
         </div>
         <p class="mt-2">
             When an unknown prnoto sans took a galley and scrambled it to make specimen
@@ -31,7 +33,7 @@
             </label> 
             <div class="mt-5 relative">
                 <input type="text" placeholder="username@site.com" class="input input-bordered w-full pr-16" /> 
-                <button class="btn btn-primary absolute top-0 right-0 rounded-l-none">Subscribe</button>
+                <button class="btn bg-gradient-to-r from-primary to-secondary absolute top-0 right-0 rounded-l-none">Subscribe</button>
             </div>
         </form>
    </div>
