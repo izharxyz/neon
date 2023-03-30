@@ -21,7 +21,7 @@
       </button>
       <button class="btn dropdown dropdown-end z-50" on:click={() => showThemes = !showThemes}>
         <div class="h-7 w-7"><IoMdColorPalette/></div>
-        <ul class={showThemes? "dropdown-content menu p-5 shadow bg-base-100 rounded-box mt-4 border border-primary-content" : "hidden"}>
+        <ul class={showThemes? "dropdown-content menu p-2 shadow bg-base-100 rounded-box mt-4 border border-primary-content" : "hidden"}>
             <li><button class="btn btn-ghost">Night</button></li>
             <li><button class="btn btn-ghost">Snow</button></li>
             <li><button class="btn btn-ghost">Valentine</button></li>
