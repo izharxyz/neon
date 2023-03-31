@@ -10,17 +10,17 @@
 
 <div class="navbar bg-base-100">
     <div class="flex-1">
-      <a href="/" class="normal-case text-3xl font-bold cursor-pointer tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">ZEDCODES</a>
+      <a href="/" class="btn normal-case text-2xl md:text-3xl font-bold cursor-pointer tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">ZEDCODES</a>
     </div>
     <div class="flex-none gap-2">
       <form class={showSearch? "form-control" : "hidden form-control"} action="/search/{search}">
         <input type="text" placeholder="Search" class="input input-bordered input-secondary w-20 md:w-64 max-w-xs" bind:value={search}/>   
       </form>
-      <button class="btn" on:click={() => showSearch = !showSearch}>
-        <div class="h-7 w-7"><IoIosSearch/></div>
+      <button class="btn " on:click={() => showSearch = !showSearch}>
+        <div class="h-6 w-6 md:h-7 md:w-7"><IoIosSearch/></div>
       </button>
       <button class="btn dropdown dropdown-end z-50" on:click={() => showThemes = !showThemes}>
-        <div class="h-7 w-7"><IoMdColorPalette/></div>
+        <div class="h-6 w-6 md:h-7 md:w-7"><IoMdColorPalette/></div>
         <ul class={showThemes? "dropdown-content menu p-2 shadow bg-base-100 rounded-box mt-4 border border-primary-content" : "hidden"}>
             <li><button class="btn btn-ghost">Night</button></li>
             <li><button class="btn btn-ghost">Snow</button></li>

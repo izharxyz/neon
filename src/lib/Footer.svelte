@@ -7,7 +7,7 @@
 <div class="card grid grid-cols-1 md:grid-cols-3 p-5 md:p-20 border border-primary-content gap-12">
    <div class="col-span-1">
         <div>
-            <a href="/" class="normal-case text-3xl font-bold cursor-pointer tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+            <a href="/" class="btn normal-case text-2xl md:text-3xl font-bold cursor-pointer tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
                 ZEDCODES
             </a> 
         </div>
