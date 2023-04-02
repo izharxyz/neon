@@ -2,9 +2,27 @@
     import Editor from '$lib/Editor.svelte'
 </script>
   
-<div>
+<div class="card border border-primary-content p-2">
+    <h1 class="my-8">
+        Write a wonderful article
+    </h1>
     <form action="?/createPost">
-        <Editor />
-        <button type="submit" class="btn btn-primary btn-sm mt-4"> Submit </button>
+        <input type="text" placeholder="Title" class="input input-bordered input-primary w-full" />
+        <input type="text" placeholder="Excerpt" class="input input-bordered input-primary w-full mt-8" />
+
+        <div class="flex flex-col md:flex-row my-8">
+            <select name="category" required class="select select-primary w-full md:w-1/2 md:mr-5">
+                <option disabled selected>Category</option>
+                <option>Web dev</option>
+                <option>Mobile dev</option>
+                <option>Blockchain</option>
+                <option>Artificial intelligence</option>
+            </select>
+            <input type="file" class="file-input file-input-bordered file-input-primary w-full md:w-1/2 mt-8 md:mt-0" />
+        </div>
+        <div class="p-2 border border-primary card">
+            <Editor />
+        </div>
+        <button type="submit" class="btn btn-primary mt-8"> Submit </button>
     </form> 
 </div>
