@@ -1,5 +1,17 @@
 <script lang="ts">
   import StarterKit from "@tiptap/starter-kit";
+  import { lowlight } from 'lowlight/lib/core';
+
+  import Image from '@tiptap/extension-image';
+  
+  import Document from '@tiptap/extension-document';
+  import Paragraph from '@tiptap/extension-paragraph';
+  import Heading from '@tiptap/extension-heading';
+  import Blockquote from '@tiptap/extension-blockquote';
+  import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight';
+
+  import Code from '@tiptap/extension-code';
+
   import { Editor } from "@tiptap/core";
   import { onMount } from "svelte";
 	import Icon from "@iconify/svelte";
@@ -12,10 +24,54 @@
       element: element,
       editorProps: {
         attributes: {
-          class: 'p-2 mt-2 border border-primary card',
+          class: 'p-2 mt-2 border border-primary-content card',
         },
       },
-      extensions: [StarterKit],
+      extensions: [
+        StarterKit,
+
+        Image.configure({
+          allowBase64: true,
+          HTMLAttributes: {
+            class: 'card w-full h-full object-fit',
+          },
+        }),
+
+        Paragraph.configure({
+        HTMLAttributes: {
+          class: '',
+        },
+        }),
+
+        Heading.configure({
+          HTMLAttributes: {
+            class: 'text-neutral-content',
+          },
+        }),
+
+        Blockquote.configure({
+          HTMLAttributes: {
+            class: 'card w-full grid place-items-center p-5 md:p-10 text-2xl md:text-3xl font-bold bg-primary-content',
+          },
+        }),
+
+        CodeBlockLowlight.configure({
+          lowlight,
+          defaultLanguage: 'js',
+          languageClassPrefix: 'language-',
+          HTMLAttributes: {
+            class: 'w-full border border-primary-content p-2 rounded-md bg-base-300',
+          },
+        }),
+
+        Code.configure({
+          HTMLAttributes: {
+            class: 'border border-primary-content px-1 rounded-md bg-base-300',
+            },
+        }),
+
+
+      ],
       content: `
           <input name="content" id="content" placeholder="content">
           `,
@@ -24,12 +80,15 @@
         editor = editor;
       },
     });
+
+    const html = editor.getHTML()
+    
   });
 </script>
 
 {#if editor}
-  <div class="border border-primary p-2 md:p-10 card">
-    <div class=" mx-auto">
+  <div class="border p-2 md:p-8 border-primary-content card">
+    <div class="mx-auto">
       <button
         on:click={() => editor.chain().focus().toggleBold().run()}
         disabled={!editor.can().chain().focus().toggleBold().run()}
