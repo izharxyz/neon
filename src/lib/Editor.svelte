@@ -51,7 +51,7 @@
 
         Blockquote.configure({
           HTMLAttributes: {
-            class: 'card w-full grid place-items-center p-5 md:p-10 text-2xl md:text-3xl font-bold bg-primary-content',
+            class: 'card w-full grid place-items-center p-5 md:p-10 bg-primary-content',
           },
         }),
 
