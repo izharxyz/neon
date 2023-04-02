@@ -24,7 +24,7 @@
       element: element,
       editorProps: {
         attributes: {
-          class: 'p-2 mt-2 border border-primary-content card',
+          class: 'textarea textarea-bordered textarea-lg p-5 mt-2',
         },
       },
       extensions: [
@@ -45,13 +45,13 @@
 
         Heading.configure({
           HTMLAttributes: {
-            class: 'text-neutral-content',
+            class: '',
           },
         }),
 
         Blockquote.configure({
           HTMLAttributes: {
-            class: 'card w-full grid place-items-center p-5 md:p-10 bg-primary-content',
+            class: 'card w-full grid place-items-center p-5 md:p-10 bg-primary-content text-neutral-content',
           },
         }),
 
@@ -72,9 +72,7 @@
 
 
       ],
-      content: `
-          <input name="content" id="content" placeholder="content">
-          `,
+      content: ``,
       onTransaction: () => {
         // force re-render so `editor.isActive` works as expected
         editor = editor;

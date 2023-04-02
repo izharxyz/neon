@@ -18,9 +18,9 @@
    </div>
    <div class="col-span-1">
         <h1 class="font-bold text-xl">Categories</h1>
-        <h3 class="mt-5">Web dev</h3>
-        <h3 class="mt-2">Mobile dev</h3>
-        <h3 class="mt-2">Linux</h3>
+        <p class="mt-5">Web dev</p>
+        <p class="mt-2">Mobile dev</p>
+        <p class="mt-2">Linux</p>
    </div>
    <div class="col-span-1">
         <h1 class="font-bold text-xl">Newsletter</h1>
