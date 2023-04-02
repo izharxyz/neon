@@ -1,10 +1,33 @@
 <script lang="ts">
+	  import { enhance, type SubmitFunction } from '$app/forms';
+    import { page } from '$app/stores';
     import Icon from '@iconify/svelte';
+
     export let profile = "/images/profile.jpg";
     let search: string;
 
     $: showSearch = false;
     $: showThemes = false;
+
+    const submitUpdateTheme: SubmitFunction = ({ action }) => {
+      const theme = action.searchParams.get('theme')
+
+      if (theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+      }
+    }
+
+    const themes = [
+      'night',
+      'winter',
+      'valentine',
+      'retro',
+      'forest',
+      'luxury',
+      'cyberpunk',
+      'coffee',
+      'dracula'
+    ]
 </script>
 
 <div class="navbar bg-base-100">
@@ -21,16 +44,19 @@
       <button class="btn dropdown dropdown-end z-50" on:click={() => showThemes = !showThemes}>
         <Icon icon="solar:pallete-2-bold" class="header-icon"/>
 
-        {#if showThemes}
-          <ul class="dropdown-content menu p-2 shadow bg-base-100 rounded-box mt-4 border border-primary-content">
-            <li><button class="btn btn-ghost">Night</button></li>
-            <li><button class="btn btn-ghost">Snow</button></li>
-            <li><button class="btn btn-ghost">Valentine</button></li>
-            <li><button class="btn btn-ghost">Retro</button></li>
-            <li><button class="btn btn-ghost">Luxury</button></li>
-            <li><button class="btn btn-ghost">Cyberpunk</button></li>
-          </ul>
-        {/if} 
+        
+        <ul class="dropdown-content menu p-2 shadow bg-base-100 rounded-box mt-4 border border-primary-content">
+          <form method="POST" use:enhance={submitUpdateTheme}>
+            {#each themes as theme} 
+              <li>
+                <button class="btn btn-ghost" formaction="/?/setTheme&theme={theme}&redirectTo={$page.url.pathname}">
+                  {theme}
+                </button>
+              </li>
+            {/each}
+          </form>
+        </ul>
+         
       </button>
       <div class="dropdown dropdown-end">
         <!-- svelte-ignore a11y-no-noninteractive-tabindex -->

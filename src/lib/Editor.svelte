@@ -30,13 +30,6 @@
       extensions: [
         StarterKit,
 
-        Image.configure({
-          allowBase64: true,
-          HTMLAttributes: {
-            class: 'card w-full h-full object-fit',
-          },
-        }),
-
         Paragraph.configure({
         HTMLAttributes: {
           class: '',
