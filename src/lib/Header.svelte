@@ -1,6 +1,5 @@
 <script lang="ts">
-    import IoIosSearch from 'svelte-icons/io/IoIosSearch.svelte'
-    import IoMdColorPalette from 'svelte-icons/io/IoMdColorPalette.svelte'
+    import Icon from '@iconify/svelte';
     export let profile = "/images/profile.jpg";
     let search: string;
 
@@ -10,17 +9,17 @@
 
 <div class="navbar bg-base-100">
     <div class="flex-1">
-      <a href="/" class="btn normal-case text-2xl md:text-3xl font-bold cursor-pointer tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">ZEDCODES</a>
+      <a href="/" class="logo">ZEDCODES</a>
     </div>
     <div class="flex-none gap-2">
       <form class={showSearch? "form-control" : "hidden form-control"} action="/search/{search}">
         <input type="text" placeholder="Search" class="input input-bordered input-secondary w-20 md:w-64 max-w-xs" bind:value={search}/>   
       </form>
       <button class="btn " on:click={() => showSearch = !showSearch}>
-        <div class="h-6 w-6 md:h-7 md:w-7"><IoIosSearch/></div>
+        <Icon icon="material-symbols:search" class="header-icon"/>
       </button>
       <button class="btn dropdown dropdown-end z-50" on:click={() => showThemes = !showThemes}>
-        <div class="h-6 w-6 md:h-7 md:w-7"><IoMdColorPalette/></div>
+        <Icon icon="solar:pallete-2-bold" class="header-icon"/>
 
         {#if showThemes}
           <ul class="dropdown-content menu p-2 shadow bg-base-100 rounded-box mt-4 border border-primary-content">

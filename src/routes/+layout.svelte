@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Icon from '@iconify/svelte';
     import "../app.css";
     import Header from "$lib/Header.svelte";
     import Footer from "$lib/Footer.svelte";
