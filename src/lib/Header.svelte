@@ -21,14 +21,17 @@
       </button>
       <button class="btn dropdown dropdown-end z-50" on:click={() => showThemes = !showThemes}>
         <div class="h-6 w-6 md:h-7 md:w-7"><IoMdColorPalette/></div>
-        <ul class={showThemes? "dropdown-content menu p-2 shadow bg-base-100 rounded-box mt-4 border border-primary-content" : "hidden"}>
+
+        {#if showThemes}
+          <ul class="dropdown-content menu p-2 shadow bg-base-100 rounded-box mt-4 border border-primary-content">
             <li><button class="btn btn-ghost">Night</button></li>
             <li><button class="btn btn-ghost">Snow</button></li>
             <li><button class="btn btn-ghost">Valentine</button></li>
             <li><button class="btn btn-ghost">Retro</button></li>
             <li><button class="btn btn-ghost">Luxury</button></li>
             <li><button class="btn btn-ghost">Cyberpunk</button></li>
-        </ul>
+          </ul>
+        {/if} 
       </button>
       <div class="dropdown dropdown-end">
         <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
