@@ -9,7 +9,7 @@
         <div class="card image-full mr-2">
             <figure class="h-48 w-48"><img src={thumbnail} alt="blog" /></figure>
             <div class="card-body relative">
-              <h2 class="absolute bottom-5">{title}</h2>
+              <h2 class="text-base absolute bottom-5">{title}</h2>
             </div>
         </div>
 
@@ -18,7 +18,7 @@
         <div class="card image-full mr-2">
             <figure class="h-48 w-48"><img src={thumbnail} alt="blog" /></figure>
             <div class="card-body relative">
-              <h2 class="absolute bottom-5">{title}</h2>
+              <h2 class="text-base absolute bottom-5">{title}</h2>
             </div>
         </div>
     </div> 
@@ -26,7 +26,7 @@
         <div class="card image-full mr-2">
             <figure class="h-48 w-48"><img src={thumbnail} alt="blog" /></figure>
             <div class="card-body relative">
-              <h2 class="absolute bottom-5">{title}</h2>
+              <h2 class="text-base absolute bottom-5">{title}</h2>
             </div>
         </div>
     </div> 
@@ -34,7 +34,7 @@
         <div class="card image-full mr-2">
             <figure class="h-48 w-48"><img src={thumbnail} alt="blog" /></figure>
             <div class="card-body relative">
-              <h2 class="absolute bottom-5">{title}</h2>
+              <h2 class="text-base absolute bottom-5">{title}</h2>
             </div>
         </div>
     </div> 
@@ -42,7 +42,7 @@
         <div class="card image-full mr-2">
             <figure class="h-48 w-48"><img src={thumbnail} alt="blog" /></figure>
             <div class="card-body relative">
-              <h2 class="absolute bottom-5">{title}</h2>
+              <h2 class="text-base absolute bottom-5">{title}</h2>
             </div>
         </div>
     </div> 
@@ -50,7 +50,7 @@
         <div class="card image-full mr-2">
             <figure class="h-48 w-48"><img src={thumbnail} alt="blog" /></figure>
             <div class="card-body relative">
-              <h2 class="absolute bottom-5">{title}</h2>
+              <h2 class="text-base absolute bottom-5">{title}</h2>
             </div>
         </div>
     </div> 
@@ -58,7 +58,7 @@
         <div class="card image-full mr-2">
             <figure class="h-48 w-48"><img src={thumbnail} alt="blog" /></figure>
             <div class="card-body relative">
-              <h2 class="absolute bottom-5">{title}</h2>
+              <h2 class="text-base absolute bottom-5">{title}</h2>
             </div>
         </div>
     </div>

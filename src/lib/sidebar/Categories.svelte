@@ -9,25 +9,25 @@
         <div class="card w-full mt-5 bg-base-100 border border-primary-content p-3">
             <div class="flex flex-row items-center">
                 <img src={profile} alt="profile-pic" class="w-10 h-10 rounded-full"/>
-                <h3 class="ml-5">Web dev</h3>
+                <p class="ml-5">Web dev</p>
             </div>
         </div>
         <div class="card w-full mt-5 bg-base-100 border border-primary-content p-3">
             <div class="flex flex-row items-center">
                 <img src={profile} alt="profile-pic" class="w-10 h-10 rounded-full"/>
-                <h3 class="ml-5">Mobile dev</h3>
+                <p class="ml-5">Mobile dev</p>
             </div>
         </div>
         <div class="card w-full mt-5 bg-base-100 border border-primary-content p-3">
             <div class="flex flex-row items-center">
                 <img src={profile} alt="profile-pic" class="w-10 h-10 rounded-full"/>
-                <h3 class="ml-5">Linux</h3>
+                <p class="ml-5">Linux</p>
             </div>
         </div>
         <div class="card w-full mt-5 bg-base-100 border border-primary-content p-3">
             <div class="flex flex-row items-center">
                 <img src={profile} alt="profile-pic" class="w-10 h-10 rounded-full"/>
-                <h3 class="ml-5">Blockchain</h3>
+                <p class="ml-5">Blockchain</p>
             </div>
         </div>
     </div>

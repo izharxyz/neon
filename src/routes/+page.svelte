@@ -14,7 +14,7 @@
 
 <div class="grid grid-cols-1 md:grid-cols-11 gap-6">
     <div class="col-span-1 md:col-span-11">
-        <h1 class="mb-2 text-bold text-md text-primary">Trending posts</h1>
+        <h1 class="mb-2 text-bold text-xl text-md text-primary">Trending posts</h1>
         <Carousel/>
     </div>
     <div class="col-span-1 md:col-span-8">
