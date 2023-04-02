@@ -3,6 +3,25 @@
   import { Editor } from "@tiptap/core";
   import { onMount } from "svelte";
 
+
+  import MdFormatBold from 'svelte-icons/md/MdFormatBold.svelte'
+  import MdFormatItalic from 'svelte-icons/md/MdFormatItalic.svelte'
+  import MdStrikethroughS from 'svelte-icons/md/MdStrikethroughS.svelte'
+  import MdCode from 'svelte-icons/md/MdCode.svelte'
+  import MdClear from 'svelte-icons/md/MdClear.svelte'
+  import MdBackspace from 'svelte-icons/md/MdBackspace.svelte'
+  import MdLocalParking from 'svelte-icons/md/MdLocalParking.svelte'
+  import MdFormatListBulleted from 'svelte-icons/md/MdFormatListBulleted.svelte'
+  import MdReorder from 'svelte-icons/md/MdReorder.svelte'
+  import MdFormatQuote from 'svelte-icons/md/MdFormatQuote.svelte'
+  import MdBorderHorizontal from 'svelte-icons/md/MdBorderHorizontal.svelte'
+  import MdUndo from 'svelte-icons/md/MdUndo.svelte'
+  import MdRedo from 'svelte-icons/md/MdRedo.svelte'
+
+  import FaUndoAlt from 'svelte-icons/fa/FaUndoAlt.svelte'
+  import FaRedoAlt from 'svelte-icons/fa/FaRedoAlt.svelte'
+
+
   let element: any;
   let editor: any;
 
@@ -34,112 +53,104 @@
         disabled={!editor.can().chain().focus().toggleBold().run()}
         class={editor.isActive("bold") ? "btn btn-xs btn-accent" : "btn btn-xs"}
       >
-        bold
+        <div class="h-6 w-6">
+          <MdFormatBold/>
+        </div>
       </button>
       <button
         on:click={() => editor.chain().focus().toggleItalic().run()}
         disabled={!editor.can().chain().focus().toggleItalic().run()}
         class={editor.isActive("italic") ? "btn btn-xs btn-accent" : "btn btn-xs"}
       >
-        italic
+        <div class="h-6 w-6">
+          <MdFormatItalic/>
+        </div>
       </button>
       <button
         on:click={() => editor.chain().focus().toggleStrike().run()}
         disabled={!editor.can().chain().focus().toggleStrike().run()}
         class={editor.isActive("strike") ? "btn btn-xs btn-accent" : "btn btn-xs"}
       >
-        strike
+        <div class="h-6 w-6">
+          <MdStrikethroughS/>
+        </div>
       </button>
       <button
         on:click={() => editor.chain().focus().toggleCode().run()}
         disabled={!editor.can().chain().focus().toggleCode().run()}
         class={editor.isActive("code") ? "btn btn-xs btn-accent" : "btn btn-xs"}
       >
-        code
+        <div class="h-6 w-6">
+          <MdCode/>
+        </div>
       </button>
-      <button on:click={() => editor.chain().focus().unsetAllMarks().run()}> clear marks </button>
-      <button on:click={() => editor.chain().focus().clearNodes().run()}> clear nodes </button>
+      <button on:click={() => editor.chain().focus().unsetAllMarks().run()}>  
+        <div class="h-6 w-6">
+          <MdBackspace/>
+        </div> 
+      </button>
+      <button on:click={() => editor.chain().focus().clearNodes().run()}> 
+        <div class="h-6 w-6">
+          <MdClear/>
+        </div> 
+      </button>
       <button
         on:click={() => editor.chain().focus().setParagraph().run()}
         class={editor.isActive("paragraph") ? "btn btn-xs btn-accent" : "btn btn-xs"}
       >
-        paragraph
+        <div class="h-6 w-6">
+          <MdLocalParking/>
+        </div> 
       </button>
-      <button
-        on:click={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
-        class={editor.isActive("heading", { level: 1 }) ? "btn btn-xs btn-accent" : "btn btn-xs"}
-      >
-        h1
-      </button>
-      <button
-        on:click={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
-        class={editor.isActive("heading", { level: 2 }) ? "btn btn-xs btn-accent" : "btn btn-xs"}
-      >
-        h2
-      </button>
-      <button
-        on:click={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
-        class={editor.isActive("heading", { level: 3 }) ? "btn btn-xs btn-accent" : "btn btn-xs"}
-      >
-        h3
-      </button>
-      <button
-        on:click={() => editor.chain().focus().toggleHeading({ level: 4 }).run()}
-        class={editor.isActive("heading", { level: 4 }) ? "btn btn-xs btn-accent" : "btn btn-xs"}
-      >
-        h4
-      </button>
-      <button
-        on:click={() => editor.chain().focus().toggleHeading({ level: 5 }).run()}
-        class={editor.isActive("heading", { level: 5 }) ? "btn btn-xs btn-accent" : "btn btn-xs"}
-      >
-        h5
-      </button>
-      <button
-        on:click={() => editor.chain().focus().toggleHeading({ level: 6 }).run()}
-        class={editor.isActive("heading", { level: 6 }) ? "btn btn-xs btn-accent" : "btn btn-xs"}
-      >
-        h6
-      </button>
+      
       <button
         on:click={() => editor.chain().focus().toggleBulletList().run()}
         class={editor.isActive("bulletList") ? "btn btn-xs btn-accent" : "btn btn-xs"}
       >
-        bullet list
+        <div class="h-6 w-6">
+          <MdFormatListBulleted/>
+        </div>
       </button>
       <button
         on:click={() => editor.chain().focus().toggleOrderedList().run()}
         class={editor.isActive("orderedList") ? "btn btn-xs btn-accent" : "btn btn-xs"}
       >
-        ordered list
+        <div class="h-6 w-6">
+          <MdReorder/>
+        </div>
       </button>
       <button
         on:click={() => editor.chain().focus().toggleCodeBlock().run()}
         class={editor.isActive("codeBlock") ? "btn btn-xs btn-accent" : "btn btn-xs"}
       >
-        code block
+        <div class="h-6 w-6">
+          <MdCode/>
+        </div>
       </button>
       <button
         on:click={() => editor.chain().focus().toggleBlockquote().run()}
         class={editor.isActive("blockquote") ? "btn btn-xs btn-accent" : "btn btn-xs"}
       >
-        blockquote
+        <div class="h-6 w-6">
+          <MdFormatQuote/>
+        </div>
       </button>
-      <button on:click={() => editor.chain().focus().setHorizontalRule().run()}>
-        horizontal rule
-      </button>
-      <button on:click={() => editor.chain().focus().setHardBreak().run()}> hard break </button>
+      
       <button
         on:click={() => editor.chain().focus().undo().run()}
         disabled={!editor.can().chain().focus().undo().run()}
       >
-        undo
+        <div class="h-5 w-5">
+          <FaUndoAlt/>
+        </div>
       </button>
       <button
         on:click={() => editor.chain().focus().redo().run()}
         disabled={!editor.can().chain().focus().redo().run()}
       >
-        redo
+        <div class="h-5 w-5">
+          <FaRedoAlt/>
+        </div>
       </button>
     </div>
   </div>
