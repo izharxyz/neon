@@ -49,7 +49,7 @@
           <form method="POST" use:enhance={submitUpdateTheme}>
             {#each themes as theme} 
               <li>
-                <button class="btn btn-ghost" formaction="/?/setTheme&theme={theme}&redirectTo={$page.url.pathname}">
+                <button class="btn mt-2" formaction="/?/setTheme&theme={theme}&redirectTo={$page.url.pathname}">
                   {theme}
                 </button>
               </li>
