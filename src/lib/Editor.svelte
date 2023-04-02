@@ -14,9 +14,6 @@
   import MdFormatListBulleted from 'svelte-icons/md/MdFormatListBulleted.svelte'
   import MdReorder from 'svelte-icons/md/MdReorder.svelte'
   import MdFormatQuote from 'svelte-icons/md/MdFormatQuote.svelte'
-  import MdBorderHorizontal from 'svelte-icons/md/MdBorderHorizontal.svelte'
-  import MdUndo from 'svelte-icons/md/MdUndo.svelte'
-  import MdRedo from 'svelte-icons/md/MdRedo.svelte'
 
   import FaUndoAlt from 'svelte-icons/fa/FaUndoAlt.svelte'
   import FaRedoAlt from 'svelte-icons/fa/FaRedoAlt.svelte'
