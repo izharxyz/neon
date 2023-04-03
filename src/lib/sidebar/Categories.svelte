@@ -1,5 +1,5 @@
 <script lang="ts">
-    export let profile = "/images/profile.jpg";
+    import Icon from "@iconify/svelte";
 </script>
 
 <div class="card w-full border border-primary-content">
@@ -8,25 +8,25 @@
         
         <div class="card w-full mt-5 bg-base-100 border border-primary-content p-3">
             <div class="flex flex-row items-center">
-                <img src={profile} alt="profile-pic" class="w-10 h-10 rounded-full"/>
+                <Icon icon="mdi:web" class="icon border-2 border-primary rounded-full"/>
                 <p class="ml-5">Web dev</p>
             </div>
         </div>
         <div class="card w-full mt-5 bg-base-100 border border-primary-content p-3">
             <div class="flex flex-row items-center">
-                <img src={profile} alt="profile-pic" class="w-10 h-10 rounded-full"/>
+                <Icon icon="tabler:device-mobile-code" class="icon border-2 border-primary rounded-full"/>
                 <p class="ml-5">Mobile dev</p>
             </div>
         </div>
         <div class="card w-full mt-5 bg-base-100 border border-primary-content p-3">
             <div class="flex flex-row items-center">
-                <img src={profile} alt="profile-pic" class="w-10 h-10 rounded-full"/>
+                <Icon icon="mdi:linux" class="icon border-2 border-primary rounded-full"/>
                 <p class="ml-5">Linux</p>
             </div>
         </div>
         <div class="card w-full mt-5 bg-base-100 border border-primary-content p-3">
             <div class="flex flex-row items-center">
-                <img src={profile} alt="profile-pic" class="w-10 h-10 rounded-full"/>
+                <Icon icon="icon-park-solid:blockchain" class="icon border-2 border-primary rounded-full"/>
                 <p class="ml-5">Blockchain</p>
             </div>
         </div>

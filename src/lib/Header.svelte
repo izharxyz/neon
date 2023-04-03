@@ -3,11 +3,10 @@
     import { page } from '$app/stores';
     import Icon from '@iconify/svelte';
 
-    export let profile = "/images/profile.jpg";
+    //export let profile = "/images/profile.jpg";
     let search: string;
 
     $: showSearch = false;
-    $: showThemes = false;
 
     const submitUpdateTheme: SubmitFunction = ({ action }) => {
       const theme = action.searchParams.get('theme')
@@ -41,10 +40,8 @@
       <button class="btn " on:click={() => showSearch = !showSearch}>
         <Icon icon="material-symbols:search" class="header-icon"/>
       </button>
-      <button class="btn dropdown dropdown-end z-50" on:click={() => showThemes = !showThemes}>
+      <button class="btn dropdown dropdown-end z-50">
         <Icon icon="solar:pallete-2-bold" class="header-icon"/>
-
-        
         <ul class="dropdown-content menu p-2 shadow bg-base-100 rounded-box mt-4 border border-primary-content">
           <form method="POST" use:enhance={submitUpdateTheme}>
             {#each themes as theme} 
@@ -56,14 +53,11 @@
             {/each}
           </form>
         </ul>
-         
       </button>
       <div class="dropdown dropdown-end">
         <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
         <label tabindex="0" class="btn btn-ghost btn-circle avatar" for="">
-          <div class="w-10 rounded-full">
-            <img src={profile} alt="profile-pic"/>
-          </div>
+          <Icon icon="game-icons:bird-mask" class="icon border-2 border-primary rounded-full"/>
         </label>
 
         <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
