@@ -39,10 +39,10 @@
         <p>View source on <span class="text-primary hover:text-primary-focus transition duration-150 cursor-pointer">Github</span></p>
         <div class="flex flex-row">
             <a href="https://github.com/zzedddd">
-                <Icon icon='mdi:github'class="icon"/>
+                <Icon icon='mdi:github' class="icon"/>
             </a>
-            <Icon icon='mdi:linkedin'class="icon"/>
-            <Icon icon='ant-design:twitter-circle-filled'class="icon"/>
+            <Icon icon='mdi:linkedin' class="icon"/>
+            <Icon icon='ant-design:twitter-circle-filled' class="icon"/>
         </div>
    </div>
 </div>
