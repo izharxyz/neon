@@ -1,6 +1,8 @@
 import type { Handle } from "@sveltejs/kit";
+import { auth } from "$lib/server/lucia";
 
 export const handle = (async ({ event, resolve }) => {
+    event.locals.auth = auth.handleRequest(event);
     let theme: string | null = null;
 
     const newTheme = event.url.searchParams.get("theme");
