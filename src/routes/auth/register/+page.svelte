@@ -1,21 +1,38 @@
-<!-- routes/signup/+page.svelte -->
 <script lang="ts">
 	import { enhance } from "$app/forms";
 </script>
 
-<div>
-	<h1>Create an account</h1>
-	<form method="POST" use:enhance>
-		<label for="name">name</label><br />
-		<input id="name" name="name" /><br />
-
-		<label for="username">username</label><br />
-		<input id="username" name="username" /><br />
-
-		<label for="email">email</label><br />
-		<input id="email" name="email" /><br />
-		<label for="password">Password</label><br />
-		<input type="password" id="password" name="password" /><br />
-		<input type="submit" value="Signup" class="btn btn-primary"/>
-	</form>
+<div class="relative flex flex-col justify-center h-[600px] overflow-hidden">
+	<div class="w-full p-6 m-auto card bg-base-100 border border-primary-content lg:max-w-lg">
+		<h1 class="text-3xl font-semibold text-center text-primary">Register</h1>
+		<form method="POST" class="space-y-4" use:enhance>
+			<div>
+				<label class="label" for="name">
+					<span class="text-base label-text">Name</span>
+				</label>
+				<input name="name" type="text" placeholder="Your name" class="w-full input input-bordered input-primary" />
+			</div>
+			<div>
+				<label class="label" for="username">
+					<span class="text-base label-text">Username</span>
+				</label>
+				<input name="username" type="text" placeholder="A unique username" class="w-full input input-bordered input-primary" />
+			</div>
+			<div>
+				<label class="label" for="email">
+					<span class="text-base label-text">Email</span>
+				</label>
+				<input name="email" type="text" placeholder="Email Address" class="w-full input input-bordered input-primary" />
+			</div>
+			<div>
+				<label class="label" for="password">
+					<span class="text-base label-text">Password</span>
+				</label>
+				<input type="password" name="password" placeholder="Enter Password" class="w-full input input-bordered input-primary" />
+			</div>
+			<div>
+				<button type="submit" class="btn btn-primary">Join Now !</button>
+			</div>
+		</form>
+	</div>
 </div>
