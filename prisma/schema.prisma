@@ -10,17 +10,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Post {
-  id           BigInt       @id @default(autoincrement())
-  title        String
-  content      String
-}
-
 model AuthUser {
   id           String       @id @unique
   name         String
   username     String       @unique
   email        String       @unique
+  posts        Post[]
   auth_session AuthSession[]
   auth_key     AuthKey[]
   // here you can add custom fields for your user
@@ -50,4 +45,27 @@ model AuthKey {
 
   @@index([user_id])
   @@map("auth_key")
+}
+
+model Post {
+  id           BigInt       @id @default(autoincrement())
+  title        String
+  thumbnail    String
+  excerpt      String
+  content      String
+  slug         String[]
+  user_id      String
+  user         AuthUser     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  category_id  String?
+  category     Category? @relation(fields: [category_id], references: [id], onDelete: SetNull)
+
+  @@map("posts")
+}
+
+model Category {
+  id           String       @id @unique
+  name         String       @unique
+  posts        Post[]
+
+  @@map("categories")
 }
