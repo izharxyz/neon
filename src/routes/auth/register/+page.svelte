@@ -31,7 +31,10 @@
 				<input type="password" name="password" placeholder="Enter Password" class="w-full input input-bordered input-primary" />
 			</div>
 			<div>
-				<button type="submit" class="btn btn-primary">Join Now !</button>
+				<a href="/auth/login" class="float-right mr-2 hover:underline">Already have an account? <span class="text-secondary">Login</span></a>
+			</div>
+			<div>
+				<button type="submit" class="btn btn-primary mt-2">Join Now !</button>
 			</div>
 		</form>
 	</div>
