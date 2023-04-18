@@ -19,10 +19,10 @@
 				<input type="password" name="password" placeholder="Enter Password" class="w-full input input-bordered input-primary" />
 			</div>
 			<div>
-				<a href="/" class="float-right mr-2 text-xs text-rpimary-content hover:underline hover:text-blue-600">Forget Password?</a>
+				<a href="/auth/register" class="float-right mr-2 hover:underline">Need an account? <span class="text-secondary">Register</span></a>
 			</div>
 			<div>
-				<button type="submit" class="btn btn-primary">Login</button>
+				<button type="submit" class="btn btn-primary mt-2">Login</button>
 			</div>
 		</form>
 	</div>
