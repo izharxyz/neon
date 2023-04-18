@@ -4,6 +4,7 @@
     import Icon from '@iconify/svelte';
 	  import { onMount } from 'svelte';
 
+    export let user: any;
     //export let profile = "/images/profile.jpg";
     let search: string;
 
@@ -63,22 +64,31 @@
           </ul>
         </button>
       {/if}
-      <div class="dropdown dropdown-end">
-        <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-        <label tabindex="0" class="btn btn-ghost btn-circle avatar" for="">
-          <Icon icon="game-icons:bird-mask" class="icon border-2 border-primary rounded-full"/>
-        </label>
 
-        <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-        <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
-          <li>
-            <a href="/" class="justify-between">
-              Profile
-            </a>
-          </li>
-          <li><a href="/">Settings</a></li>
-          <li><a href="/">Logout</a></li>
-        </ul>
-      </div>
+      {#if user}
+        <div class="dropdown dropdown-end">
+          <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+          <label tabindex="0" class="btn btn-ghost btn-circle avatar" for="">
+            <Icon icon="game-icons:bird-mask" class="icon border-2 border-primary rounded-full"/>
+          </label>
+
+          <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+          <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+            <form method="POST">
+              <li>
+                <a href="/" class="justify-between">
+                  Profile
+                </a>
+              </li>
+              <li><a href="/">Settings</a></li>
+              <li><button formaction="/auth/logout" type="submit" class="normal-case">Logout</button></li>
+            </form>
+          </ul>
+        </div> 
+      {:else}
+        <div>
+          <a href="/auth/register"><button class="btn btn-accent">Get Started</button></a>
+        </div>
+      {/if}
     </div>
   </div>
