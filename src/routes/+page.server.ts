@@ -3,8 +3,12 @@ import { prisma } from "$lib/server/prisma";
 import type { Actions, PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async () => {
+
+    const posts = await prisma.post.findMany();
+    console.log({posts})
+
     return {
-        posts: await prisma.post.findMany()
+        posts
     }
 };
 
