@@ -22,7 +22,7 @@
 				<a href="/auth/register" class="float-right mr-2 hover:underline">Need an account? <span class="text-secondary">Register</span></a>
 			</div>
 			<div>
-				<button type="submit" class="btn btn-primary mt-2">Login</button>
+				<button type="submit" class="btn btn-primary mt-4">Login</button>
 			</div>
 		</form>
 	</div>
