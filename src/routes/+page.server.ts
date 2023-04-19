@@ -4,7 +4,7 @@ import type { Actions, PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async () => {
 
-    const posts = await prisma.post.findMany();
+    const posts = await prisma.category.findFirstOrThrow()
     console.log({posts})
 
     return {
