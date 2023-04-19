@@ -18,10 +18,10 @@
         <Carousel/>
     </div>
     <div class="col-span-1 md:col-span-8">
-        <HeroCard/>
+        <HeroCard title={posts[0].title} excerpt={posts[0].excerpt} postId={posts[0].id} />
         <div class="col-span-1 md:col-span-8">
             {#each arr as arr}
-                <PostCard/>
+                <PostCard title={posts[1].title} excerpt={posts[1].excerpt} postId={posts[1].id}/>
             {/each}
         </div>
     </div>
