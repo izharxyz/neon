@@ -51,8 +51,8 @@ model Post {
   title        String
   excerpt      String
   content      String
-
-  @@map("posts")
+  featured     Boolean      @default(false)
+  views        Int          @default(1)
 }
 
 model Category {
