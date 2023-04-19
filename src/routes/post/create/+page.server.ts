@@ -1,4 +1,4 @@
-import { fail } from "@sveltejs/kit";
+import { fail, redirect } from "@sveltejs/kit";
 import { prisma } from "$lib/server/prisma";
 import type { Actions, PageServerLoad } from "./$types";
 
@@ -10,21 +10,28 @@ export const load: PageServerLoad = async () => {
 
 export const actions: Actions = {
     default : async ({ request }) => {
-        const { content } = Object.fromEntries(await request.formData()) as { 
+        const { title, excerpt, category, thumbnail, content } = Object.fromEntries(await request.formData()) as {
+            title: string 
+            excerpt: string
+            category: string
+            thumbnail: string
             content: string
         }
         
-        console.log(content) 
+        console.log({title, excerpt, category,thumbnail, content}) 
 
         try {
-            //
+            await prisma.post.create({
+                data: {
+                    title,
+                    excerpt,
+                    content
+                }
+            })
         } catch (err) {
             console.log(err)
             return fail(500, { message: 'fff'})
         }
-
-        return {
-            status: 201
-        }
+        throw redirect(302, '/')
     },
 };
