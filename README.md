@@ -4,10 +4,6 @@
 Fast, responsive site developed using bleeding edge technologies and tools with an amazing UI and User Experience.
 This project is still in continuous development.
 
-## Architecture
-
-![architechture](/static/images/arch.png?raw=true "Architecture")
-
 ## Techstack
 
 - [Sveltekit](https://kit.svelte.dev/) web development, streamlined.
