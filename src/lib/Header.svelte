@@ -75,11 +75,8 @@
           <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
           <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
             <form method="POST">
-              <li>
-                <a href="/" class="justify-between">
-                  Profile
-                </a>
-              </li>
+              <li><a href="/post/create">Create Post</a></li>
+              <li><a href="/">Profile</a></li>
               <li><a href="/">Settings</a></li>
               <li><button formaction="/auth/logout" type="submit" class="normal-case">Logout</button></li>
             </form>
