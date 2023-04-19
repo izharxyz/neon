@@ -1,12 +1,6 @@
 import { fail, redirect } from "@sveltejs/kit";
 import { prisma } from "$lib/server/prisma";
-import type { Actions, PageServerLoad } from "./$types";
-
-export const load: PageServerLoad = async () => {
-    return {
-        posts: await prisma.post.findMany()
-    }
-};
+import type { Actions} from "./$types";
 
 export const actions: Actions = {
     default : async ({ request }) => {
