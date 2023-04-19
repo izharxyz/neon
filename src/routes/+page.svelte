@@ -8,8 +8,6 @@
 
     export let data: PageData
     $: ({ posts } = data)
-
-    const arr: number[]= [1,1,1,1,1,1,1,1,1,1];
 </script>
 
 <div class="grid grid-cols-1 md:grid-cols-11 gap-6">
