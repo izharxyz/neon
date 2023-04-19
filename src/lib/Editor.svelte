@@ -6,6 +6,7 @@
   import Heading from '@tiptap/extension-heading';
   import Blockquote from '@tiptap/extension-blockquote';
   import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight';
+  import HardBreak from "@tiptap/extension-hard-break";
 
   import Code from '@tiptap/extension-code';
 
@@ -32,13 +33,18 @@
 
         Paragraph.configure({
         HTMLAttributes: {
-          class: '',
+          class: 'whitespace-pre-line',
         },
         }),
 
         Heading.configure({
           HTMLAttributes: {
-            class: '',
+            class: 'whitespace-pre-line',
+          },
+        }),
+        HardBreak.configure({
+          HTMLAttributes: {
+            class: 'this-class-is-useless',
           },
         }),
 
