@@ -34,7 +34,7 @@
 				<a href="/auth/login" class="float-right mr-2 hover:underline">Already have an account? <span class="text-secondary">Login</span></a>
 			</div>
 			<div>
-				<button type="submit" class="btn btn-primary mt-2">Join Now !</button>
+				<button type="submit" class="btn btn-primary mt-4">Join Now !</button>
 			</div>
 		</form>
 	</div>
