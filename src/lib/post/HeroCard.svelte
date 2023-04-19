@@ -1,6 +1,7 @@
 <script lang="ts">
     import Icon from "@iconify/svelte";
 
+    export let postId: bigint;
     export let title = "An Amazing Post";
     export let thumbnail = "/images/sky.jpg";
     export let excerpt = "An amazing post which is a must read!";
@@ -10,6 +11,7 @@
 </script>
 
 <div class="card w-full bg-base-100 border border-primary-content">
+    <a href="/post/{postId}">
     <figure><img src={thumbnail} alt="Shoes" /></figure>
     <div class="card-body">
       <h2 class="card-title hover:text-primary-focus transition duration-150">
@@ -33,4 +35,5 @@
         <button class="btn bg-gradient-to-r from-primary to-secondary btn-sm">Read more</button>
       </div>
     </div>
+    </a>
   </div>
