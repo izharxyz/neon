@@ -11,7 +11,7 @@
 </script>
 
 <div class="card w-full bg-base-100 border border-primary-content">
-    <a href="/post/{postId}">
+    <a href="/post/{postId}" class="card">
     <figure><img src={thumbnail} alt="Shoes" /></figure>
     <div class="card-body">
       <h2 class="card-title hover:text-primary-focus transition duration-150">
