@@ -20,8 +20,8 @@
     <div class="col-span-1 md:col-span-8">
         <HeroCard title={posts[0].title} excerpt={posts[0].excerpt} postId={posts[0].id} />
         <div class="col-span-1 md:col-span-8">
-            {#each arr as arr}
-                <PostCard title={posts[1].title} excerpt={posts[1].excerpt} postId={posts[1].id}/>
+            {#each posts as post}
+                <PostCard title={post.title} excerpt={post.excerpt} postId={post.id}/>
             {/each}
         </div>
     </div>
