@@ -29,6 +29,26 @@ CREATE TABLE "auth_key" (
     CONSTRAINT "auth_key_pkey" PRIMARY KEY ("id")
 );
 
+-- CreateTable
+CREATE TABLE "posts" (
+    "id" INT8 NOT NULL DEFAULT unique_rowid(),
+    "title" STRING NOT NULL,
+    "excerpt" STRING NOT NULL,
+    "content" STRING NOT NULL,
+    "featured" BOOL NOT NULL DEFAULT false,
+    "views" INT4 NOT NULL DEFAULT 1,
+
+    CONSTRAINT "posts_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "categories" (
+    "id" STRING NOT NULL,
+    "name" STRING NOT NULL,
+
+    CONSTRAINT "categories_pkey" PRIMARY KEY ("id")
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "auth_user_id_key" ON "auth_user"("id");
 
@@ -50,8 +70,8 @@ CREATE UNIQUE INDEX "auth_key_id_key" ON "auth_key"("id");
 -- CreateIndex
 CREATE INDEX "auth_key_user_id_idx" ON "auth_key"("user_id");
 
--- AddForeignKey
-ALTER TABLE "auth_session" ADD CONSTRAINT "auth_session_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "auth_user"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+-- CreateIndex
+CREATE UNIQUE INDEX "categories_id_key" ON "categories"("id");
 
--- AddForeignKey
-ALTER TABLE "auth_key" ADD CONSTRAINT "auth_key_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "auth_user"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+-- CreateIndex
+CREATE UNIQUE INDEX "categories_name_key" ON "categories"("name");
