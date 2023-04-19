@@ -6,17 +6,7 @@ This project is still in continuous development.
 
 ## Architecture
 
-+-----------+        +----------------+       +---------------+       +----------------------+
-|   Client  |        |  SvelteKit App |       |  Prisma ORM   |       | CockroachDB Database |
-|   Browser | <----> |  (Node.js)     | <---- |  (Node.js)    | <---- |  (Distributed SQL)   |
-+-----------+        +----------------+       +---------------+       +----------------------+
-                                        |
-                                        |
-                                +--------------+
-                                |  Lucia Auth  |
-                                |  (Node.js)   |
-                                +--------------+
-
+![architechture](/static/images/arch.png?raw=true "Architecture")
 
 ## Techstack
 
