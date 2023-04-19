@@ -11,7 +11,8 @@
 
 <div class="card md:card-side bg-base-100 mt-14 md:mt-6">
     <a href="/post/{postId}">
-    <figure><img src={thumbnail} alt="Post" class="card md:w-64 md:h-64"/></figure>
+        <figure><img src={thumbnail} alt="Post" class="card md:w-64 md:h-64"/></figure>
+    </a>
     <div class="ml-2 md:ml-0 md:card-body">
         <div class="flex flex-row justify-between">
             <div class="badge badge-outline mt-4 md:mt-0">{category}</div>
@@ -25,5 +26,4 @@
             {/each}
         </div>
     </div>
-    </a>
 </div>
