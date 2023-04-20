@@ -50,12 +50,12 @@ model Post {
   featured     Boolean      @default(false)
   views        Int          @default(1)
 
-  @@map("posts")
+  @@map("post")
 }
 
 model Category {
   id           String       @id @unique
   name         String       @unique
 
-  @@map("categories")
+  @@map("category")
 }
