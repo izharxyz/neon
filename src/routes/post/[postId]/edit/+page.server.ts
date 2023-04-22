@@ -22,7 +22,7 @@ export const load: PageServerLoad = async ({ params }) => {
 
 export const actions: Actions = {
     default: async ({ request, params }) => {
-        const { title, content } = Object.fromEntries(await request.formData()) as { title: string, content: string}
+        const { title, excerpt, content } = Object.fromEntries(await request.formData()) as { title: string, excerpt: string, content: string}
 
         try {
             await prisma.post.update({
@@ -30,8 +30,9 @@ export const actions: Actions = {
                     id: BigInt(params.postId)
                 },
                 data: {
-                    title: title,
-                    content: content
+                    title,
+                    excerpt,
+                    content
                 },
             })
         } catch (error) {
