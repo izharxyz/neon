@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
-    import Editor from '$lib/Editor.svelte'
+    import Editor from '$lib/components/Editor.svelte'
 
     let content: any;
 

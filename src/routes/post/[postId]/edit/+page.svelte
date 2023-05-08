@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
-    import Editor from '$lib/Editor.svelte'
+    import Editor from '$lib/components/Editor.svelte'
     import type { PageData } from "./$types";
 
     export let data: PageData

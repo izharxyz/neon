@@ -1,10 +1,10 @@
 <script lang="ts">
     import type { PageData } from "./$types";
-    import HeroCard from "$lib/post/HeroCard.svelte";
-    import PostCard from "$lib/post/PostCard.svelte";
-    import Categories from "$lib/sidebar/Categories.svelte";
-    import Popular from "$lib/sidebar/Popular.svelte";
-    import Carousel from "$lib/post/Carousel.svelte";
+    import HeroCard from "$lib/components/post/HeroCard.svelte";
+    import PostCard from "$lib/components/post/PostCard.svelte";
+    import Categories from "$lib/components/sidebar/Categories.svelte";
+    import Popular from "$lib/components/sidebar/Popular.svelte";
+    import Carousel from "$lib/components/post/Carousel.svelte";
 
     export let data: PageData
     $: ({ posts } = data)

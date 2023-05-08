@@ -2,8 +2,8 @@
     import type { PageData } from './$types'
     import Icon from '@iconify/svelte';
     import "../app.css";
-    import Header from "$lib/Header.svelte";
-    import Footer from "$lib/Footer.svelte";
+    import Header from "$lib/components/Header.svelte";
+    import Footer from "$lib/components/Footer.svelte";
 
     export let data: PageData;
 </script>
