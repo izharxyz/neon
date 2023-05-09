@@ -38,7 +38,7 @@
 
 <div class="navbar bg-base-100">
     <div class="flex-1">
-      <a href="/" class="logo">ZEDCODES</a>
+      <a href="/" class="logo">NEON</a>
     </div>
     <div class="flex-none gap-2">
       <form class={showSearch? "form-control" : "hidden form-control"} action="/search/{search}">

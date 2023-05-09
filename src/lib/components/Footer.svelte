@@ -6,7 +6,7 @@
    <div class="col-span-1">
         <div>
             <a href="/" class="logo">
-                ZEDCODES
+                NEON
             </a> 
         </div>
         <p class="mt-3">
