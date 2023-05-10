@@ -47,9 +47,8 @@ export const actions: Actions = {
 				console.log("user created SUCCESSFULLY")
 				console.log({user})
 	
-				const session = await auth.createSession(user.userId);
-
 				// creates session after successfull register; no need to login
+				const session = await auth.createSession(user.userId);
 				locals.auth.setSession(session);
 
 			} catch(e) {
