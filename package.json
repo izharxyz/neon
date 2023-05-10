@@ -45,6 +45,7 @@
 		"@tiptap/starter-kit": "^2.0.0-beta.220",
 		"daisyui": "^2.51.5",
 		"lowlight": "^2.8.1",
-		"lucia-auth": "^1.1.0"
+		"lucia-auth": "^1.1.0",
+		"zod": "^3.21.4"
 	}
 }
