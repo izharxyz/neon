@@ -1,4 +1,4 @@
-import { fail, redirect } from "@sveltejs/kit";
+import { redirect } from "@sveltejs/kit";
 import { auth } from "$lib/server/lucia";
 import { z } from "zod";
 import type { PageServerLoad, Actions } from "./$types";
@@ -52,9 +52,10 @@ export const actions: Actions = {
 				locals.auth.setSession(session);
 
 			} catch(e) {
-				console.log({e})
-				// username already in use
-				return fail(400);
+				console.log(e)
+				return {
+					message: "Username already taken"
+				}
 			}
 
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
