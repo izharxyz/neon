@@ -15,7 +15,7 @@
 				<input name="name" type="text" placeholder="Your name" class="w-full input input-bordered input-primary" />
 				<label class="label" for="name">
 					{#if form?.errors?.name}
-						<span class="text-base label-text text-error">{form?.errors?.name[0]}</span>
+						<span class="text-xs label-text text-error">{form?.errors?.name[0]}</span>
 					{/if}
 				</label>
 			</div>
@@ -26,7 +26,7 @@
 				<input name="username" type="text" placeholder="A unique username" class="w-full input input-bordered input-primary" />
 				<label class="label" for="username">
 					{#if form?.errors?.username}
-						<span class="text-base label-text text-error">{form?.errors?.username[0]}</span>
+						<span class="text-xs label-text text-error">{form?.errors?.username[0]}</span>
 					{/if}
 				</label>
 			</div>
@@ -37,7 +37,7 @@
 				<input name="email" type="text" placeholder="Email Address" class="w-full input input-bordered input-primary" />
 				<label class="label" for="email">
 					{#if form?.errors?.email}
-						<span class="text-base label-text text-error">{form?.errors?.email[0]}</span>
+						<span class="text-xs label-text text-error">{form?.errors?.email[0]}</span>
 					{/if}
 				</label>
 			</div>
@@ -48,7 +48,7 @@
 				<input type="password" name="password" placeholder="Enter Password" class="w-full input input-bordered input-primary" />
 				<label class="label" for="password">
 					{#if form?.errors?.password}
-						<span class="text-base label-text text-error">{form?.errors?.password[0]}</span>
+						<span class="text-xs label-text text-error">{form?.errors?.password[0]}</span>
 					{/if}
 				</label>
 			</div>
@@ -59,7 +59,7 @@
 				<input type="password" name="passwordConfirm" placeholder="Confirm Password" class="w-full input input-bordered input-primary" />
 				<label class="label" for="passwordConfirm">
 					{#if form?.errors?.passwordConfirm}
-						<span class="text-base label-text text-error">{form?.errors?.passwordConfirm[0]}</span>
+						<span class="text-xs label-text text-error">{form?.errors?.passwordConfirm[0]}</span>
 					{/if}
 				</label>
 			</div>
