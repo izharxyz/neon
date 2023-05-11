@@ -12,7 +12,7 @@
 				<label class="label" for="name">
 					<span class="text-base label-text">Name</span>
 				</label>
-				<input name="name" type="text" placeholder="Your name" class="w-full input input-bordered input-primary" />
+				<input name="name" type="text" placeholder="Your name" class="w-full input input-bordered input-primary" value={form?.data?.name? form?.data?.name : ""}/>
 				<label class="label" for="name">
 					{#if form?.errors?.name}
 						<span class="text-xs label-text text-error">{form?.errors?.name[0]}</span>
@@ -23,10 +23,13 @@
 				<label class="label" for="username">
 					<span class="text-base label-text">Username</span>
 				</label>
-				<input name="username" type="text" placeholder="A unique username" class="w-full input input-bordered input-primary" />
+				<input name="username" type="text" placeholder="A unique username" class="w-full input input-bordered input-primary" value={form?.data?.username? form?.data?.username : ""}/>
 				<label class="label" for="username">
 					{#if form?.errors?.username}
 						<span class="text-xs label-text text-error">{form?.errors?.username[0]}</span>
+					{/if}
+					{#if form?.message}
+						<span class="text-xs label-text text-error">{form?.message}</span>
 					{/if}
 				</label>
 			</div>
@@ -34,7 +37,7 @@
 				<label class="label" for="email">
 					<span class="text-base label-text">Email</span>
 				</label>
-				<input name="email" type="text" placeholder="Email Address" class="w-full input input-bordered input-primary" />
+				<input name="email" type="text" placeholder="Email Address" class="w-full input input-bordered input-primary" value={form?.data?.email? form?.data?.email : ""}/>
 				<label class="label" for="email">
 					{#if form?.errors?.email}
 						<span class="text-xs label-text text-error">{form?.errors?.email[0]}</span>
