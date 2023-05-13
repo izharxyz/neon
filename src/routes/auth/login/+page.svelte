@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { enhance } from "$app/forms";
+	export let form;
 </script>
 
 <div class="relative flex flex-col justify-center h-[600px] overflow-hidden">
@@ -11,12 +12,22 @@
 					<span class="text-base label-text">Email</span>
 				</label>
 				<input name="email" type="text" placeholder="Email Address" class="w-full input input-bordered input-primary" />
+				<label class="label" for="email">
+					{#if form?.errors?.email}
+						<span class="text-xs label-text text-error">{form?.errors?.email[0]}</span>
+					{/if}
+				</label>
 			</div>
 			<div>
 				<label class="label" for="password">
 					<span class="text-base label-text">Password</span>
 				</label>
 				<input type="password" name="password" placeholder="Enter Password" class="w-full input input-bordered input-primary" />
+				<label class="label" for="password">
+					{#if form?.errors?.password}
+						<span class="text-xs label-text text-error">{form?.errors?.password[0]}</span>
+					{/if}
+				</label>
 			</div>
 			<div>
 				<a href="/auth/register" class="float-right mr-2 hover:underline">Need an account? <span class="text-secondary">Register</span></a>
