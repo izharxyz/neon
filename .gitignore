@@ -6,6 +6,7 @@ node_modules
 /venv
 .env
 .env.*
+db.sqlite3
 !.env.example
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
