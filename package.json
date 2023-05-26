@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "postcss static/css/main.css -o static/css/main.min.css"
+    "build": "postcss static/css/main.css -o static/css/main.min.css --watch"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
