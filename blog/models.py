@@ -15,7 +15,7 @@ class Post(models.Model):
     slug = models.SlugField(null=False)
     excerpt = models.CharField(
         max_length=255, null=False, default='an amazing must read post')
-    thumbnail = models.ImageField(upload_to='static/images/thumnails/')
+    thumbnail = models.ImageField(upload_to='static/images/thumbnails/')
     category = models.ForeignKey(
         Category, on_delete=models.SET_NULL, null=True)
 
