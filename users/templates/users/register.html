@@ -1,0 +1,38 @@
+{% extends 'blog/base.html' %}
+
+<!--- fuck this formatter -->
+
+{% block content %}
+<div class="bg-gray-200 mx-auto">
+  <form
+    action="{% url 'register' %}"
+    method="POST"
+    class="bg-pink-200 p-5 m-10 max-w-xl"
+  >
+
+  {% csrf_token %}
+  <h2>Sign Up</h2>
+		
+	{% for field in form %}
+	<p>
+		{% if field.errors %}
+		<ul class="errorlist">
+			{% for error in field.errors %}
+			    <li>{{ error }}</li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+    <div class="mt-5 rounded-md p-2">
+      {{ field.label_tag }} 
+      <span class="w-full">
+        {{ field }}
+      </span>
+    </div>
+	</p>
+	{% endfor %}
+    <button class="rounded-md bg-red-300 px-5 py-2" type="submit">
+      SUBMIT
+    </button>
+  </form>
+</div>
+{% endblock content %}
