@@ -1,4 +1,5 @@
 from django.shortcuts import redirect, render
+from django.contrib import messages
 from django.views import View
 from .forms import UserRegisterForm
 
@@ -14,6 +15,7 @@ class RegisterView(View):
             user = form.save(commit=False)
             user.username = user.username.lower()
             user.save()
+            messages.success(request, 'Account created successfully.')
             return redirect('index')
         else:
             return render(request, 'users/register.html', {'form': form})
