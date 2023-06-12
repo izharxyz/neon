@@ -1,38 +1,82 @@
-{% extends 'blog/base.html' %}
+{% extends 'blog/base.html' %} {% load static %}
 
 <!--- fuck this formatter -->
 
 {% block content %}
-<div class="bg-gray-200 mx-auto">
-  <form
-    action="{% url 'register' %}"
-    method="POST"
-    class="bg-pink-200 p-5 m-10 max-w-xl"
-  >
 
-  {% csrf_token %}
-  <h2>Sign Up</h2>
-		
-	{% for field in form %}
-	<p>
-		{% if field.errors %}
-		<ul class="errorlist">
-			{% for error in field.errors %}
-			    <li>{{ error }}</li>
-			{% endfor %}
-		</ul>
-		{% endif %}
-    <div class="mt-5 rounded-md p-2">
-      {{ field.label_tag }} 
-      <span class="w-full">
-        {{ field }}
-      </span>
+<div
+  class="w-screen h-screen bg-gradient-to-br from-secondary to-accent flex justify-center items-center"
+>
+  <div
+    class="card lg:card-side bg-base-300 shadow-xl w-5/6 h-5/6 lg:grid lg:grid-cols-2"
+  >
+    <!-- right side of card which has image in it; hidden of small to medium devices-->
+
+    <figure class="relative">
+      <img
+        src="{% static 'images/register_bg.png' %}"
+        alt="mountain"
+        class="w-full h-full object-cover hidden lg:block"
+      />
+      <div
+        class="absolute top-0 left-0 h-full w-full flex items-center justify-center"
+      >
+        <div class="text-center p-16">
+          <h1 class="text-base-300 font-bold text-4xl">Welcome</h1>
+          <p class="text-base-300 text-md text-justify mt-4">
+            Enim ut sem viverra aliquet eget sit amet tellus cras. Aliquet nec
+            ullamcorper sit amet risus nullam eget felis eget. Faucibus vitae
+            aliquet nec ullamcorper sit amet risus. Maecenas ultricies mi eget
+            mauris pharetra et.
+          </p>
+        </div>
+      </div>
+    </figure>
+
+    <!-- Left side of card which has form in it -->
+
+    <div class="card-body flex justify-center items-center">
+      <div class="w-full md:px-5">
+        <h2 class="card-title">Register</h2>
+
+        <form action="{% url 'register' %}" method="POST">
+          {% csrf_token %}
+          <input
+            type="text"
+            name="username"
+            placeholder="Username"
+            class="input input-bordered input-md w-full mt-4"
+          />
+          <input
+            type="text"
+            name="email"
+            placeholder="Email"
+            class="input input-bordered input-md w-full mt-4"
+          />
+          <input
+            type="text"
+            name="password"
+            placeholder="Password"
+            class="input input-bordered input-md w-full mt-4"
+          />
+          <input
+            type="text"
+            name="password2"
+            placeholder="Confirm password"
+            class="input input-bordered input-md w-full mt-4"
+          />
+          <button type="submit" class="btn btn-primary w-full mt-4">
+            Submit
+          </button>
+        </form>
+
+        <button class="btn btn-accent w-full mt-4">Sign up with Google</button>
+        <button class="btn btn-secondary w-full mt-4">
+          Sign up with Github
+        </button>
+      </div>
     </div>
-	</p>
-	{% endfor %}
-    <button class="rounded-md bg-red-300 px-5 py-2" type="submit">
-      SUBMIT
-    </button>
-  </form>
+  </div>
 </div>
+
 {% endblock content %}
