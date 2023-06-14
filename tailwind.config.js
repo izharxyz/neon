@@ -5,7 +5,11 @@ module.exports = {
     './users/templates/users/*.html'
   ],
   theme: {
-    extend: {},
+    extend: {
+      height: {
+        screen: ['100vh', '100dvh'],
+      }
+    },
   },
   plugins: [require('daisyui')],
   daisyui: {
