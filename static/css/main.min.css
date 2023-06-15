@@ -1306,11 +1306,17 @@ html {
 .max-w-xl {
   max-width: 36rem;
 }
+.flex-row {
+  flex-direction: row;
+}
 .items-center {
   align-items: center;
 }
 .justify-center {
   justify-content: center;
+}
+.gap-4 {
+  gap: 1rem;
 }
 .rounded-md {
   border-radius: 0.375rem;
@@ -1435,6 +1441,10 @@ html {
 }
 @media (min-width: 768px) {
 
+  .md\:flex {
+    display: flex;
+  }
+
   .md\:h-4\/5 {
     height: 80%;
   }
@@ -1449,6 +1459,18 @@ html {
 
   .md\:w-5\/6 {
     width: 83.333333%;
+  }
+
+  .md\:w-1\/2 {
+    width: 50%;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:gap-4 {
+    gap: 1rem;
   }
 
   .md\:p-10 {
@@ -1467,6 +1489,14 @@ html {
 
   .lg\:grid {
     display: grid;
+  }
+
+  .lg\:w-full {
+    width: 100%;
+  }
+
+  .lg\:flex-none {
+    flex: none;
   }
 
   .lg\:grid-cols-2 {
