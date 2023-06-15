@@ -1435,6 +1435,18 @@ html {
 }
 @media (min-width: 768px) {
 
+  .md\:h-4\/5 {
+    height: 80%;
+  }
+
+  .md\:h-4\/6 {
+    height: 66.666667%;
+  }
+
+  .md\:h-1\/6 {
+    height: 16.666667%;
+  }
+
   .md\:w-5\/6 {
     width: 83.333333%;
   }
@@ -1444,6 +1456,10 @@ html {
   }
 }
 @media (min-width: 1024px) {
+
+  .lg\:mt-10 {
+    margin-top: 2.5rem;
+  }
 
   .lg\:block {
     display: block;
@@ -1455,5 +1471,66 @@ html {
 
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (orientation: portrait) {
+
+  .portrait\:h-full {
+    height: 100%;
+  }
+
+  .portrait\:h-screen {
+    height: 100vh;
+    height: 100dvh;
+  }
+}
+@media (orientation: landscape) {
+
+  .landscape\:h-screen {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .landscape\:h-full {
+    height: 100%;
+  }
+
+  .landscape\:min-h-screen {
+    min-height: 100vh;
+  }
+}
+@media (min-width: 768px) {
+
+  @media (orientation: landscape) {
+
+    .md\:landscape\:h-screen {
+      height: 100vh;
+      height: 100dvh;
+    }
+  }
+}
+@media (min-width: 1024px) {
+
+  @media (orientation: landscape) {
+
+    .lg\:landscape\:my-10 {
+      margin-top: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .lg\:landscape\:h-screen {
+      height: 100vh;
+      height: 100dvh;
+    }
+
+    .lg\:landscape\:py-5 {
+      padding-top: 1.25rem;
+      padding-bottom: 1.25rem;
+    }
+
+    .lg\:landscape\:py-10 {
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
   }
 }
