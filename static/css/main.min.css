@@ -1272,6 +1272,10 @@ html {
 .h-full {
   height: 100%;
 }
+.h-screen {
+  height: 100vh;
+  height: 100dvh;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1289,6 +1293,9 @@ html {
 }
 .max-w-md {
   max-width: 28rem;
+}
+.content-center {
+  align-content: center;
 }
 .items-center {
   align-items: center;
@@ -1355,6 +1362,10 @@ html {
 .text-neutral-content {
   --tw-text-opacity: 1;
   color: hsl(var(--nc) / var(--tw-text-opacity));
+}
+.text-info-content {
+  --tw-text-opacity: 1;
+  color: hsl(var(--inc) / var(--tw-text-opacity));
 }
 .shadow-xl {
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
