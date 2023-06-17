@@ -7,12 +7,14 @@ from .forms import UserRegisterForm
 
 class RegisterView(View):
     def get(self, request):
-        user = User.objects.get(username=request.user.username)
-        if user:
-            return redirect('index')
 
-        form = UserRegisterForm()
-        return render(request, 'users/register.html', {'form': form})
+        try:
+            user = User.objects.get(username=request.user.username)
+            if user:
+                return redirect('index')
+        except:
+            form = UserRegisterForm()
+            return render(request, 'users/register.html', {'form': form})
 
     def post(self, request):
         form = UserRegisterForm(request.POST)
