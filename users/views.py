@@ -35,7 +35,11 @@ class CheckUsernameExists(View):
         if not len(username) > 2:
             return HttpResponse('<small style="color: red; padding-left: 4px">username too short</small>')
         else:
-            user = User.objects.filter(username=username).exists()
+            invalid_chars = [' ', '!', '@', '#', '$',
+                             '^', '&', '*', '(', ')', '-', '=', '+']
+            if any(char in invalid_chars for char in username.strip()):
+                return HttpResponse('<small style="color: red; padding-left: 4px">invalid username</small>')
+            user = User.objects.filter(username=username.strip()).exists()
             if user:
                 return HttpResponse('<small style="color: red; padding-left: 4px">username already taken</small>')
 
