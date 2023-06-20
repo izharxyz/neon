@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import HttpResponse, redirect, render
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.views import View
@@ -23,6 +23,21 @@ class RegisterView(View):
             user.username = user.username.lower()
             user.save()
             messages.success(request, 'Account created successfully.')
-            return redirect('index')
+            return redirect('login')
         else:
             return render(request, 'users/register.html', {'form': form})
+
+
+class CheckUsernameExists(View):
+    def post(self, request):
+        username = request.POST.get('username')
+
+        if not len(username) > 2:
+            return HttpResponse('<small style="color: red; padding-left: 4px">username too short</small>')
+        else:
+            user = User.objects.filter(username=username).exists()
+            if user:
+                return HttpResponse('<small style="color: red; padding-left: 4px">username already taken</small>')
+
+            else:
+                return HttpResponse('<small style="color: green; padding-left: 4px">username avlaible</small>')

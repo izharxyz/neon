@@ -1337,6 +1337,15 @@ html {
   height: 100vh;
   height: 100dvh;
 }
+.h-2 {
+  height: 0.5rem;
+}
+.h-3 {
+  height: 0.75rem;
+}
+.h-4 {
+  height: 1rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
