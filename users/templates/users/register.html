@@ -38,27 +38,75 @@
         <div class="card-body flex justify-center items-center p-0">
             <div class="w-full p-5 md:p-10">
                 <h2 class="card-title">Register</h2>
-                <div id="username-check" class="h-4"></div>
+                <div id="username-check" class="h-4 flex flex-row">
+                    <small style="color: red; padding-left: 4px">
+                        {{ form.non_field_errors }}
+                    </small>
+                </div>
                 <form action="{% url 'register' %}" method="POST">
                     {% csrf_token %}
                     <div class="md:flex md:flex-row md:gap-4 lg:block">
+                        {% if form.username.errors %}
+                        <input
+                            type="text"
+                            name="username"
+                            placeholder="Username"
+                            class="input input-bordered input-error input-md w-full mt-4"
+                            value="{{ form.username.value }}"
+                            hx-post="{% url 'check-username-exixts' %}"
+                            hx-target="#username-check"
+                            hx-trigger="keyup"
+                        />
+                        {% else %}
                         <input
                             type="text"
                             name="username"
                             placeholder="Username"
                             class="input input-bordered input-md w-full mt-4"
+                            value="{{ form.username.value }}"
                             hx-post="{% url 'check-username-exixts' %}"
                             hx-target="#username-check"
                             hx-trigger="keyup"
                         />
+                        {% endif %}
+
+                        <!--fuck-->
+
+                        {% if form.email.errors %}
+                        <input
+                            type="text"
+                            name="email"
+                            placeholder="Email"
+                            class="input input-bordered input-error input-md w-full mt-4"
+                            value="{{ form.email.value }}"
+                        />
+                        {% else %}
                         <input
                             type="text"
                             name="email"
                             placeholder="Email"
                             class="input input-bordered input-md w-full mt-4"
+                            value="{{ form.email.value }}"
                         />
+                        {% endif %}
                     </div>
                     <div class="flex flex-row gap-4 lg:block">
+                        <!--fuck password2 -->
+
+                        {% if form.password2.errors %}
+                        <input
+                            type="password"
+                            name="password1"
+                            placeholder="Password"
+                            class="input input-bordered input-error input-md w-full mt-4"
+                        />
+                        <input
+                            type="password"
+                            name="password2"
+                            placeholder="Confirm password"
+                            class="input input-bordered input-error input-md w-full mt-4"
+                        />
+                        {% else %}
                         <input
                             type="password"
                             name="password1"
@@ -71,6 +119,7 @@
                             placeholder="Confirm password"
                             class="input input-bordered input-md w-full mt-4"
                         />
+                        {% endif %}
                     </div>
                     <button type="submit" class="btn btn-primary w-full mt-4">
                         Rrgister Now
