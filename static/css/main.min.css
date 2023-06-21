@@ -1093,6 +1093,13 @@ html {
   outline-offset: 2px;
   outline-color: hsl(var(--bc) / 0.2);
 }
+.input-error {
+  --tw-border-opacity: 1;
+  border-color: hsl(var(--er) / var(--tw-border-opacity));
+}
+.input-error:focus {
+  outline-color: hsl(var(--er) / 1);
+}
 .input-disabled,
   .input:disabled,
   .input[disabled] {
@@ -1346,6 +1353,9 @@ html {
 .h-4 {
   height: 1rem;
 }
+.h-6 {
+  height: 1.5rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1420,6 +1430,9 @@ html {
 .p-5 {
   padding: 1.25rem;
 }
+.pl-1 {
+  padding-left: 0.25rem;
+}
 .text-center {
   text-align: center;
 }
@@ -1433,6 +1446,10 @@ html {
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
+}
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 .font-bold {
   font-weight: 700;
@@ -1448,6 +1465,10 @@ html {
 .text-info-content {
   --tw-text-opacity: 1;
   color: hsl(var(--inc) / var(--tw-text-opacity));
+}
+.text-error {
+  --tw-text-opacity: 1;
+  color: hsl(var(--er) / var(--tw-text-opacity));
 }
 .shadow-xl {
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
