@@ -1,177 +1,128 @@
-{% extends 'blog/base.html' %} {% load static %}
-
+{% extends 'blog/base.html' %}
+{% load static %}
 <!--- fuck this formatter -->
-
 {% block content %}
-
-<div
-    class="w-screen landscape:min-h-screen portrait:h-screen bg-gradient-to-br from-secondary to-accent flex justify-center items-center"
->
-    <div
-        class="card lg:card-side bg-base-300 shadow-xl w-11/12 md:w-5/6 h-5/6 lg:grid lg:grid-cols-2"
-    >
-        <!-- right side of card which has image in it; hidden of small to medium devices-->
-
-        <figure class="relative">
-            <img
-                src="{% static 'images/register_bg.png' %}"
-                alt="mountain"
-                class="w-full h-full object-cover hidden lg:block"
-            />
-            <div
-                class="absolute top-0 left-0 h-full w-full flex items-center justify-center"
-            >
-                <div class="text-center p-16">
-                    <h1 class="text-base-300 font-bold text-4xl">Welcome</h1>
-                    <p class="text-base-300 text-md text-justify mt-4">
-                        Enim ut sem viverra aliquet eget sit amet tellus cras.
-                        Aliquet nec ullamcorper sit amet risus nullam eget felis
-                        eget. Faucibus vitae aliquet nec ullamcorper sit amet
-                        risus. Maecenas ultricies mi eget mauris pharetra et.
-                    </p>
-                </div>
-            </div>
-        </figure>
-
-        <!-- Left side of card which has form in it -->
-
-        <div class="card-body flex justify-center items-center p-0">
-            <div class="w-full p-5 md:p-10">
-                <h2 class="card-title">Register</h2>
-                <div id="username-check" class="h-4 flex flex-row">
-                    <small style="color: red; padding-left: 4px">
-                        {{ form.non_field_errors }}
-                    </small>
-                </div>
-                <form action="{% url 'register' %}" method="POST">
-                    {% csrf_token %}
-                    <div class="md:flex md:flex-row md:gap-4 lg:block">
-                        {% if form.username.errors %}
-                        <input
-                            type="text"
-                            name="username"
-                            placeholder="Username"
-                            class="input input-bordered input-error input-md w-full mt-4"
-                            value="{{ form.username.value }}"
-                            hx-post="{% url 'check-username-exixts' %}"
-                            hx-target="#username-check"
-                            hx-trigger="keyup"
-                        />
-                        {% elif form.username.value %}
-                        <input
-                            type="text"
-                            name="username"
-                            placeholder="Username"
-                            class="input input-bordered input-md w-full mt-4"
-                            value="{{ form.username.value }}"
-                            hx-post="{% url 'check-username-exixts' %}"
-                            hx-target="#username-check"
-                            hx-trigger="keyup"
-                        />
-                        {% else %}
-                        <input
-                            type="text"
-                            name="username"
-                            placeholder="Username"
-                            class="input input-bordered input-md w-full mt-4"
-                            hx-post="{% url 'check-username-exixts' %}"
-                            hx-target="#username-check"
-                            hx-trigger="keyup"
-                        />
-                        {% endif %}
-
-                        <!--fuck-->
-
-                        {% if form.email.errors %}
-                        <input
-                            type="text"
-                            name="email"
-                            placeholder="Email"
-                            class="input input-bordered input-error input-md w-full mt-4"
-                            value="{{ form.email.value }}"
-                        />
-                        {% elif form.email.value %}
-                        <input
-                            type="text"
-                            name="email"
-                            placeholder="Email"
-                            class="input input-bordered input-md w-full mt-4"
-                            value="{{ form.email.value }}"
-                        />
-                        {% else %}
-                        <input
-                            type="text"
-                            name="email"
-                            placeholder="Email"
-                            class="input input-bordered input-md w-full mt-4"
-                        />
-                        {% endif %}
+    <div class="w-screen landscape:min-h-screen portrait:h-screen bg-gradient-to-br from-secondary to-accent flex justify-center items-center">
+        <div class="card lg:card-side bg-base-300 shadow-xl w-11/12 md:w-5/6 h-5/6 lg:grid lg:grid-cols-2">
+            <!-- right side of card which has image in it; hidden of small to medium devices-->
+            <figure class="relative">
+                <img src="{% static 'images/register_bg.png' %}"
+                     alt="mountain"
+                     class="w-full h-full object-cover hidden lg:block" />
+                <div class="absolute top-0 left-0 h-full w-full flex items-center justify-center">
+                    <div class="text-center p-16">
+                        <h1 class="text-base-300 font-bold text-4xl">Welcome</h1>
+                        <p class="text-base-300 text-md text-justify mt-4">
+                            Enim ut sem viverra aliquet eget sit amet tellus cras.
+                            Aliquet nec ullamcorper sit amet risus nullam eget felis
+                            eget. Faucibus vitae aliquet nec ullamcorper sit amet
+                            risus. Maecenas ultricies mi eget mauris pharetra et.
+                        </p>
                     </div>
-                    <div class="flex flex-row gap-4 lg:block">
-                        <!--fuck password2 -->
-
-                        {% if form.password2.errors %}
-                        <input
-                            type="password"
-                            name="password1"
-                            placeholder="Password"
-                            class="input input-bordered input-error input-md w-full mt-4"
-                        />
-                        <input
-                            type="password"
-                            name="password2"
-                            placeholder="Confirm password"
-                            class="input input-bordered input-error input-md w-full mt-4"
-                        />
-                        {% else %}
-                        <input
-                            type="password"
-                            name="password1"
-                            placeholder="Password"
-                            class="input input-bordered input-md w-full mt-4"
-                        />
-                        <input
-                            type="password"
-                            name="password2"
-                            placeholder="Confirm password"
-                            class="input input-bordered input-md w-full mt-4"
-                        />
-                        {% endif %}
+                </div>
+            </figure>
+            <!-- Left side of card which has form in it -->
+            <div class="card-body flex justify-center items-center p-0">
+                <div class="w-full p-5 md:p-10">
+                    <h2 class="card-title">Register</h2>
+                    <div id="username-check" class="h-4 flex flex-row">
+                        <small style="color: red; padding-left: 4px">{{ form.non_field_errors }}</small>
                     </div>
-                    <button type="submit" class="btn btn-primary w-full mt-4">
-                        Rrgister Now
+                    <form action="{% url 'register' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="md:flex md:flex-row md:gap-4 lg:block">
+                            {% if form.username.errors %}
+                                <input type="text"
+                                       name="username"
+                                       placeholder="Username"
+                                       class="input input-bordered input-error input-md w-full mt-4"
+                                       value="{{ form.username.value }}"
+                                       hx-post="{% url 'check-username-exixts' %}"
+                                       hx-target="#username-check"
+                                       hx-trigger="keyup" />
+                            {% elif form.username.value %}
+                                <input type="text"
+                                       name="username"
+                                       placeholder="Username"
+                                       class="input input-bordered input-md w-full mt-4"
+                                       value="{{ form.username.value }}"
+                                       hx-post="{% url 'check-username-exixts' %}"
+                                       hx-target="#username-check"
+                                       hx-trigger="keyup" />
+                            {% else %}
+                                <input type="text"
+                                       name="username"
+                                       placeholder="Username"
+                                       class="input input-bordered input-md w-full mt-4"
+                                       hx-post="{% url 'check-username-exixts' %}"
+                                       hx-target="#username-check"
+                                       hx-trigger="keyup" />
+                            {% endif %}
+                            <!--fuck-->
+                            {% if form.email.errors %}
+                                <input type="text"
+                                       name="email"
+                                       placeholder="Email"
+                                       class="input input-bordered input-error input-md w-full mt-4"
+                                       value="{{ form.email.value }}" />
+                            {% elif form.email.value %}
+                                <input type="text"
+                                       name="email"
+                                       placeholder="Email"
+                                       class="input input-bordered input-md w-full mt-4"
+                                       value="{{ form.email.value }}" />
+                            {% else %}
+                                <input type="text"
+                                       name="email"
+                                       placeholder="Email"
+                                       class="input input-bordered input-md w-full mt-4" />
+                            {% endif %}
+                        </div>
+                        <div class="flex flex-row gap-4 lg:block">
+                            <!--fuck password2 -->
+                            {% if form.password2.errors %}
+                                <input type="password"
+                                       name="password1"
+                                       placeholder="Password"
+                                       class="input input-bordered input-error input-md w-full mt-4" />
+                                <input type="password"
+                                       name="password2"
+                                       placeholder="Confirm password"
+                                       class="input input-bordered input-error input-md w-full mt-4" />
+                            {% else %}
+                                <input type="password"
+                                       name="password1"
+                                       placeholder="Password"
+                                       class="input input-bordered input-md w-full mt-4" />
+                                <input type="password"
+                                       name="password2"
+                                       placeholder="Confirm password"
+                                       class="input input-bordered input-md w-full mt-4" />
+                            {% endif %}
+                        </div>
+                        <button type="submit" class="btn btn-primary w-full mt-4">Rrgister Now</button>
+                    </form>
+                    <button class="btn btn-outline w-full mt-4 lg:mt-10">
+                        <img src="{% static 'icons/google.svg' %}"
+                             alt="google"
+                             class="w-5 h-5"
+                             height="20px"
+                             width="20px" />
+                        Sign up with Google
                     </button>
-                </form>
-
-                <button class="btn btn-outline w-full mt-4 lg:mt-10">
-                    <img
-                        src="{% static 'icons/google.svg' %}"
-                        alt="google"
-                        class="w-5 h-5"
-                        height="20px"
-                        width="20px"
-                    />
-                    Sign up with Google
-                </button>
-
-                <button class="btn btn-outline w-full mt-4">
-                    <img
-                        src="{% static 'icons/gh.svg' %}"
-                        alt="github"
-                        class="w-5 h-5"
-                        height="20px"
-                        width="20px"
-                    />
-                    Sign up with Github
-                </button>
-                <div class="flex flex-row justify-end mt-4">
-                    <a href="{% url 'login' %}" class="btn btn-accent"
-                        >Login instead</a
-                    >
+                    <button class="btn btn-outline w-full mt-4">
+                        <img src="{% static 'icons/gh.svg' %}"
+                             alt="github"
+                             class="w-5 h-5"
+                             height="20px"
+                             width="20px" />
+                        Sign up with Github
+                    </button>
+                    <div class="flex flex-row justify-end mt-4">
+                        <a href="{% url 'login' %}" class="btn btn-accent">Login instead</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
 {% endblock content %}
