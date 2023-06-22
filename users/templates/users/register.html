@@ -57,13 +57,23 @@
                             hx-target="#username-check"
                             hx-trigger="keyup"
                         />
-                        {% else %}
+                        {% elif form.username.value %}
                         <input
                             type="text"
                             name="username"
                             placeholder="Username"
                             class="input input-bordered input-md w-full mt-4"
                             value="{{ form.username.value }}"
+                            hx-post="{% url 'check-username-exixts' %}"
+                            hx-target="#username-check"
+                            hx-trigger="keyup"
+                        />
+                        {% else %}
+                        <input
+                            type="text"
+                            name="username"
+                            placeholder="Username"
+                            class="input input-bordered input-md w-full mt-4"
                             hx-post="{% url 'check-username-exixts' %}"
                             hx-target="#username-check"
                             hx-trigger="keyup"
@@ -80,13 +90,20 @@
                             class="input input-bordered input-error input-md w-full mt-4"
                             value="{{ form.email.value }}"
                         />
-                        {% else %}
+                        {% elif form.email.value %}
                         <input
                             type="text"
                             name="email"
                             placeholder="Email"
                             class="input input-bordered input-md w-full mt-4"
                             value="{{ form.email.value }}"
+                        />
+                        {% else %}
+                        <input
+                            type="text"
+                            name="email"
+                            placeholder="Email"
+                            class="input input-bordered input-md w-full mt-4"
                         />
                         {% endif %}
                     </div>
