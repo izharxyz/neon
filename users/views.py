@@ -45,3 +45,9 @@ class CheckUsernameExists(View):
 
             else:
                 return HttpResponse('<small style="color: green; padding-left: 4px">username avlaible</small>')
+
+
+class PasswordResetView(View):
+    def get(self, request):
+        messages.error(request, 'Laude password bhool gya to gaand mara!')
+        return redirect('login')
