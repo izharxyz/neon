@@ -49,5 +49,5 @@ class CheckUsernameExists(View):
 
 class PasswordResetView(View):
     def get(self, request):
-        messages.error(request, 'Laude password bhool gya to gaand mara!')
+        messages.error(request, 'mujhe bhi nhi pata, tu gaand mara!')
         return redirect('login')
