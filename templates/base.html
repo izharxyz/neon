@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- meta block for SEO (dec, kw, auther, open graph and twitter) tags -->
+        {% block meta %}
+            <meta name="description" property="og:description" content="69ms world is content writing website for nerds by nerds"> 
+            <meta name="keywords" content="blog, python, django, content">
+        {% endblock meta %}
+
+        <!-- header block for title and externer file imports -->
+        {% block header %}
+            <title>69ms world</title>
+        {% endblock header %}
+        
+        <link rel="shortcut icon"
+              type="image/png"
+              href="{% static 'favicon.ico' %}" />
+        <link rel="stylesheet" href="{% static 'css/main.min.css' %}" />
+    </head>
+    <body>
+        {% block content %}
+        {% endblock content %}
+    </body>
+</html>
