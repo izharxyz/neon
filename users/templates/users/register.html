@@ -1,6 +1,8 @@
-{% extends 'blog/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
-<!--- fuck this formatter -->
+{% block header %}
+    <script async src="{% static 'js/htmx.min.js' %}"></script>
+{% endblock header %}
 {% block content %}
     <div class="w-screen landscape:min-h-screen portrait:h-screen bg-gradient-to-br from-secondary to-accent flex justify-center items-center">
         <div class="card lg:card-side bg-base-300 shadow-xl w-11/12 md:w-5/6 h-5/6 lg:grid lg:grid-cols-2">
@@ -58,7 +60,6 @@
                                        hx-target="#username-check"
                                        hx-trigger="keyup" />
                             {% endif %}
-                            <!--fuck-->
                             {% if form.email.errors %}
                                 <input type="text"
                                        name="email"
@@ -79,7 +80,6 @@
                             {% endif %}
                         </div>
                         <div class="flex flex-row gap-4 lg:block">
-                            <!--fuck password2 -->
                             {% if form.password2.errors %}
                                 <input type="password"
                                        name="password1"
