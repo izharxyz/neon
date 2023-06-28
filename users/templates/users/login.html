@@ -7,8 +7,9 @@
             <!-- right side of card which has image in it; hidden of small to medium devices-->
             <figure class="relative">
                 <img src="{% static 'images/register_bg.png' %}"
-                     alt="mountain"
-                     class="w-full h-full object-cover hidden lg:block" />
+                    alt="mountain"
+                    loading="lazy"
+                    class="w-full h-full object-cover hidden lg:block" />
                 <div class="absolute top-0 left-0 h-full w-full flex items-center justify-center">
                     <div class="text-center p-16">
                         <h1 class="text-base-300 font-bold text-4xl">Welcome</h1>
@@ -38,7 +39,7 @@
                                name="password"
                                placeholder="Password"
                                class="input input-bordered input-md w-full mt-4" />
-                        <button type="submit" class="btn btn-primary w-full mt-4">Sign In</button>
+                        <button type="submit" class="btn btn-primary w-full mt-4 text-base-100">Sign In</button>
                     </form>
                     <button class="btn btn-outline w-full mt-4 lg:mt-10">
                         <img src="{% static 'icons/google.svg' %}"
@@ -58,7 +59,7 @@
                     </button>
                     <div class="flex flex-row justify-between mt-4">
                         <a href="{% url 'password-reset' %}" class="link text-md mt-2">Forgot password?</a>
-                        <a href="{% url 'register' %}" class="btn btn-accent">Register</a>
+                        <a href="{% url 'register' %}" class="btn btn-accent text-base-100">Register</a>
                     </div>
                 </div>
             </div>

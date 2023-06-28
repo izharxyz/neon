@@ -9,8 +9,9 @@
             <!-- right side of card which has image in it; hidden of small to medium devices-->
             <figure class="relative">
                 <img src="{% static 'images/register_bg.png' %}"
-                     alt="mountain"
-                     class="w-full h-full object-cover hidden lg:block" />
+                    loading="lazy"
+                    alt="mountain"
+                    class="w-full h-full object-cover hidden lg:block" />
                 <div class="absolute top-0 left-0 h-full w-full flex items-center justify-center">
                     <div class="text-center p-16">
                         <h1 class="text-base-300 font-bold text-4xl">Welcome</h1>
@@ -100,7 +101,7 @@
                                        class="input input-bordered input-md w-full mt-4" />
                             {% endif %}
                         </div>
-                        <button type="submit" class="btn btn-primary w-full mt-4">Rrgister Now</button>
+                        <button type="submit" class="btn btn-primary w-full mt-4 text-base-100">Rrgister Now</button>
                     </form>
                     <button class="btn btn-outline w-full mt-4 lg:mt-10">
                         <img src="{% static 'icons/google.svg' %}"
@@ -119,7 +120,7 @@
                         Sign up with Github
                     </button>
                     <div class="flex flex-row justify-end mt-4">
-                        <a href="{% url 'login' %}" class="btn btn-accent">Login instead</a>
+                        <a href="{% url 'login' %}" class="btn btn-accent text-base-100">Login instead</a>
                     </div>
                 </div>
             </div>
