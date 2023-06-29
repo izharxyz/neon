@@ -2,7 +2,8 @@
 module.exports = {
   content: [
     './blog/templates/blog/*.html',
-    './users/templates/users/*.html'
+    './users/templates/users/*.html',
+    './templates/**/*.html'
   ],
   theme: {
     extend: {
@@ -13,7 +14,7 @@ module.exports = {
   },
   plugins: [require('daisyui')],
   daisyui: {
-    themes: ["winter"],
+    themes: ["forest"],
   },
 }
 
