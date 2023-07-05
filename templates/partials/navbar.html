@@ -1,21 +1,24 @@
 {% load static %}
 <div class="container max-w-7xl mx-auto">
-    <div class="navbar px-2">
+    <div class="navbar px-3">
         <a href="/" class="navbar-start">
-            <img src="{% static '/icons/logo.png' %}"
-                 alt="logo"
-                 class="object-cover rounded-full w-12 h-12"
-                 height="48px"
-                 width="48px">
+            <svg class="h-6 w-6 text-neutral-content"
+                 xmlns="http://www.w3.org/2000/svg"
+                 width="10"
+                 height="10"
+                 viewBox="0 0 512 512">
+                <path fill="currentColor" d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM96 256a64 64 0 1 1 128 0a64 64 0 1 1-128 0zm256-64a64 64 0 1 1 0 128a64 64 0 1 1 0-128z" />
+            </svg>
         </a>
         <div class="hidden md:flex md:gap-2 navbar-center">
-            <button class="btn join-item btn-ghost">Home</button>
-            <button class="btn join-item btn-ghost">New</button>
-            <button class="btn join-item btn-ghost">Popular</button>
+            <button class="btn join-item btn-ghost btn-sm">Home</button>
+            <button class="btn join-item btn-ghost btn-sm">New</button>
+            <button class="btn join-item btn-ghost btn-sm">Popular</button>
         </div>
         <div class="navbar-end">
-            <button class="btn btn-circle btn-ghost mr-2">
-                <svg class="fill-base-content"
+            <button class="btn btn-circle btn-ghost btn-active btn-sm mr-2">
+                <!-- search icon -->
+                <svg class="fill-base-content h-5 w-5"
                      xmlns="http://www.w3.org/2000/svg"
                      width="26"
                      height="26"
@@ -23,11 +26,11 @@
                     <path d="m19.6 21l-6.3-6.3q-.75.6-1.725.95T9.5 16q-2.725 0-4.612-1.888T3 9.5q0-2.725 1.888-4.612T9.5 3q2.725 0 4.612 1.888T16 9.5q0 1.1-.35 2.075T14.7 13.3l6.3 6.3l-1.4 1.4ZM9.5 14q1.875 0 3.188-1.313T14 9.5q0-1.875-1.313-3.188T9.5 5Q7.625 5 6.312 6.313T5 9.5q0 1.875 1.313 3.188T9.5 14Z" />
                 </svg>
             </button>
-            <label class="btn btn-circle btn-ghost swap swap-rotate md:hidden">
+            <label class="btn btn-circle btn-ghost btn-active btn-sm swap swap-rotate md:hidden">
                 <!-- this hidden checkbox controls the state -->
                 <input type="checkbox" />
                 <!-- hamburger icon -->
-                <svg class="swap-off fill-current"
+                <svg class="swap-off fill-current h-5 w-5"
                      xmlns="http://www.w3.org/2000/svg"
                      width="32"
                      height="32"
@@ -35,7 +38,7 @@
                     <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
                 </svg>
                 <!-- close icon -->
-                <svg class="swap-on fill-current"
+                <svg class="swap-on fill-current h-5 w-5"
                      xmlns="http://www.w3.org/2000/svg"
                      width="32"
                      height="32"
@@ -45,7 +48,8 @@
             </label>
             <div class="hidden md:flex md:gap-2">
                 {% if user.is_authenticated %}
-                    <a href="#" class="btn btn-primary btn-md">
+                    <a href="#" class="btn btn-sm btn-primary">
+                        <!-- write (pen) icon -->
                         <svg class="h-4 w-4"
                              xmlns="http://www.w3.org/2000/svg"
                              width="20"
@@ -55,7 +59,8 @@
                         </svg>
                         Write
                     </a>
-                    <a href="{% url 'logout' %}" class="btn btn-secondary btn-md">
+                    <a href="{% url 'logout' %}" class="btn btn-secondary btn-sm">
+                        <!-- logout icon -->
                         <svg class="h-5 w-5"
                              xmlns="http://www.w3.org/2000/svg"
                              width="20"
@@ -69,7 +74,8 @@
                         Logout
                     </a>
                 {% else %}
-                    <a href="{% url 'login' %}" class="btn btn-primary btn-md">
+                    <a href="{% url 'login' %}" class="btn btn-primary btn-sm">
+                        <!-- login icon -->
                         <svg class="h-5 w-5"
                              xmlns="http://www.w3.org/2000/svg"
                              width="20"
@@ -81,7 +87,8 @@
                             </g>
                         </svg>
                     Login</a>
-                    <a href="{% url 'register' %}" class="btn btn-secondary btn-md">
+                    <a href="{% url 'register' %}" class="btn btn-secondary btn-sm">
+                        <!-- register icon -->
                         <svg class="h-5 w-5"
                              xmlns="http://www.w3.org/2000/svg"
                              width="10"
