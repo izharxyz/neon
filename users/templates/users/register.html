@@ -9,8 +9,8 @@
 {% endblock navbar %}
 {% block content %}
     <div class="w-screen landscape:min-h-screen portrait:h-screen flex justify-center items-center">
-        <div class="card lg:card-side bg-base-300 shadow-xl w-11/12 md:w-5/6 h-5/6 lg:grid lg:grid-cols-2">
-            <!-- right side of card which has image in it; hidden of small to medium devices-->
+        <div class="card lg:card-side bg-base-100 bg-opacity-70 shadow-xl w-11/12 md:w-5/6 h-5/6 lg:grid lg:grid-cols-2">
+            <!-- left side of card which has image in it; hidden of small to medium devices-->
             <figure class="relative">
                 <img src="{% static 'images/register_bg.png' %}"
                      alt="mountain"
@@ -27,7 +27,7 @@
                     </div>
                 </div>
             </figure>
-            <!-- Left side of card which has form in it -->
+            <!-- right side of card which has form in it -->
             <div class="card-body flex justify-center items-center p-0">
                 <div class="w-full p-5 md:p-10">
                     <h2 class="card-title">Register</h2>
