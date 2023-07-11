@@ -1,18 +1,30 @@
 {% extends 'base.html' %}
+{% load static %}
 <!-- content -->
 {% block content %}
-    <div class="hero min-h-screen"
-         style="background-image: url('/static/images/bg.jpg')">
-        <div class="hero-overlay bg-opacity-60"></div>
-        <div class="hero-content text-center text-neutral-content">
-            <div class="max-w-md">
-                <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
-                <p class="mb-5">
-                    Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                    assumenda excepturi exercitationem quasi. In deleniti eaque aut
-                    repudiandae et a id nisi.
-                </p>
-                <a href="{% url 'register' %}" class="btn btn-primary">Fuck you</a>
+    <div class="hero min-h-screen">
+        <div class="hero-content p-2 w-full">
+            <div class="max-w-7xl min-w-full grid grid-cols-1 md:grid-cols-11 gap-5">
+                <div class="col-span-1 md:col-span-8">
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-content mb-10">
+                        Best of the week...
+                    </h1>
+                    <div class="card bg-base-100 image-full">
+                        <figure>
+                            <img src="{% static 'images/unix.jpg' %}"
+                                 alt="Shoes"
+                                 width="0"
+                                 height="0"
+                                 class="h-full w-full object-cover" />
+                        </figure>
+                        <div class="card-body justify-end">
+                            <div class="card-actions justify-start text-start">
+                                <h1 class="text-3xl font-bold text-start">If a dog chews shoes whose shoes does he choose?</h1>
+                                <p>If a dog chews shoes whose shoes does he choose?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
