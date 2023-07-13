@@ -22,6 +22,8 @@ class Post(models.Model):
     content = models.TextField()
 
     views = models.IntegerField(default=1)
+    likes = models.IntegerField(default=0)
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
