@@ -3,29 +3,47 @@
 <!-- content -->
 {% block content %}
     <div class="hero min-h-screen">
-        <div class="hero-content p-2 w-full">
-            <div class="max-w-7xl min-w-full grid grid-cols-1 md:grid-cols-11 gap-5">
-                <div class="col-span-1 md:col-span-8">
-                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-content mb-10">
-                        Best of the week...
-                    </h1>
-                    <div class="card bg-base-100 image-full">
-                        <figure>
-                            <img src="{% static 'images/unix.jpg' %}"
-                                 alt="Shoes"
-                                 width="0"
-                                 height="0"
-                                 class="h-full w-full object-cover" />
-                        </figure>
-                        <div class="card-body justify-end">
-                            <div class="card-actions justify-start text-start">
-                                <h1 class="text-3xl font-bold text-start">If a dog chews shoes whose shoes does he choose?</h1>
-                                <p>If a dog chews shoes whose shoes does he choose?</p>
+        <div class="hero-content p-5 w-full">
+            <div class="min-w-full grid grid-cols-1 md:grid-cols-11 gap-5 mt-48">
+                <div class="col-span-1 md:col-span-7">
+                    <a href="##"> <!-- href="// url 'blog-detail' featured_post.slug //" -->
+                        <div class="card bg-base-100 bg-opacity-90 glass">
+                            <figure>
+                                <img src="{{ featured_post.thumbnail }}"
+                                     alt="Shoes"
+                                     width="0"
+                                     height="0"
+                                     class="h-full w-full object-cover" />
+                            </figure>
+                            <div class="card-body">
+                                <h2 class="card-title">
+                                    {{ featured_post.title }}
+                                    <div class="badge badge-secondary">FEATURED</div>
+                                </h2>
+                                <div class="card-actions justify-start text-start">
+                                    <div class="badge badge-outline">Linux</div>
+                                    <div class="badge badge-outline">{{ featured_post.category }}</div>
+                                </div>
                             </div>
                         </div>
+                    </a>
+                </div>
+                <div class="col-span-1 md:col-span-4 w-full glass p-2 card gap-2">
+                    {% for post in posts %}
+                    <div class="card relative">
+                        <figure>
+                            <img src="{{ post.thumbnail }}" alt="{{ post.title }}" class="h-64 w-full card object-cover"/>
+                        </figure>
+                        <div class="absolute bottom-5 left-5">
+                            <h2 class="text-md text-base-content">{{ post.title }}</h2>
+                        </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
+    </div>
+    <div class="col-span-1 md:col-span-3">
+        <div class="w-full h-56 glass flex justify-center items-center rounded-lg text-primary-content">Fuckin footer</div>
     </div>
 {% endblock content %}
