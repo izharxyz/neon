@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 
 class Category(models.Model):
     name = models.CharField(max_length=64, null=False)
+    image = models.ImageField(
+        upload_to='static/images/category/', default='static/images/category/default.webp')
 
     def __str__(self) -> str:
         return self.name
