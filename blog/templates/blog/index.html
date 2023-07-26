@@ -4,7 +4,7 @@
     <div class="container max-w-7xl p-5 mx-auto">
         <div class="min-w-full inline-grid grid-cols-1 lg:grid-cols-11 gap-5 mt-48">
             <div class="col-span-1 lg:col-span-7">
-                <div class="w-full">
+                <div class="w-full relative">
                     <a href="##"> <!-- href="// url 'blog-detail' featured_post.slug //" -->
                         <div class="card bg-base-100 bg-opacity-90 glass">
                             <figure>
@@ -14,14 +14,16 @@
                                         height="0"
                                         class="h-full w-full object-cover" />
                             </figure>
-                            <div class="card-body">
-                                <h2 class="card-title gap-5 text-lg justify-between">
+                            <div class="absolute top-5 left-5 badge badge-secondary badge-lg">
+                                FEATURED
+                            </div>
+                            <div class="card-body p-5">
+                                <h2 class="card-title text-base md:text-lg font-semibold">
                                     {{ featured_post.title }}
-                                    <div class="badge badge-secondary">FEATURED</div>
                                 </h2>
-                                <p class="text-base font-normal">{{ featured_post.excerpt }}</p>
+                                <p class="text-sm md:text-base font-normal">{{ featured_post.excerpt }}</p>
                                 <div class="card-actions justify-between text-start">
-                                    <div class="badge badge-outline badge-accent mt-2">{{ featured_post.category }}</div>
+                                    <div class="badge badge-outline badge-primary mt-2">{{ featured_post.category }}</div>
                                     <div class="text-xs mt-2 flex gap-2 items-center">
                                         <svg class="text-info h-4 w-4"
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -67,8 +69,8 @@
                         <svg class="fill-primary text-primary h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6.5 11L12 2l5.5 9h-11Zm11 11q-1.875 0-3.188-1.313T13 17.5q0-1.875 1.313-3.188T17.5 13q1.875 0 3.188 1.313T22 17.5q0 1.875-1.313 3.188T17.5 22ZM3 21.5v-8h8v8H3Z"/></svg>
                         Browse by category ...
                     </div>
-                    {% for post in trending_posts %}
-                        {% include 'partials/trending_post_card.html' %}
+                    {% for category in categories %}
+                        {% include 'partials/category_card.html' %}
                     {% endfor %}
                 </div>
             </div>
