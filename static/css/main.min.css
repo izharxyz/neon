@@ -1736,6 +1736,13 @@ html {
     text-shadow: 0 1px rgb(0 0 0 / var(--glass-text-shadow-opacity, 5%));
   }
 }
+.badge-lg {
+  height: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding-left: 0.688rem;
+  padding-right: 0.688rem;
+}
 .btn-sm {
   height: 2rem;
   padding-left: 0.75rem;
@@ -1932,6 +1939,9 @@ html {
 .top-48 {
   top: 12rem;
 }
+.left-5 {
+  left: 1.25rem;
+}
 .z-10 {
   z-index: 10;
 }
@@ -2121,6 +2131,16 @@ html {
 .rounded-lg {
   border-radius: 0.5rem;
 }
+.border-2 {
+  border-width: 2px;
+}
+.border {
+  border-width: 1px;
+}
+.border-primary {
+  --tw-border-opacity: 1;
+  border-color: hsl(var(--p) / var(--tw-border-opacity));
+}
 .bg-base-100 {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--b1) / var(--tw-bg-opacity));
@@ -2229,6 +2249,9 @@ html {
 }
 .font-normal {
   font-weight: 400;
+}
+.capitalize {
+  text-transform: capitalize;
 }
 .text-base-100 {
   --tw-text-opacity: 1;
@@ -2353,6 +2376,11 @@ html {
   .md\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
+  }
+
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
 
