@@ -6,7 +6,7 @@ from blog.models import Category, Post
 class IndexView(View):
     def get(self, request):
         featured_post = Post.objects.order_by('-views').first()
-        trending_posts = Post.objects.all().exclude(id=featured_post.id)[:3]
+        trending_posts = Post.objects.all().exclude(id=featured_post.id)[:5]
         random_posts = Post.objects.order_by(
             '?').exclude(id=featured_post.id)[:9]
         categories = Category.objects.order_by('name')
