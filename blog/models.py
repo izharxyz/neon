@@ -14,7 +14,7 @@ class Category(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=255, null=False, default='post title')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    slug = models.SlugField(null=False)
+    slug = models.SlugField(null=False, max_length=255)
     excerpt = models.CharField(
         max_length=255, null=False, default='an amazing must read post')
     thumbnail = models.ImageField(upload_to='static/images/thumbnails/')
