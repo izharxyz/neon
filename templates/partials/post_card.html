@@ -2,7 +2,10 @@
     <figure>
         <img src="{{ post.thumbnail }}"
              class="w-64 h-64 object-cover hidden md:block"
-             alt="Movie" />
+             loading="lazy"
+             height="16rem"
+             width="16rem"
+             alt="{{ post.title }}" />
     </figure>
     <div class="card-body w-4/6 p-5">
         <h2 class="text-base md:text-lg font-semibold">{{ post.title }}</h2>
