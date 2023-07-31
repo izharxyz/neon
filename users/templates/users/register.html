@@ -41,7 +41,7 @@
                                 <input type="text"
                                        name="username"
                                        placeholder="Username"
-                                       class="input input-bordered input-error input-md w-full mt-4"
+                                       class="input input-bordered input-ghost input-error input-md w-full mt-4"
                                        value="{{ form.username.value }}"
                                        hx-post="{% url 'check-username-exixts' %}"
                                        hx-target="#username-check"
@@ -50,7 +50,7 @@
                                 <input type="text"
                                        name="username"
                                        placeholder="Username"
-                                       class="input input-bordered input-md w-full mt-4"
+                                       class="input input-bordered input-ghost input-md w-full mt-4"
                                        value="{{ form.username.value }}"
                                        hx-post="{% url 'check-username-exixts' %}"
                                        hx-target="#username-check"
@@ -59,7 +59,7 @@
                                 <input type="text"
                                        name="username"
                                        placeholder="Username"
-                                       class="input input-bordered input-md w-full mt-4"
+                                       class="input input-bordered input-ghost input-md w-full mt-4"
                                        hx-post="{% url 'check-username-exixts' %}"
                                        hx-target="#username-check"
                                        hx-trigger="keyup" />
@@ -68,19 +68,19 @@
                                 <input type="text"
                                        name="email"
                                        placeholder="Email"
-                                       class="input input-bordered input-error input-md w-full mt-4"
+                                       class="input input-bordered input-ghost input-error input-md w-full mt-4"
                                        value="{{ form.email.value }}" />
                             {% elif form.email.value %}
                                 <input type="text"
                                        name="email"
                                        placeholder="Email"
-                                       class="input input-bordered input-md w-full mt-4"
+                                       class="input input-bordered input-ghost input-md w-full mt-4"
                                        value="{{ form.email.value }}" />
                             {% else %}
                                 <input type="text"
                                        name="email"
                                        placeholder="Email"
-                                       class="input input-bordered input-md w-full mt-4" />
+                                       class="input input-bordered input-ghost input-md w-full mt-4" />
                             {% endif %}
                         </div>
                         <div class="flex flex-row gap-4 lg:block">
@@ -88,20 +88,20 @@
                                 <input type="password"
                                        name="password1"
                                        placeholder="Password"
-                                       class="input input-bordered input-error input-md w-full mt-4" />
+                                       class="input input-bordered input-ghost input-error input-md w-full mt-4" />
                                 <input type="password"
                                        name="password2"
                                        placeholder="Confirm password"
-                                       class="input input-bordered input-error input-md w-full mt-4" />
+                                       class="input input-bordered input-ghost input-error input-md w-full mt-4" />
                             {% else %}
                                 <input type="password"
                                        name="password1"
                                        placeholder="Password"
-                                       class="input input-bordered input-md w-full mt-4" />
+                                       class="input input-bordered input-ghost input-md w-full mt-4" />
                                 <input type="password"
                                        name="password2"
                                        placeholder="Confirm password"
-                                       class="input input-bordered input-md w-full mt-4" />
+                                       class="input input-bordered input-ghost input-md w-full mt-4" />
                             {% endif %}
                         </div>
                         <button type="submit" class="btn btn-primary w-full mt-4 text-base-100">Rrgister Now</button>
