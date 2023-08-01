@@ -2088,6 +2088,9 @@ html {
 .gap-12 {
   gap: 3rem;
 }
+.gap-3 {
+  gap: 0.75rem;
+}
 .overflow-hidden {
   overflow: hidden;
 }
@@ -2404,6 +2407,10 @@ html {
 
   .md\:gap-4 {
     gap: 1rem;
+  }
+
+  .md\:gap-5 {
+    gap: 1.25rem;
   }
 
   .md\:p-10 {
