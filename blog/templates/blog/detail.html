@@ -5,20 +5,55 @@
         <div class="w-full h-fit mt-48 mb-5 p-5 rounded-box bg-base-100 bg-opacity-70 backdrop-blur-3xl">
             <h1 class="text-3xl md:text-4xl font-bold">{{ post.title }}</h1>
             <h3 class="mt-5 text-lg">{{ post.excerpt }}</h3>
-            <div class="mt-5 text-base flex items-center gap-5">
-                <img src="{{ post.category.image.url }}"
-                     alt="author"
-                     class="w-12 h-12 rounded-full object-cover">
-                <div class="text-sm">
-                    <p class="font-semibold">
-                        {{ post.author.username }} <span class="ml-5 text-primary font-normal"><a href="/">Follow</a></span>
-                    </p>
-                    <p class="text-neutral-content">
-                        Published on <span class="text-base-content">{{ post.created_at|date }}</span>
-                    </p>
+            <div class="mt-5 flex items-center justify-between w-full">
+                <div class="flex flex-row gap-5 items-center text-base">
+                    <img src="{{ post.category.image.url }}"
+                         alt="author"
+                         class="w-12 h-12 rounded-full object-cover">
+                    <div class="text-sm">
+                        <p class="font-semibold">
+                            {{ post.author.username }} <span class="ml-2 text-primary font-normal"><a href="/">Follow</a></span>
+                        </p>
+                        <div class="text-neutral-content flex gap-2 items-center">
+                            <svg class="text-info h-4 w-4"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 width="24"
+                                 height="24"
+                                 viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M12 20a8 8 0 0 0 8-8a8 8 0 0 0-8-8a8 8 0 0 0-8 8a8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10a10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67l-.75 1.23L11 13V7h1.5Z" />
+                            </svg>
+                            <span class="text-base-content">{{ post.created_at|date }}</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="mt-5 py-5 flex items-center justify-between">
+                {% if user == post.author %}
+                    <div class="flex gap-2">
+                        <a href="/" class="btn btn-info btn-sm">
+                            <!-- pen icon -->
+                            <svg class="h-4 w-4"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 width="20"
+                                 height="20"
+                                 viewBox="0 0 14 14">
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M5 12.24L.5 13.5L1.76 9L10 .8a1 1 0 0 1 1.43 0l1.77 1.78a1 1 0 0 1 0 1.42Z" />
+                            </svg>
+                            <span class="hidden md:block">UPDATE</span>
+                        </a>
+                        <a href="/" class="btn btn-error btn-sm">
+                            <!-- delete icon -->
+                            <svg class="h-5 w-5"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 width="1024"
+                                 height="1024"
+                                 viewBox="0 0 1024 1024">
+                                <path fill="currentColor" d="M360 184h-8c4.4 0 8-3.6 8-8v8h304v-8c0 4.4 3.6 8 8 8h-8v72h72v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80h72v-72zm504 72H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zM731.3 840H292.7l-24.2-512h487l-24.2 512z" />
+                            </svg>
+                            <span class="hidden md:block">DELETE</span>
+                        </a>
+                    </div>
+                {% endif %}
+            </div> 
+            <div class="mt-5 p-5 flex items-center justify-between rounded-box bg-base-100 bg-opacity-70 backdrop-blur-3xl">
                 <div class="flex gap-5 items-center">
                     <svg class="h-6 w-6 text-base-content"
                          xmlns="http://www.w3.org/2000/svg"
