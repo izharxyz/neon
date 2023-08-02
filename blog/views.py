@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import View
 from blog.models import Category, Post
 
@@ -18,3 +18,9 @@ class IndexView(View):
             'categories': categories
         }
         return render(request, 'blog/index.html', ctx)
+
+
+class PostDetailView(View):
+    def get(self, request, slug):
+        post = get_object_or_404(Post, slug=slug)
+        return render(request, 'blog/detail.html', {'post': post})
