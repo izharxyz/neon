@@ -1,7 +1,7 @@
-<a href="">
+<a href="{% url 'post-detail' post.slug %}">
     <div class="card card-side bg-base-100 bg-opacity-70 h-64 backdrop-blur-3xl w-full overflow-hidden">
         <figure>
-            <img src="{{ post.thumbnail }}"
+            <img src="{{ post.thumbnail.url }}"
                  class="w-64 h-64 object-cover hidden md:block"
                  loading="lazy"
                  height="16rem"
