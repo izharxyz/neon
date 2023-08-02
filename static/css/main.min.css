@@ -1731,6 +1731,9 @@ html {
   min-height: 2rem;
   font-size: 0.875rem;
 }
+.btn-wide {
+  width: 16rem;
+}
 .btn-square:where(.btn-sm) {
   height: 2rem;
   width: 2rem;
@@ -2016,6 +2019,9 @@ html {
   height: 100vh;
   height: 100dvh;
 }
+.h-7 {
+  height: 1.75rem;
+}
 .w-1\/2 {
   width: 50%;
 }
@@ -2045,6 +2051,21 @@ html {
 }
 .w-screen {
   width: 100vw;
+}
+.w-1\/3 {
+  width: 33.333333%;
+}
+.w-7 {
+  width: 1.75rem;
+}
+.w-48 {
+  width: 12rem;
+}
+.w-96 {
+  width: 24rem;
+}
+.w-80 {
+  width: 20rem;
 }
 .min-w-full {
   min-width: 100%;
@@ -2090,6 +2111,12 @@ html {
 }
 .gap-5 {
   gap: 1.25rem;
+}
+.gap-10 {
+  gap: 2.5rem;
+}
+.gap-20 {
+  gap: 5rem;
 }
 .overflow-hidden {
   overflow: hidden;
@@ -2176,6 +2203,9 @@ html {
 }
 .p-20 {
   padding: 5rem;
+}
+.p-10 {
+  padding: 2.5rem;
 }
 .px-5 {
   padding-left: 1.25rem;
@@ -2290,6 +2320,12 @@ html {
 .duration-200 {
   transition-duration: 200ms;
 }
+.duration-300 {
+  transition-duration: 300ms;
+}
+.duration-500 {
+  transition-duration: 500ms;
+}
 
 @media (min-width: 1024px) {
 
@@ -2326,9 +2362,24 @@ html {
   }
 }
 
+.hover\:translate-y-5:hover {
+  --tw-translate-y: 1.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:translate-x-5:hover {
+  --tw-translate-x: 1.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .hover\:text-secondary:hover {
   --tw-text-opacity: 1;
   color: hsl(var(--s) / var(--tw-text-opacity));
+}
+
+.group:hover .group-hover\:translate-x-5 {
+  --tw-translate-x: 1.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 @media (min-width: 768px) {
@@ -2373,6 +2424,10 @@ html {
     width: 50%;
   }
 
+  .md\:w-80 {
+    width: 20rem;
+  }
+
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -2395,6 +2450,10 @@ html {
 
   .md\:p-10 {
     padding: 2.5rem;
+  }
+
+  .md\:p-20 {
+    padding: 5rem;
   }
 
   .md\:pt-20 {
@@ -2441,6 +2500,10 @@ html {
 
   .lg\:grid {
     display: grid;
+  }
+
+  .lg\:w-96 {
+    width: 24rem;
   }
 
   .lg\:grid-cols-11 {
