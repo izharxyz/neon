@@ -51,7 +51,7 @@
             </label>
             <div class="hidden md:flex md:gap-2">
                 {% if user.is_authenticated %}
-                    <a href="#" class="btn btn-sm btn-primary">
+                    <a href="{% url 'post-create' %}" class="btn btn-sm btn-primary">
                         <!-- write (pen) icon -->
                         <svg class="h-4 w-4"
                              xmlns="http://www.w3.org/2000/svg"
