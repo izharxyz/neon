@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import View
 from blog.models import Category, Post
+from .forms import PostCreationForm
 
 
 class IndexView(View):
@@ -18,6 +20,16 @@ class IndexView(View):
             'categories': categories
         }
         return render(request, 'blog/index.html', ctx)
+
+
+class PostCreateView(LoginRequiredMixin, View):
+    def get(self, request):
+        form = PostCreationForm()
+        return render(request, 'blog/form.html', {'form': form})
+
+    def post(slef, request):
+        form = PostCreationForm()
+        return render(request, 'blog/form.html', {'form': form})
 
 
 class PostDetailView(View):
