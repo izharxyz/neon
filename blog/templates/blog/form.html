@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container max-w-5xl p-5 mx-auto">
+        <div class="w-full h-fit mt-48 mb-5 p-5 rounded-box bg-base-100 bg-opacity-70 backdrop-blur-3xl">
+            <form action="">
+                {% csrf_token %}
+
+                {{ form.as_p }}
+            </form>
+        </div>
+    </div>
+{% endblock content %}
