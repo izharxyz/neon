@@ -2249,6 +2249,9 @@ html {
 .p-5 {
   padding: 1.25rem;
 }
+.p-1 {
+  padding: 0.25rem;
+}
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -2256,6 +2259,10 @@ html {
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+}
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }
 .pr-16 {
   padding-right: 4rem;
@@ -2488,6 +2495,10 @@ html {
     margin-top: 1.25rem;
   }
 
+  .md\:mb-0 {
+    margin-bottom: 0px;
+  }
+
   .md\:block {
     display: block;
   }
@@ -2542,6 +2553,15 @@ html {
 
   .md\:p-20 {
     padding: 5rem;
+  }
+
+  .md\:p-5 {
+    padding: 1.25rem;
+  }
+
+  .md\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
   .md\:pt-20 {
