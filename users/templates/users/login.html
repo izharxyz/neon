@@ -16,7 +16,9 @@
                      class="w-full h-full object-cover hidden lg:block" />
                 <div class="absolute top-0 left-0 h-full w-full flex items-center justify-center">
                     <div class="text-center p-16">
-                        <h1 class="text-neutral-content font-bold text-4xl">Welcome</h1>
+                        <h1 class="text-neutral-content font-bold text-4xl">
+                            Welcome
+                        </h1>
                         <p class="text-neutral-content text-md text-justify mt-4">
                             Enim ut sem viverra aliquet eget sit amet tellus cras.
                             Aliquet nec ullamcorper sit amet risus nullam eget felis
@@ -30,9 +32,15 @@
             <div class="card-body flex justify-center items-center p-0">
                 <div class="w-full p-5 md:p-10">
                     {% if messages %}
-                        {% for message in messages %}<h3 class="text-{{ message.tags }} text-md mb-4">{{ message }}</h3>{% endfor %}
+                        {% for message in messages %}
+                            <h3 class="text-{{ message.tags }} text-md mb-4">
+                                {{ message }}
+                            </h3>
+                        {% endfor %}
                     {% endif %}
-                    <h2 class="card-title">Login</h2>
+                    <h2 class="card-title">
+                        Login
+                    </h2>
                     <form action="{% url 'login' %}" method="POST">
                         {% csrf_token %}
                         <input type="text"
@@ -43,9 +51,13 @@
                                name="password"
                                placeholder="Password"
                                class="input input-bordered input-ghost input-md w-full mt-4" />
-                        <button type="submit" class="btn btn-primary w-full mt-4">Sign In</button>
+                        <button type="submit" class="btn btn-primary w-full mt-4">
+                            Sign In
+                        </button>
                     </form>
-                    <div class="divider mt-5 lg:mt-10">OR</div>
+                    <div class="divider mt-5 lg:mt-10">
+                        OR
+                    </div>
                     <button class="btn btn-outline w-full mt-2 lg:mt-5">
                         <img src="{% static 'icons/google.svg' %}"
                              alt="google"

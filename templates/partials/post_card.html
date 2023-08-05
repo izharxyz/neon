@@ -9,10 +9,16 @@
                  alt="{{ post.title }}" />
         </figure>
         <div class="card-body w-4/6 p-5">
-            <h2 class="text-base md:text-lg font-semibold">{{ post.title }}</h2>
-            <p class="text-sm md:text-base">{{ post.excerpt }}</p>
+            <h2 class="text-base md:text-lg font-semibold">
+                {{ post.title }}
+            </h2>
+            <p class="text-sm md:text-base">
+                {{ post.excerpt }}
+            </p>
             <div class="flex flex-wrap items-center justify-between">
-                <div class="badge badge-primary badge-outline mt-2">{{ post.category }}</div>
+                <div class="badge badge-primary badge-outline mt-2">
+                    {{ post.category }}
+                </div>
                 <div class="text-xs mt-2 flex gap-2 items-center">
                     <svg class="text-info h-4 w-4"
                          xmlns="http://www.w3.org/2000/svg"
