@@ -1,5 +1,6 @@
 from django.forms import ModelForm
-from .models import Post
+
+from blog.models import Post
 
 
 class PostCreationForm(ModelForm):

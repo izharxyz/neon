@@ -1,7 +1,8 @@
-from django.shortcuts import HttpResponse, redirect, render
 from django.contrib import messages
 from django.contrib.auth.models import User
+from django.shortcuts import HttpResponse, redirect, render
 from django.views import View
+
 from .forms import UserRegisterForm
 
 
