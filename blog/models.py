@@ -1,5 +1,6 @@
-from django.db import models
+from ckeditor_uploader.fields import RichTextUploadingField
 from django.contrib.auth.models import User
+from django.db import models
 
 
 class Category(models.Model):
@@ -21,7 +22,7 @@ class Post(models.Model):
     category = models.ForeignKey(
         Category, on_delete=models.SET_NULL, null=True)
 
-    content = models.TextField()
+    content = RichTextUploadingField()
 
     views = models.IntegerField(default=1)
     likes = models.IntegerField(default=0)
