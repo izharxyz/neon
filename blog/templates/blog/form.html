@@ -5,7 +5,7 @@
         <div class="w-full h-fit mt-48 mb-5 p-5 rounded-box bg-base-100 bg-opacity-70 backdrop-blur-3xl">
             <form action="">
                 {% csrf_token %}
-
+                {{ form.media }}
                 {{ form.as_p }}
             </form>
         </div>
