@@ -148,6 +148,10 @@ CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
 CKEDITOR_UPLOAD_PATH = "static/images/contents"
 CKEDITOR_CONFIGS = {
     'default': {
-        'toolbar': 'full'
+        'toolbar': 'full',
+        'width': 'full',
+        'extraPlugins': ','.join(
+            ['codesnippet']
+        )
     }
 }
