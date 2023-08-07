@@ -37,9 +37,6 @@ class PostCreateView(LoginRequiredMixin, View):
             post.slug = post.title
             messages.success(request, 'Blog post created successfully')
             return redirect('index')
-        print(request.POST)
-        print('\n\n\n\n ######################')
-        print(form.errors.as_data())
         return render(request, 'blog/form.html', {'form': form})
 
 
