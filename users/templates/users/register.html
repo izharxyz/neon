@@ -14,6 +14,8 @@
             <figure class="relative">
                 <img src="{% static 'images/register_bg.png' %}"
                      alt="mountain"
+                     height="full"
+                     width="full"
                      class="w-full h-full object-cover hidden lg:block" />
                 <div class="absolute top-0 left-0 h-full w-full flex items-center justify-center">
                     <div class="text-center p-16">
@@ -36,9 +38,9 @@
                         Register
                     </h2>
                     <div id="username-check" class="h-4 flex flex-row">
-                        <small style="color: red; padding-left: 4px">{{ form.non_field_errors }}</small>
+                        <small class="text-error ml-1">{{ form.non_field_errors }}</small>
                     </div>
-                    <form action="{% url 'register' %}" method="POST">
+                    <form action="{% url 'register' %}" method="post">
                         {% csrf_token %}
                         <div class="md:flex md:flex-row md:gap-4 lg:block">
                             {% if form.username.errors %}
