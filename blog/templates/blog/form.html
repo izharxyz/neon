@@ -3,7 +3,9 @@
 {% block content %}
     <div class="container max-w-5xl p-5 mx-auto">
         <div class="w-full h-fit mt-48 mb-5 p-5 rounded-box bg-base-100 bg-opacity-70 backdrop-blur-3xl">
-            <form action="">
+            <form action="{% url 'post-create' %}"
+                  method="post"
+                  enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form.media }}
  
@@ -33,6 +35,9 @@
                 <div class="rounded-md overflow-hidden mt-5">
                     {{ form.content }}
                 </div>
+                <button type="submit" class="mt-5 btn btn-primary btn-md">
+                    SUBMIT
+                </button>
             </form>
         </div>
     </div>
