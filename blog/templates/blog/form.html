@@ -6,7 +6,33 @@
             <form action="">
                 {% csrf_token %}
                 {{ form.media }}
-                {{ form.as_p }}
+ 
+                <input type="text"
+                       name="title"
+                       placeholder="Title"
+                       class="input input-bordered input-ghost w-full"
+                       {% if form.title.value != None %} value="{{ form.title.value }}" {% endif %}>
+                <input type="text"
+                       name="excerpt"
+                       placeholder="Excerpt"
+                       class="input input-bordered input-ghost w-full mt-5"
+                       {% if form.excerpt.value != None %} value="{{ form.excerpt.value }}" {% endif %}>
+                <div class="grid grid-cols-2 mt-5 gap-5">
+                    <input type="file"
+                           name="thumbnail"
+                           class="file-input file-input-bordered file-input-ghost w-">
+                    <select name="{{ form.category.html_name }}"
+                            id="{{ form.category.id_for_label }}"
+                            class="select w-full select-ghost select-bordered">
+                        {% for widget in form.category.subwidgets %}
+                            {{ widget }}
+                        {% endfor %}
+                    </select>
+                </div>
+ 
+                <div class="rounded-md overflow-hidden mt-5">
+                    {{ form.content }}
+                </div>
             </form>
         </div>
     </div>
