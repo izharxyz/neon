@@ -1,8 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import get_object_or_404, redirect, render
 from django.views import View
+
+from blog.forms import PostCreationForm
 from blog.models import Category, Post
-from .forms import PostCreationForm
 
 
 class IndexView(View):
@@ -28,7 +30,16 @@ class PostCreateView(LoginRequiredMixin, View):
         return render(request, 'blog/form.html', {'form': form})
 
     def post(slef, request):
-        form = PostCreationForm()
+        form = PostCreationForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.slug = post.title
+            messages.success(request, 'Blog post created successfully')
+            return redirect('index')
+        print(request.POST)
+        print('\n\n\n\n ######################')
+        print(form.errors.as_data())
         return render(request, 'blog/form.html', {'form': form})
 
 
