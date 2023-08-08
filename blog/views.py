@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404, redirect, render
+from django.utils.text import slugify
 from django.views import View
 
 from blog.forms import PostCreationForm
@@ -34,9 +35,10 @@ class PostCreateView(LoginRequiredMixin, View):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
-            post.slug = post.title
+            post.slug = slugify(post.title)
+            post.save()
             messages.success(request, 'Blog post created successfully')
-            return redirect('index')
+            return redirect('post-detail', post.slug)
         return render(request, 'blog/form.html', {'form': form})
 
 
