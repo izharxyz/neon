@@ -4,6 +4,7 @@
     "build": "postcss static/css/main.css -o static/css/main.min.css; rm -rf ./static/"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9",
     "autoprefixer": "^10.4.14",
     "daisyui": "^3.2.1",
     "postcss": "^8.4.26",

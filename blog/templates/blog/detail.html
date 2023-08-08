@@ -13,6 +13,8 @@
                 <div class="flex flex-row gap-5 items-center text-base">
                     <img src="{{ post.category.image.url }}"
                          alt="author"
+                         height="48"
+                         width="48"
                          class="w-12 h-12 rounded-full object-cover">
                     <div class="text-sm">
                         <p class="font-semibold">
@@ -98,14 +100,16 @@
                     </svg>
                 </div>
             </div>
-            <div class="mt-5">
+            <div class="mt-10">
                 <img src="{{ post.thumbnail.url }}"
                      alt="{{ post.title }}"
+                     height="full"
+                     width="full"
                      class="w-full h-full rounded-box object-cover">
             </div>
-            <div class="mt-5 text-lg">
+            <article class="mt-10 text-lg prose max-w-max">
                 {{ post.content|safe }}
-            </div>
+            </article>
         </div>
     </div>
 {% endblock content %}
