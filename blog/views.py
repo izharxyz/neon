@@ -45,4 +45,6 @@ class PostCreateView(LoginRequiredMixin, View):
 class PostDetailView(View):
     def get(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
+        post.views = post.views + 1
+        post.save()
         return render(request, 'blog/detail.html', {'post': post})
