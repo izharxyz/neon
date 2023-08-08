@@ -2549,6 +2549,12 @@ html {
 .card-normal .card-title {
   margin-bottom: 0.75rem;
 }
+.prose img {
+  border-radius: var(--rounded-box, 1rem);
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .static {
   position: static;
 }
@@ -2598,9 +2604,6 @@ html {
 }
 .ml-1 {
   margin-left: 0.25rem;
-}
-.ml-2 {
-  margin-left: 0.5rem;
 }
 .ml-5 {
   margin-left: 1.25rem;
@@ -2865,6 +2868,9 @@ html {
 .p-16 {
   padding: 4rem;
 }
+.p-3 {
+  padding: 0.75rem;
+}
 .p-5 {
   padding: 1.25rem;
 }
@@ -3001,6 +3007,7 @@ html {
 .duration-500 {
   transition-duration: 500ms;
 }
+
 @media (min-width: 1024px) {
 
   .lg\:card-side {
@@ -3035,14 +3042,17 @@ html {
        object-fit: cover;
   }
 }
+
 .hover\:text-secondary:hover {
   --tw-text-opacity: 1;
   color: hsl(var(--s) / var(--tw-text-opacity));
 }
+
 .group:hover .group-hover\:translate-x-5 {
   --tw-translate-x: 1.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+
 @media (min-width: 768px) {
 
   .md\:col-span-3 {
@@ -3113,6 +3123,10 @@ html {
     padding: 5rem;
   }
 
+  .md\:p-5 {
+    padding: 1.25rem;
+  }
+
   .md\:px-5 {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
@@ -3137,6 +3151,7 @@ html {
     line-height: 1.75rem;
   }
 }
+
 @media (min-width: 1024px) {
 
   .lg\:col-span-4 {
@@ -3180,6 +3195,7 @@ html {
     line-height: 1;
   }
 }
+
 @media (orientation: portrait) {
 
   .portrait\:h-screen {
@@ -3187,6 +3203,7 @@ html {
     height: 100dvh;
   }
 }
+
 @media (orientation: landscape) {
 
   .landscape\:min-h-screen {

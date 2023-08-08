@@ -15,4 +15,7 @@
     .btn-retro-accent {
         @apply btn-accent border-b-4 border-r-4 border-accent-content hover:border-accent-content;
     }
+    .prose img {
+        @apply rounded-box w-full object-cover;
+    }
 }
