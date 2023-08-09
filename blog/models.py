@@ -18,7 +18,8 @@ class Post(models.Model):
     slug = models.SlugField(null=False, max_length=255, unique=True)
     excerpt = models.CharField(
         max_length=255, null=False)
-    thumbnail = models.ImageField(upload_to='static/images/thumbnails/')
+    thumbnail = models.ImageField(
+        upload_to='static/images/thumbnails/', default='static/images/default.webp')
     category = models.ForeignKey(
         Category, on_delete=models.SET_NULL, null=True)
 
