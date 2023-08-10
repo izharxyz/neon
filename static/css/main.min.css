@@ -2806,6 +2806,9 @@ html {
   height: 100vh;
   height: 100dvh;
 }
+.h-96 {
+  height: 24rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -3061,6 +3064,9 @@ html {
 }
 .capitalize {
   text-transform: capitalize;
+}
+.normal-case {
+  text-transform: none;
 }
 .tracking-wide {
   letter-spacing: 0.025em;
