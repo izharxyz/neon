@@ -66,3 +66,16 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         messages.success(self.request, 'Blog post updated successfully')
         slug = self.kwargs['slug']
         return reverse_lazy('post-detail', kwargs={'slug': slug})
+
+
+class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Post
+    template_name = 'blog/delete.html'
+
+    def test_func(self) -> bool | None:
+        post = get_object_or_404(Post, slug=self.kwargs['slug'])
+        return self.request.user == post.author
+
+    def get_success_url(self):
+        messages.success(self.request, 'Blog post deleted successfully')
+        return reverse_lazy('index')
