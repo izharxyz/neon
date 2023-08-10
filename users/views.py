@@ -1,8 +1,11 @@
-from django.shortcuts import HttpResponse, redirect, render
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
+from django.shortcuts import HttpResponse, get_object_or_404, redirect, render
 from django.views import View
-from .forms import UserRegisterForm
+
+from users.forms import UserRegisterForm
+from users.models import Profile
 
 
 class RegisterView(View):
@@ -51,3 +54,18 @@ class PasswordResetView(View):
     def get(self, request):
         messages.error(request, 'mujhe bhi nhi pata, tu gaand mara!')
         return redirect('login')
+
+
+class ProfileView(View):
+    def get(self, request, username):
+        user = get_object_or_404(User, username=username)
+        user_is_owner = False
+        if user == request.user:
+            user_is_owner = True
+        profile = get_object_or_404(Profile, user=user)
+
+        ctx = {
+            'user_is_owner': user_is_owner,
+            'profile': profile
+        }
+        return render(request, 'users/profile.html', ctx)
