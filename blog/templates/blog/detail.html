@@ -45,7 +45,7 @@
                             </svg>
                             <span class="hidden md:block">UPDATE</span>
                         </a>
-                        <a href="/" class="btn btn-error btn-sm">
+                        <a href="{% url 'post-delete' post.slug %}" class="btn btn-error btn-sm">
                             <!-- delete icon -->
                             <svg class="h-5 w-5"
                                  xmlns="http://www.w3.org/2000/svg"
