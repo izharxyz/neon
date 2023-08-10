@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block navbar %}
+{% endblock navbar %}
+ 
+{% block content %}
+    <div class="h-screen w-screen flex items-center justify-center">
+        <div>
+            <img src="{{ profile.profile_pic.url }}"
+                 alt="{{ profile.user.usename }}"
+                 width="{{ profile.profile_pic.width }}"
+                 height="{{ profile.profile_pic.height }}"
+                 class="h-96 w-64 rounded-box object-cover">
+ 
+            {% if user_is_owner %}
+                <button class="w-full btn btn-accent mt-5">
+                    EDIT
+                </button>
+            {% endif %}
+ 
+        </div>
+    </div>
+{% endblock content %}
+
+{% block footer %}
+{% endblock footer %}
