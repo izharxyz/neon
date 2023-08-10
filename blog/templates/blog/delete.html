@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="max-w-7xl mx-auto p-5 min-h-screen text-primary-content flex items-center justify-center">
+        <div class="p-20 rounded-box bg-base-100 bg-opacity-70 backdrop-blur-3xl">
+            <form method="post">
+                {% csrf_token %}
+                <p class="text-base-content text-lg">
+                    Are you sure you want to delete <span class="font-bold">"{{ object }}"</span>?
+                </p>
+                {{ form }}
+                <div class="flex flex-row justify-between items-center mt-5">
+                    <a href="{% url 'index' %}" class="btn btn-info">Go back</a>
+                    <input type="submit" value="Confirm" class="btn btn-error">
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
