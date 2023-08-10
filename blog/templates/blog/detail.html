@@ -11,16 +11,18 @@
             </h3>
             <div class="mt-5 flex items-center justify-between w-full">
                 <div class="flex flex-row gap-5 items-center text-base">
-                    <img src="{{ post.category.image.url }}"
-                         alt="author"
-                         height="48"
-                         width="48"
-                         class="w-12 h-12 rounded-full object-cover">
+                    <a href="{% url 'user-profile' post.author.username %}">
+                        <img src="{{ profile.profile_pic.url }}"
+                             alt="author"
+                             height="48"
+                             width="48"
+                             class="w-12 h-12 rounded-full object-cover">
+                    </a>
                     <div class="text-sm">
                         <p class="font-semibold">
-                            {{ post.author.username }} <span class="ml-1 text-primary font-normal"><a href="/">Follow</a></span>
+                            <a href="{% url 'user-profile' post.author.username %}" class="mr-1">{{ post.author.username }}</a> &#x2022; <span class="ml-1 text-primary font-normal"><a href="/">Follow</a></span>
                         </p>
-                        <div class="text-neutral-content flex gap-2 items-center">
+                        <div class="text-neutral-content flex gap-2 items-center mt-1">
                             <svg class="text-info h-4 w-4"
                                  xmlns="http://www.w3.org/2000/svg"
                                  width="24"
