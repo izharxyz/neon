@@ -4,7 +4,7 @@
         <div class="navbar-start">
             <!-- logo icon -->
             <a href="/">
-                <svg class="h-6 w-6 text-base-content"
+                <svg class="h-7 w-7 text-base-content"
                      xmlns="http://www.w3.org/2000/svg"
                      width="10"
                      height="10"
@@ -14,9 +14,9 @@
             </a>
         </div>
         <div class="hidden md:flex md:gap-2 navbar-center">
-            <button class="btn join-item btn-ghost btn-sm">
+            <a href="/" class="btn join-item btn-ghost btn-sm">
                 Home
-            </button>
+            </a>
             <button class="btn join-item btn-ghost btn-sm">
                 Categories
             </button>
@@ -55,7 +55,7 @@
                     <polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
                 </svg>
             </label>
-            <div class="hidden md:flex md:gap-2">
+            <div class="hidden md:flex md:gap-2 items-center">
                 {% if user.is_authenticated %}
                     <a href="{% url 'post-create' %}" class="btn btn-sm btn-primary">
                         <!-- write (pen) icon -->
@@ -68,34 +68,23 @@
                         </svg>
                         Write
                     </a>
-                    <a href="{% url 'logout' %}" class="btn btn-secondary btn-sm">
-                        <!-- logout icon -->
-                        <svg class="h-5 w-5"
-                             xmlns="http://www.w3.org/2000/svg"
-                             width="20"
-                             height="20"
-                             viewBox="0 0 24 24">
-                            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                            <path d="M14 8V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2v-2" />
-                            <path d="M9 12h12l-3-3m0 6l3-3" />
-                            </g>
-                        </svg>
-                        Logout
+                    <a href="{% url 'user-profile' user.username %}" class="ml-2">
+                        <img src="{{ user_profile.profile_pic.url }}"
+                             alt="{{ user.usename }}"
+                             class="w-7 h-7 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                     </a>
                 {% else %}
-                    <a href="{% url 'login' %}" class="btn btn-primary btn-sm">
-                        <!-- login icon -->
-                        <svg class="h-5 w-5"
+                    <a href="{% url 'post-create' %}" class="btn btn-sm btn-primary">
+                        <!-- write (pen) icon -->
+                        <svg class="h-4 w-4"
                              xmlns="http://www.w3.org/2000/svg"
                              width="20"
                              height="20"
-                             viewBox="0 0 24 24">
-                            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                            <path d="M14 8V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2v-2" />
-                            <path d="M20 12H7l3-3m0 6l-3-3" />
-                            </g>
+                             viewBox="0 0 14 14">
+                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M5 12.24L.5 13.5L1.76 9L10 .8a1 1 0 0 1 1.43 0l1.77 1.78a1 1 0 0 1 0 1.42Z" />
                         </svg>
-                    Login</a>
+                        Write
+                    </a>
                     <a href="{% url 'register' %}" class="btn btn-secondary btn-sm">
                         <!-- register icon -->
                         <svg class="h-5 w-5"
