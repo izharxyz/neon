@@ -8,6 +8,7 @@ from django.views.generic.edit import DeleteView, UpdateView
 
 from blog.forms import PostCreationForm
 from blog.models import Category, Post
+from users.models import Profile
 
 
 class IndexView(View):
@@ -50,7 +51,9 @@ class PostDetailView(View):
         post = get_object_or_404(Post, slug=slug)
         post.views = post.views + 1
         post.save()
-        return render(request, 'blog/detail.html', {'post': post})
+
+        profile = get_object_or_404(Profile, user=post.author)
+        return render(request, 'blog/detail.html', {'post': post, 'profile': profile})
 
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
