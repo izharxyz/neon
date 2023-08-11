@@ -1,14 +1,12 @@
-from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.views import LogoutView
 from django.urls import path
 
-from users.views import (CheckUsernameExists, PasswordResetView, ProfileView,
-                         RegisterView)
+from users.views import (CheckUsernameExists, CustomLoginView,
+                         PasswordResetView, ProfileView, RegisterView)
 
 urlpatterns = [
     path('register/', RegisterView.as_view(), name='register'),
-    path('login/', LoginView.as_view(
-        template_name='users/login.html',
-        redirect_authenticated_user=True), name='login'),
+    path('login/', CustomLoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(template_name='users/logout'), name='logout'),
     path('check-username-exists/', CheckUsernameExists.as_view(),
          name='check-username-exixts'),
