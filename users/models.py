@@ -6,6 +6,10 @@ from blog.models import Post
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    full_name = models.CharField(
+        max_length=128, null=True, blank=True, default='No Name')
+    title = models.CharField(max_length=128, null=True,
+                             blank=True, default='enthusiast')
     profile_pic = models.ImageField(
         upload_to='user/profiles', default='user/profiles/default')
     bio = models.CharField(max_length=1000, null=True, blank=True)
