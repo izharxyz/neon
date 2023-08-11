@@ -7,7 +7,7 @@ from blog.models import Post
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     profile_pic = models.ImageField(
-        upload_to='static/images/profiles', default='static/images/profiles/default.webp')
+        upload_to='user/profiles', default='user/profiles/default')
     bio = models.CharField(max_length=1000, null=True, blank=True)
 
     github = models.URLField(null=True, blank=True, max_length=64)
