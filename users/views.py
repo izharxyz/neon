@@ -1,7 +1,9 @@
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
+from django.contrib.auth.views import LoginView
 from django.shortcuts import HttpResponse, get_object_or_404, redirect, render
+from django.urls import reverse
 from django.views import View
 
 from users.forms import UserRegisterForm
@@ -29,6 +31,16 @@ class RegisterView(View):
             return redirect('login')
         else:
             return render(request, 'users/register.html', {'form': form})
+
+
+class CustomLoginView(LoginView):
+    template_name = 'users/login.html'
+    redirect_authenticated_user = True
+
+    def get_success_url(self) -> str:
+        url = self.get_redirect_url()
+        print(url)
+        return url or reverse('user-profile', kwargs={'username': self.request.user.username})
 
 
 class CheckUsernameExists(View):
