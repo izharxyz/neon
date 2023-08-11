@@ -397,22 +397,21 @@ html {
 }
 
 :root {
-  color-scheme: dark;
-  --pf: 198 93% 53%;
-  --sf: 234 89% 67%;
-  --af: 329 86% 63%;
-  --b2: 222 47% 4%;
-  --b3: 0 0% 0%;
-  --bc: 229 7% 80%;
-  --pc: 202 34% 14%;
-  --sc: 239 22% 15%;
-  --ac: 332 26% 15%;
-  --nc: 221 7% 82%;
-  --suc: 169 31% 13%;
-  --wac: 39 36% 14%;
-  --erc: 354 28% 15%;
+  color-scheme: light;
+  --pf: 353 74% 60%;
+  --sf: 254 86% 70%;
+  --af: 181 56% 63%;
+  --nf: 336 43% 41%;
+  --b2: 318 46% 82%;
+  --b3: 318 46% 75%;
+  --pc: 356 26% 14%;
+  --sc: 256 20% 15%;
+  --ac: 181 16% 15%;
+  --inc: 239 85% 93%;
+  --suc: 126 38% 89%;
+  --wac: 29 59% 11%;
+  --erc: 11 100% 91%;
   --rounded-box: 1rem;
-  --rounded-btn: 0.5rem;
   --rounded-badge: 1.9rem;
   --animation-btn: 0.25s;
   --animation-input: .2s;
@@ -421,17 +420,18 @@ html {
   --border-btn: 1px;
   --tab-border: 1px;
   --tab-radius: 0.5rem;
-  --p: 198 93% 60%;
-  --s: 234 89% 74%;
-  --a: 329 86% 70%;
-  --n: 217 33% 17%;
-  --nf: 217 30% 22%;
-  --b1: 222 47% 11%;
-  --in: 198 90% 48%;
-  --inc: 0 0% 0%;
-  --su: 172 66% 50%;
-  --wa: 41 88% 64%;
-  --er: 351 95% 71%;
+  --p: 353 74% 67%;
+  --s: 254 86% 77%;
+  --a: 181 56% 70%;
+  --n: 336 43% 48%;
+  --nc: 318 46% 89%;
+  --b1: 318 46% 89%;
+  --bc: 344 38% 28%;
+  --in: 221 83% 53%;
+  --su: 142 76% 36%;
+  --wa: 32 95% 44%;
+  --er: 0 72% 51%;
+  --rounded-btn: 1.9rem;
 }
 
 *, ::before, ::after {
@@ -3211,16 +3211,12 @@ html {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
-.duration-200 {
-  transition-duration: 200ms;
-}
 .duration-300 {
   transition-duration: 300ms;
 }
 .duration-500 {
   transition-duration: 500ms;
 }
-
 @media (min-width: 1024px) {
 
   .lg\:card-side {
@@ -3255,32 +3251,22 @@ html {
        object-fit: cover;
   }
 }
-
 .hover\:bg-accent:hover {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--a) / var(--tw-bg-opacity));
 }
-
 .hover\:text-accent:hover {
   --tw-text-opacity: 1;
   color: hsl(var(--a) / var(--tw-text-opacity));
 }
-
 .hover\:text-accent-content:hover {
   --tw-text-opacity: 1;
   color: hsl(var(--ac) / var(--tw-text-opacity));
 }
-
-.hover\:text-secondary:hover {
-  --tw-text-opacity: 1;
-  color: hsl(var(--s) / var(--tw-text-opacity));
-}
-
 .group:hover .group-hover\:translate-x-5 {
   --tw-translate-x: 1.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-
 @media (min-width: 768px) {
 
   .md\:col-span-3 {
@@ -3375,7 +3361,6 @@ html {
     line-height: 1.75rem;
   }
 }
-
 @media (min-width: 1024px) {
 
   .lg\:col-span-4 {
@@ -3435,7 +3420,6 @@ html {
     line-height: 1;
   }
 }
-
 @media (orientation: portrait) {
 
   .portrait\:h-screen {
@@ -3443,7 +3427,6 @@ html {
     height: 100dvh;
   }
 }
-
 @media (orientation: landscape) {
 
   .landscape\:min-h-screen {
