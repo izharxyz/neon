@@ -43,6 +43,7 @@
                     </h2>
                     <form action="{% url 'login' %}" method="POST">
                         {% csrf_token %}
+                        <input type="hidden" name="next" value="{{ next }}">
                         <input type="text"
                                name="username"
                                placeholder="Username"
