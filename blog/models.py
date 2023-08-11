@@ -6,7 +6,7 @@ from django.db import models
 class Category(models.Model):
     name = models.CharField(max_length=64, null=False)
     image = models.ImageField(
-        upload_to='static/images/category/', default='static/images/category/default.webp')
+        upload_to='blog/categories/', default='blog/categories/default.webp')
 
     def __str__(self) -> str:
         return self.name
@@ -19,7 +19,7 @@ class Post(models.Model):
     excerpt = models.CharField(
         max_length=255, null=False)
     thumbnail = models.ImageField(
-        upload_to='blog/thumbnails/', default='blog/images/default')
+        upload_to='blog/thumbnails/', default='blog/thumbnails/default')
     category = models.ForeignKey(
         Category, on_delete=models.SET_NULL, null=True)
 
