@@ -23,6 +23,14 @@ class RegisterView(View):
 
     def post(self, request):
         form = UserRegisterForm(request.POST)
+        email = str(request.POST.get('email'))
+        valid_email_providers = ('gmail.com', 'protonmail.com', 'pm.me',
+                                 'yahoo.com', 'myyahoo.com', 'outlook.com', 'hotmail.com')
+        if not email.endswith(valid_email_providers):
+            inavlid_email = True
+            messages.error(request, 'bad email provider')
+            return render(request, 'users/register.html',
+                          {'form': form, 'invalid_email': inavlid_email})
         if form.is_valid():
             user = form.save(commit=False)
             user.username = user.username.lower()

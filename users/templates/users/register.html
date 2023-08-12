@@ -38,7 +38,11 @@
                         Register
                     </h2>
                     <div id="username-check" class="h-4 flex flex-row">
-                        <small class="text-error ml-1">{{ form.non_field_errors }}</small>
+                        <small class="text-error ml-1">{{ form.non_field_errors }}
+                            {% if invalid_email %}
+                                please use reputated email provider like gmail or yahoo
+                            {% endif %}
+                        </small>
                     </div>
                     <form action="{% url 'register' %}" method="post">
                         {% csrf_token %}
