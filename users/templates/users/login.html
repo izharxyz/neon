@@ -40,11 +40,12 @@
                         <input type="text"
                                name="username"
                                placeholder="Username"
-                               class="input input-bordered input-ghost input-sm md:input-md w-full mt-4" />
+                               {% if form.username.value != None %} value="{{ form.username.value }}" {% endif %}
+                               class="input input-bordered input-ghost input-sm md:input-md w-full mt-4 {% if form.username.errors %} input-error {% endif %}" />
                         <input type="password"
                                name="password"
                                placeholder="Password"
-                               class="input input-bordered input-ghost input-sm md:input-md w-full mt-4" />
+                               class="input input-bordered input-ghost input-sm md:input-md w-full mt-4 {% if form.password.errors %} input-error {% endif %}" />
                         <button type="submit" class="btn btn-sm md:btn-md btn-primary w-full mt-4">
                             Sign In
                         </button>
