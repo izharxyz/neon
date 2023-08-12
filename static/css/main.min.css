@@ -2522,6 +2522,19 @@ html {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.file-input-sm {
+  height: 2rem;
+  padding-right: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  line-height: 2;
+}
+.file-input-sm::file-selector-button {
+  margin-right: 0.75rem;
+  height: 1.875rem;
+  min-height: 1.875rem;
+  font-size: 0.875rem;
+}
 .input-md {
   height: 3rem;
   padding-left: 1rem;
@@ -2529,6 +2542,13 @@ html {
   font-size: 0.875rem;
   line-height: 1.25rem;
   line-height: 2;
+}
+.input-sm {
+  height: 2rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 2rem;
 }
 .join.join-vertical .join-item:first-child:not(:last-child),
   .join.join-vertical *:first-child:not(:last-child) .join-item {
@@ -2557,6 +2577,18 @@ html {
   border-top-left-radius: 0;
   border-bottom-right-radius: inherit;
   border-top-right-radius: inherit;
+}
+.select-sm {
+  height: 2rem;
+  padding-left: 0.75rem;
+  padding-right: 2rem;
+  font-size: 0.875rem;
+  line-height: 2rem;
+  min-height: 2rem;
+}
+[dir="rtl"] .select-sm {
+  padding-right: 0.75rem;
+  padding-left: 2rem;
 }
 :where(.toast) {
   right: 0px;
@@ -2836,6 +2868,12 @@ html {
   height: 100vh;
   height: 100dvh;
 }
+.h-3 {
+  height: 0.75rem;
+}
+.h-8 {
+  height: 2rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -2877,6 +2915,12 @@ html {
 }
 .w-screen {
   width: 100vw;
+}
+.w-3 {
+  width: 0.75rem;
+}
+.w-8 {
+  width: 2rem;
 }
 .min-w-full {
   min-width: 100%;
@@ -3217,6 +3261,40 @@ html {
 .duration-500 {
   transition-duration: 500ms;
 }
+
+@media (min-width: 768px) {
+
+  .md\:btn-md {
+    height: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    min-height: 3rem;
+    font-size: 0.875rem;
+  }
+
+  .btn-square:where(.md\:btn-md) {
+    height: 3rem;
+    width: 3rem;
+    padding: 0px;
+  }
+
+  .btn-circle:where(.md\:btn-md) {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 9999px;
+    padding: 0px;
+  }
+
+  .md\:input-md {
+    height: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    line-height: 2;
+  }
+}
+
 @media (min-width: 1024px) {
 
   .lg\:card-side {
@@ -3251,22 +3329,27 @@ html {
        object-fit: cover;
   }
 }
+
 .hover\:bg-accent:hover {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--a) / var(--tw-bg-opacity));
 }
+
 .hover\:text-accent:hover {
   --tw-text-opacity: 1;
   color: hsl(var(--a) / var(--tw-text-opacity));
 }
+
 .hover\:text-accent-content:hover {
   --tw-text-opacity: 1;
   color: hsl(var(--ac) / var(--tw-text-opacity));
 }
+
 .group:hover .group-hover\:translate-x-5 {
   --tw-translate-x: 1.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+
 @media (min-width: 768px) {
 
   .md\:col-span-3 {
@@ -3295,6 +3378,10 @@ html {
 
   .md\:h-24 {
     height: 6rem;
+  }
+
+  .md\:h-5\/6 {
+    height: 83.333333%;
   }
 
   .md\:w-24 {
@@ -3361,6 +3448,7 @@ html {
     line-height: 1.75rem;
   }
 }
+
 @media (min-width: 1024px) {
 
   .lg\:col-span-4 {
@@ -3389,6 +3477,10 @@ html {
 
   .lg\:grid {
     display: grid;
+  }
+
+  .lg\:h-5\/6 {
+    height: 83.333333%;
   }
 
   .lg\:w-96 {
@@ -3420,6 +3512,7 @@ html {
     line-height: 1;
   }
 }
+
 @media (orientation: portrait) {
 
   .portrait\:h-screen {
@@ -3427,6 +3520,7 @@ html {
     height: 100dvh;
   }
 }
+
 @media (orientation: landscape) {
 
   .landscape\:min-h-screen {
