@@ -5,7 +5,6 @@ from django.contrib.auth.views import LoginView
 from django.shortcuts import HttpResponse, get_object_or_404, redirect, render
 from django.urls import reverse
 from django.views import View
-from django.views.generic.edit import UpdateView
 
 from users.forms import UserProfileForm, UserRegisterForm
 from users.models import Profile
@@ -93,8 +92,16 @@ class ProfileUpdateView(LoginRequiredMixin, UserPassesTestMixin, View):
         profile = get_object_or_404(Profile, user=request.user)
         if not profile.user.username == username:
             return redirect('user-profile-update', profile.user.username)
-        form = UserProfileForm()
+        form = UserProfileForm(instance=profile)
         return render(request, 'users/profile_update.html', {'form': form, 'profile': profile})
 
     def post(self, request, username):
-        pass
+        profile = get_object_or_404(Profile, user=request.user)
+        form = UserProfileForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            form.save()
+            messages.success(
+                request, f"{username}'s profile updated successfully")
+            return redirect('user-profile', username)
+        messages.error(request, 'there were errors in form')
+        return render(request, 'users/profile_update.html', {'form': form, 'profile': profile})
