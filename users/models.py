@@ -7,17 +7,20 @@ from blog.models import Post
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     full_name = models.CharField(
-        max_length=128, null=True, blank=True, default='user is too lazy to set name')
+        max_length=128, null=True, default='user is too lazy to set name')
     title = models.CharField(max_length=128, null=True,
-                             blank=True, default='user is too lazy to set title')
+                             default='user is too lazy to set title')
     profile_pic = models.ImageField(
         upload_to='user/profiles', default='user/profiles/default')
-    bio = models.TextField(max_length=1000, null=True,
-                           blank=True, default='user is too lazy to set bio')
+    bio = models.CharField(max_length=1000, null=True,
+                           default='user is too lazy to set bio')
 
-    github = models.URLField(null=True, blank=True, max_length=64)
-    instagram = models.URLField(null=True, blank=True, max_length=64)
-    twitter = models.URLField(null=True, blank=True, max_length=64)
+    github = models.URLField(null=True, max_length=64,
+                             default='https://github.com/')
+    instagram = models.URLField(
+        null=True, max_length=64, default='https://www.instagram.com/')
+    twitter = models.URLField(null=True, max_length=64,
+                              default='https://twitter.com/')
 
     """ followers = models.ManyToManyField()
     follows = models.ManyToManyField(Post)
