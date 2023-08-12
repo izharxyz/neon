@@ -71,7 +71,7 @@
                     <a href="{% url 'user-profile' user.username %}" class="ml-2">
                         <img src="{{ user_profile.profile_pic.url }}"
                              alt="{{ user.usename }}"
-                             class="w-7 h-7 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                             class="w-7 h-7 rounded-full object-cover ring ring-primary ring-offset-base-100 ring-offset-2">
                     </a>
                 {% else %}
                     <a href="{% url 'post-create' %}" class="btn btn-sm btn-primary">
