@@ -2,7 +2,8 @@ from django.contrib.auth.views import LogoutView
 from django.urls import path
 
 from users.views import (CheckUsernameExists, CustomLoginView,
-                         PasswordResetView, ProfileView, RegisterView)
+                         PasswordResetView, ProfileUpdateView, ProfileView,
+                         RegisterView)
 
 urlpatterns = [
     path('register/', RegisterView.as_view(), name='register'),
@@ -12,5 +13,7 @@ urlpatterns = [
          name='check-username-exixts'),
     path('password-reset/', PasswordResetView.as_view(), name='password-reset'),
 
-    path('profile/<slug:username>/', ProfileView.as_view(), name='user-profile')
+    path('profile/<slug:username>/', ProfileView.as_view(), name='user-profile'),
+    path('profile/<slug:username>/update/',
+         ProfileUpdateView.as_view(), name='user-profile-update')
 ]

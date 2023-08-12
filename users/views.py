@@ -5,6 +5,7 @@ from django.contrib.auth.views import LoginView
 from django.shortcuts import HttpResponse, get_object_or_404, redirect, render
 from django.urls import reverse
 from django.views import View
+from django.views.generic.edit import UpdateView
 
 from users.forms import UserRegisterForm
 from users.models import Profile
@@ -81,3 +82,17 @@ class ProfileView(View):
             'profile': profile
         }
         return render(request, 'users/profile.html', ctx)
+
+
+class ProfileUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Profile
+    template_name = 'users/profile_update.html'
+
+    def test_func(self) -> bool | None:
+        profile = get_object_or_404(Profile, user=self.request.user)
+        return profile.user == self.request.user
+
+    def get_success_url(self) -> str:
+        messages.success(
+            self.request, f"{self.request.user.username}'s profile updated successfylly")
+        return reverse('user-profile', kwargs={'username': self.kwargs['username']})
