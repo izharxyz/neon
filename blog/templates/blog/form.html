@@ -14,7 +14,7 @@
                         <input type="text"
                                name="title"
                                placeholder="Enter a unique title"
-                               class="input input-error input-bordered input-ghost w-full"
+                               class="input input-error input-bordered input-ghost w-full input-sm"
                                {% if form.title.value != None %} value="{{ form.title.value }}" {% endif %}>
 
                         <div class="text-xs text-error flex flex-col gap-2 mt-2 mx-2">
@@ -27,7 +27,7 @@
                     <input type="text"
                            name="title"
                            placeholder="Enter a unique title"
-                           class="input input-bordered input-ghost w-full"
+                           class="input input-bordered input-ghost w-full input-sm"
                            {% if form.title.value != None %} value="{{ form.title.value }}" {% endif %}>
                 {% endif %}
 
@@ -36,7 +36,7 @@
                         <input type="text"
                                name="excerpt"
                                placeholder="Excerpt"
-                               class="input input-error input-bordered input-ghost w-full mt-5"
+                               class="input input-error input-bordered input-ghost w-full input-sm mt-5"
                                {% if form.excerpt.value != None %} value="{{ form.excerpt.value }}" {% endif %}>
                     </div>
                     <div class="text-xs text-error flex flex-col gap-2 mt-2 mx-2">
@@ -48,17 +48,17 @@
                     <input type="text"
                            name="excerpt"
                            placeholder="Excerpt"
-                           class="input input-bordered input-ghost w-full mt-5"
+                           class="input input-bordered input-ghost w-full input-sm mt-5"
                            {% if form.excerpt.value != None %} value="{{ form.excerpt.value }}" {% endif %}>
                 {% endif %}
  
                 <div class="grid grid-cols-2 mt-5 gap-5">
                     <input type="file"
                            name="thumbnail"
-                           {% if form.thumbnail.errors %} class="file-input file-input-error file-input-bordered file-input-ghost w-full" {% else %} class="file-input file-input-bordered file-input-ghost w-full" {% endif %}>
+                           {% if form.thumbnail.errors %} class="file-input file-input-error file-input-bordered file-input-sm file-input-ghost w-full" {% else %} class="file-input file-input-bordered file-input-sm file-input-ghost w-full" {% endif %}>
                     <select name="{{ form.category.html_name }}"
                             id="{{ form.category.id_for_label }}"
-                            {% if form.category.errors %} class="select w-full select-error select-ghost select-bordered" {% else %} class="select w-full select-ghost select-bordered" {% endif %}>
+                            {% if form.category.errors %} class="select w-full select-error select-ghost select-sm select-bordered" {% else %} class="select w-full select-ghost select-sm select-bordered" {% endif %}>
                         {% for widget in form.category.subwidgets %}
                             {{ widget }}
                         {% endfor %}
@@ -70,7 +70,7 @@
                 </div>
  
  
-                <button type="submit" class="mt-5 btn btn-primary btn-md w-full">
+                <button type="submit" class="mt-5 btn btn-sm btn-primary w-full">
                     Submit and publish it
                 </button>
  

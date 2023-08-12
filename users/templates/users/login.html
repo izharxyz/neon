@@ -8,7 +8,7 @@
 {% endblock navbar %}
 {% block content %}
     <div class="w-screen landscape:min-h-screen portrait:h-screen flex justify-center items-center">
-        <div class="card lg:card-side bg-base-100 bg-opacity-70 backdrop-blur-3xl shadow-xl w-11/12 md:w-5/6 h-5/6 lg:grid lg:grid-cols-2">
+        <div class="card lg:card-side bg-base-100 bg-opacity-70 backdrop-blur-3xl shadow-xl w-11/12 md:w-5/6 h-fit lg:h-5/6 lg:grid lg:grid-cols-2">
             <!-- right side of card which has image in it; hidden of small to medium devices-->
             <figure class="relative">
                 <img src="{% static 'images/register_bg.png' %}"
@@ -31,13 +31,6 @@
             <!-- Left side of card which has form in it -->
             <div class="card-body flex justify-center items-center p-0">
                 <div class="w-full p-5 md:p-10">
-                    {% if messages %}
-                        {% for message in messages %}
-                            <h3 class="text-{{ message.tags }} text-md mb-4">
-                                {{ message }}
-                            </h3>
-                        {% endfor %}
-                    {% endif %}
                     <h2 class="card-title">
                         Login
                     </h2>
@@ -47,19 +40,19 @@
                         <input type="text"
                                name="username"
                                placeholder="Username"
-                               class="input input-bordered input-ghost input-md w-full mt-4" />
+                               class="input input-bordered input-ghost input-sm md:input-md w-full mt-4" />
                         <input type="password"
                                name="password"
                                placeholder="Password"
-                               class="input input-bordered input-ghost input-md w-full mt-4" />
-                        <button type="submit" class="btn btn-primary w-full mt-4">
+                               class="input input-bordered input-ghost input-sm md:input-md w-full mt-4" />
+                        <button type="submit" class="btn btn-sm md:btn-md btn-primary w-full mt-4">
                             Sign In
                         </button>
                     </form>
                     <div class="divider mt-5 lg:mt-10">
                         OR
                     </div>
-                    <button class="btn btn-outline w-full mt-2 lg:mt-5">
+                    <button class="btn btn-sm md:btn-md btn-outline w-full mt-2 lg:mt-5">
                         <img src="{% static 'icons/google.svg' %}"
                              alt="google"
                              class="w-5 h-5"
@@ -67,7 +60,7 @@
                              width="20px" />
                         Sign in with Google
                     </button>
-                    <button class="btn btn-outline w-full mt-4">
+                    <button class="btn btn-sm md:btn-md btn-outline w-full mt-4">
                         <img src="{% static 'icons/gh.svg' %}"
                              alt="github"
                              class="w-5 h-5"
@@ -77,7 +70,7 @@
                     </button>
                     <div class="flex flex-row justify-between mt-4">
                         <a href="{% url 'password-reset' %}" class="link text-md mt-2">Forgot password?</a>
-                        <a href="{% url 'register' %}" class="btn btn-accent">Register</a>
+                        <a href="{% url 'register' %}" class="btn btn-sm md:btn-md btn-accent">Register</a>
                     </div>
                 </div>
             </div>
