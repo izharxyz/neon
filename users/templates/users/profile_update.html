@@ -11,8 +11,26 @@
  
                 <form action="{% url 'user-profile-update' profile.user.username %}"
                       method="post"
-                      class="lg:max-w-[30rem] w-full flex flex-col gap-5">
+                      enctype="multipart/form-data"
+                      class="lg:max-w-[30rem] w-full h-full flex flex-col gap-5">
                     {% csrf_token %}
+                    <div>
+                        <label for="profile_pic"
+                               class="flex flex-col items-center w-full p-1 mx-auto text-center input-bordered input-ghost input input-lg cursor-pointer rounded-box">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 fill="none"
+                                 viewBox="0 0 24 24"
+                                 stroke-width="1"
+                                 stroke="currentColor"
+                                 class="w-8 h-8 text-primary">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" />
+                            </svg>
+                            <p class="mt-1 font-light tracking-wide text-xs text-base-content">
+                                Click to upload or drag and drop profile pic
+                            </p>
+                            <input name="profile_pic" id="profile_pic" type="file" class="hidden" />
+                        </label>
+                    </div>
                     <input type="text"
                            name="full_name"
                            placeholder="Full name"
@@ -23,16 +41,17 @@
                            placeholder="Title"
                            {% if form.title.value != None and form.title.value != 'user is too lazy to set title' %} value="{{ form.title.value }}" {% endif %}
                            class="input input-bordered input-ghost input-sm w-full {% if form.title.errors %} input-error {% endif %}" />
+ 
                     <textarea name="bio"
+                              placeholder="Bio"
                               id="{{ form.bio.id_for_label }}"
                               maxlength="1000"
-                              placeholder="Bio"
-                              class="textarea textarea-bordered textarea-ghost textarea-sm w-full {% if form.bio.errors %} textarea-error {% endif %}"></textarea>
+                              class="textarea textarea-bordered textarea-ghost textarea-sm rounded-box {% if form.title.errors %} textarea-error {% endif %}"> {% if form.bio.value != None %} {{ form.bio.value }} {% endif %}</textarea>
  
                     <div class="relative">
                         <input type="text"
                                name="{{ form.twitter.html_name }}"
-                               {% if form.twitter.value != None %} value="{{ form.twitter }}" {% endif %}
+                               {% if form.twitter.value != None %} value="{{ form.twitter.value }}" {% endif %}
                                class="input input-bordered input-sm input-ghost w-full pl-16 {% if form.twitter.errors %} input-error {% endif %}" />
                         <div class="btn btn-primary btn-sm absolute top-0 left-0 rounded-r-none">
                             <svg class="h-5 w-5 text-primary-content"
@@ -74,9 +93,11 @@
                             </svg>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-sm btn-secondary w-full">
-                        Save
-                    </button>
+                    <div class="grow flex items-end">
+                        <button type="submit" class="btn btn-sm btn-secondary w-full">
+                            Save
+                        </button>
+                    </div>
                 </form>
  
             </div>
