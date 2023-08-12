@@ -65,9 +65,34 @@
                     </p>
                 {% endif %}
 
-                <button class="h-10 w-32 rounded-btn bg-primary text-primary-content text-center hover:bg-accent hover:text-accent-content transition duration-300">
-                    follow
-                </button>
+                <div class="flex flex-row gap-5">
+                    {% if user_is_owner %}
+                        <a href="{% url 'user-profile-update' profile.user.username %}"
+                           class="btn btn-secondary btn-sm normal-case">
+                            <svg class="h-4 w-4"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 width="20"
+                                 height="20"
+                                 viewBox="0 0 14 14">
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M5 12.24L.5 13.5L1.76 9L10 .8a1 1 0 0 1 1.43 0l1.77 1.78a1 1 0 0 1 0 1.42Z" />
+                            </svg>
+                        Edit profile</a>
+                        <a href="{% url 'logout' %}" class="btn btn-accent btn-sm normal-case">
+                            <svg class="h-4 w-4"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 width="24"
+                                 height="24"
+                                 viewBox="0 0 24 24">
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                <path d="M14 8V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2v-2" />
+                                <path d="M9 12h12l-3-3m0 6l3-3" />
+                                </g>
+                            </svg>
+                        Logout</a>
+                    {% else %}
+                        <a href="#" class="btn btn-primary btn-sm normal-case">follow</a>
+                    {% endif %}
+                </div>
                 <div class="grow flex flex-row gap-5 items-end">
                     {% if profile.twitter != None %}
                         <a href="{{ profile.twitter }}">
