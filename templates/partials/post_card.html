@@ -4,8 +4,8 @@
             <img src="{{ post.thumbnail.url }}"
                  class="w-64 h-64 object-cover hidden md:block"
                  loading="lazy"
-                 height="16rem"
-                 width="16rem"
+                 height="{{ post.thumbnail.height }}"
+                 width="{{ post.thumbnail.width }}"
                  alt="{{ post.title }}" />
         </figure>
         <div class="card-body w-4/6 p-5">

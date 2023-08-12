@@ -71,6 +71,8 @@
                     <a href="{% url 'user-profile' user.username %}" class="ml-2">
                         <img src="{{ user_profile.profile_pic.url }}"
                              alt="{{ user.usename }}"
+                             height="{{ user_profile.profile_pic.height }}"
+                             width="{{ user_profile.profile_pic.width }}"
                              class="w-7 h-7 rounded-full object-cover ring ring-primary ring-offset-base-100 ring-offset-2">
                     </a>
                 {% else %}

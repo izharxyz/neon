@@ -14,8 +14,8 @@
                     <a href="{% url 'user-profile' post.author.username %}">
                         <img src="{{ profile.profile_pic.url }}"
                              alt="author"
-                             height="48"
-                             width="48"
+                             height="{{ profile.profile_pic.height }}"
+                             width="{{ profile.profile_pic.width }}"
                              class="w-12 h-12 rounded-full object-cover">
                     </a>
                     <div class="text-sm">
@@ -109,8 +109,8 @@
             <div class="mt-10">
                 <img src="{{ post.thumbnail.url }}"
                      alt="{{ post.title }}"
-                     height="full"
-                     width="full"
+                     height="{{ post.thumbnail.height }}"
+                     width="{{ post.thumbnail.width }}"
                      class="w-full h-full rounded-box object-cover">
             </div>
             <article class="mt-10 text-lg prose max-w-max overflow-hidden">
