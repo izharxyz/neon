@@ -103,5 +103,5 @@ class ProfileUpdateView(LoginRequiredMixin, UserPassesTestMixin, View):
             messages.success(
                 request, f"{username}'s profile updated successfully")
             return redirect('user-profile', username)
-        messages.error(request, 'there were errors in form')
+        messages.error(request, 'there were errors in the form')
         return render(request, 'users/profile_update.html', {'form': form, 'profile': profile})
