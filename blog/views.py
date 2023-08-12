@@ -43,6 +43,7 @@ class PostCreateView(LoginRequiredMixin, View):
             post.save()
             messages.success(request, 'Blog post created successfully')
             return redirect('post-detail', post.slug)
+        messages.error(request, 'There were errors in form')
         return render(request, 'blog/form.html', {'form': form})
 
 
