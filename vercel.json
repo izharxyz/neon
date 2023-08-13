@@ -1,5 +1,4 @@
 {
-    "version": 2,
     "builds": [
         {
             "src": "neon/wsgi.py",
@@ -15,10 +14,6 @@
         }
     ],
     "routes": [
-        {
-            "src": "/static/(.*)",
-            "dest": "/static/$1"
-        },
         {
             "src": "/(.*)",
             "dest": "neon/wsgi.py"
