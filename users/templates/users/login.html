@@ -50,14 +50,15 @@
                     <div class="divider mt-5 lg:mt-10">
                         OR
                     </div>
-                    <button class="btn btn-sm md:btn-md btn-outline w-full mt-2 lg:mt-5">
+                    <a href="{% url 'social:begin' 'google-oauth2' %}"
+                       class="btn btn-sm md:btn-md btn-outline w-full mt-2 lg:mt-5">
                         <img src="{% static 'icons/google.svg' %}"
                              alt="google"
                              class="w-5 h-5"
                              height="20px"
                              width="20px" />
                         Sign in with Google
-                    </button>
+                    </a>
                     <button class="btn btn-sm md:btn-md btn-outline w-full mt-4">
                         <img src="{% static 'icons/gh.svg' %}"
                              alt="github"
