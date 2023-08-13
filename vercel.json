@@ -1,4 +1,5 @@
 {
+    "regions": ["bom1"],
     "builds": [
         {
             "src": "neon/wsgi.py",
