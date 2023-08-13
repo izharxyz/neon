@@ -8,7 +8,7 @@ class Category(models.Model):
     image = models.ImageField(
         upload_to='blog/categories/', default='blog/categories/default.webp')
 
-    def __str__(self) -> str:
+    def __str__(self):
         return self.name
 
 
@@ -31,5 +31,5 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return self.title

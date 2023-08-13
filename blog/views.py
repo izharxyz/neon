@@ -62,7 +62,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     fields = ['title', 'excerpt', 'thumbnail', 'category', 'content']
     template_name = 'blog/form.html'
 
-    def test_func(self) -> bool | None:
+    def test_func(self):
         post = get_object_or_404(Post, slug=self.kwargs['slug'])
         return self.request.user == post.author
 
@@ -76,7 +76,7 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
     template_name = 'blog/delete.html'
 
-    def test_func(self) -> bool | None:
+    def test_func(self):
         post = get_object_or_404(Post, slug=self.kwargs['slug'])
         return self.request.user == post.author
 

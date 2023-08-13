@@ -29,5 +29,5 @@ class Profile(models.Model):
     liked_posts = models.ManyToManyField(Post)
     comments = models.ManyToManyField(Post) """
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{self.user.username}'s profile"

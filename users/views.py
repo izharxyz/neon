@@ -45,7 +45,7 @@ class CustomLoginView(LoginView):
     template_name = 'users/login.html'
     redirect_authenticated_user = True
 
-    def get_success_url(self) -> str:
+    def get_success_url(self):
         url = self.get_redirect_url()
         print(url)
         return url or reverse('user-profile', kwargs={'username': self.request.user.username})
@@ -92,7 +92,7 @@ class ProfileView(View):
 
 
 class ProfileUpdateView(LoginRequiredMixin, UserPassesTestMixin, View):
-    def test_func(self) -> bool | None:
+    def test_func(self):
         profile = get_object_or_404(Profile, user=self.request.user)
         return profile.user.id == self.request.user.id
 
