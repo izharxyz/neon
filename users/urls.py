@@ -1,11 +1,13 @@
 from django.contrib.auth.views import LogoutView
-from django.urls import path
+from django.urls import include, path
 
 from users.views import (CheckUsernameExists, CustomLoginView,
                          PasswordResetView, ProfileUpdateView, ProfileView,
                          RegisterView)
 
 urlpatterns = [
+    path('social/', include('social_django.urls', namespace='social')),
+
     path('register/', RegisterView.as_view(), name='register'),
     path('login/', CustomLoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(template_name='users/logout'), name='logout'),
