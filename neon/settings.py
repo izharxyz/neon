@@ -24,7 +24,7 @@ if os.getenv('ENVIRONMENT') == 'DEV':
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = [os.getenv('ALLOWED_HOST'), 'cloudinary.com']
+ALLOWED_HOSTS = [os.getenv('ALLOWED_HOST'), 'cloudinary.com', '.vercel.app']
 
 
 # Application definition
