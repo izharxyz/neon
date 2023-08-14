@@ -10,6 +10,9 @@ module.exports = {
             height: {
                 screen: ["100vh", "100dvh"],
             },
+            scale: {
+                flip: "-1",
+            },
         },
     },
     plugins: [require("@tailwindcss/typography"), require("daisyui")],
