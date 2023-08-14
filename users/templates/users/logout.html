@@ -1,5 +1,13 @@
 {% extends 'base.html' %}
-<!--- fuck this formatter -->
+
+{% block meta %}
+    <meta name="description" property="og:description" content="Logout">
+    <meta name="keywords" content="logout">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex nofollow">
+    <meta name="googlebot-news" content="noindex nofollow">
+{% endblock meta %}
+
 {% block content %}
     <div class="h-screen w-screen flex justify-center content-center gapt-5">
         <h2 class="font-bold text-4xl text-info-content">

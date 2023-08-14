@@ -1428,6 +1428,11 @@ html {
   .input-group > .select {
   border-radius: 0px;
 }
+.join {
+  display: inline-flex;
+  align-items: stretch;
+  border-radius: var(--rounded-btn, 0.5rem);
+}
 .join :where(.join-item) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -1460,6 +1465,9 @@ html {
   .join :where(*:last-child:not(:first-child) .join-item) {
   border-top-right-radius: inherit;
   border-bottom-right-radius: inherit;
+}
+:where(.join *) {
+  border-radius: inherit;
 }
 .link {
   cursor: pointer;
@@ -2199,6 +2207,11 @@ html {
   color: hsl(var(--bc) / var(--tw-placeholder-opacity));
   --tw-placeholder-opacity: 0.2;
 }
+.join > :where(*:not(:first-child)) {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: -1px;
+}
 .join-item:focus {
   isolation: isolate;
 }
@@ -2597,6 +2610,9 @@ html {
   font-size: 0.875rem;
   line-height: 2rem;
 }
+.join.join-vertical {
+  flex-direction: column;
+}
 .join.join-vertical .join-item:first-child:not(:last-child),
   .join.join-vertical *:first-child:not(:last-child) .join-item {
   border-bottom-left-radius: 0;
@@ -2610,6 +2626,9 @@ html {
   border-top-right-radius: 0;
   border-bottom-left-radius: inherit;
   border-bottom-right-radius: inherit;
+}
+.join.join-horizontal {
+  flex-direction: row;
 }
 .join.join-horizontal .join-item:first-child:not(:last-child),
   .join.join-horizontal *:first-child:not(:last-child) .join-item {
@@ -2759,6 +2778,16 @@ html {
 }
 .card-normal .card-title {
   margin-bottom: 0.75rem;
+}
+.join.join-vertical > :where(*:not(:first-child)) {
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: -1px;
+}
+.join.join-horizontal > :where(*:not(:first-child)) {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: -1px;
 }
 .prose img {
   border-radius: var(--rounded-box, 1rem);

@@ -1,5 +1,38 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block meta %}
+ 
+    {% if object %}
+        <meta name="description"
+              property="og:description"
+              content="{{ object.excerpt }}">
+        <meta name="auther" content="{{ object.author.username }}">
+        <meta name="keywords"
+              content="{{ object.category }}, update post, update, blog article, 69ms World">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="googlebot" content="noindex">
+    {% else %}
+        <meta name="description" property="og:description" content="Create">
+        <meta name="auther" content="Create a blog post">
+        <meta name="keywords"
+              content="create post, create, blog article, 69ms World">
+        <meta name="robots" content="index, follow">
+        <meta name="googlebot" content="index follow">
+    {% endif %}
+ 
+{% endblock meta %}
+
+{% block header %}
+ 
+    {% if object %}
+        <title>Update {{ object.title }}</title>
+    {% else %}
+        <title>Create a blog post</title>
+    {% endif %}
+ 
+{% endblock header %}
+
 {% block content %}
     <div class="container max-w-5xl p-5 mx-auto">
         <div class="w-full h-fit mt-48 mb-5 p-5 rounded-box bg-base-100 bg-opacity-70 backdrop-blur-3xl">

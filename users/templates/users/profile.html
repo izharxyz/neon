@@ -1,6 +1,20 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block meta %}
+    <meta name="description"
+          property="og:description"
+          content="{{ prfile.user.username }}'s profile">
+    <meta name="keywords" content="user profile, profile, 69ms World">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index follow">
+    <meta name="googlebot-news" content="noindex follow">
+{% endblock meta %}
+
+{% block header %}
+    <title>Profile | {{ profile.user.username }}</title>
+{% endblock header %}
+
 {% block navbar %}
 {% endblock navbar %}
  
