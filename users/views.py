@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView
 from django.shortcuts import HttpResponse, get_object_or_404, redirect, render
 from django.urls import reverse
+from django.utils.text import slugify
 from django.views import View
 
 from users.forms import UserProfileForm, UserRegisterForm
@@ -105,6 +106,18 @@ class ProfileUpdateView(LoginRequiredMixin, UserPassesTestMixin, View):
 
     def post(self, request, username):
         profile = get_object_or_404(Profile, user=request.user)
+        user = request.user
+        uname = request.POST.get('username')
+        if len(uname) > 2:
+            try:
+                user.username = slugify(uname)
+                user.save()
+                username = uname
+            except:
+                messages.error(request, 'username not changed, already taken')
+        else:
+            messages.warning(
+                request, f'username not changed, {uname} is too short')
         form = UserProfileForm(request.POST, request.FILES, instance=profile)
         if form.is_valid():
             form.save()
