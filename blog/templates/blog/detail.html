@@ -1,5 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block meta %}
+    <meta name="description"
+          property="og:description"
+          content="{{ post.excerpt }}">
+    <meta name="auther" content="{{ post.author.username }}">
+    <meta name="keywords" content="{{ post.category }}, blog, post, article">
+    <meta name="robots" content="index, follow">
+{% endblock meta %}
+
+{% block header %}
+    <title>{{ post.title }}</title>
+{% endblock header %}
+
 {% block content %}
     <div class="container max-w-5xl px-1 py-5 md:px-5 mx-auto">
         <div class="w-full h-fit mt-48 p-5 rounded-box bg-base-100 bg-opacity-70 backdrop-blur-3xl">
