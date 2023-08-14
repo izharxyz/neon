@@ -127,14 +127,15 @@
                              width="20px" />
                         Sign up with Google
                     </a>
-                    <button class="btn btn-sm md:btn-md btn-outline w-full mt-4">
+                    <a href="{% url 'social:begin' 'github' %}"
+                       class="btn btn-sm md:btn-md btn-outline w-full mt-4">
                         <img src="{% static 'icons/gh.svg' %}"
                              alt="github"
                              class="w-5 h-5"
                              height="20px"
                              width="20px" />
                         Sign up with Github
-                    </button>
+                    </a>
                     <div class="flex flex-row justify-end mt-4">
                         <a href="{% url 'login' %}" class="btn btn-sm md:btn-md btn-accent">Login instead</a>
                     </div>
