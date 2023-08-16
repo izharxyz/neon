@@ -16,6 +16,8 @@
 <!-- navbar block to remove its contents -->
 {% block navbar %}
 {% endblock navbar %}
+{% block toast %}
+{% endblock toast %}
 {% block content %}
     <div class="w-screen landscape:min-h-screen portrait:h-screen flex justify-center items-center">
         <div class="card lg:card-side bg-base-100 bg-opacity-70 shadow-xl backdrop-blur-3xl w-11/12 md:w-5/6 h-fit lg:h-5/6 lg:grid lg:grid-cols-2">
@@ -43,10 +45,16 @@
                     <h2 class="card-title">
                         Register
                     </h2>
-                    <div id="username-check" class="h-4 flex flex-row">
+                    <div id="username-check" class="h-4 flex flex-row gap-1">
                         <small class="text-error ml-1">{{ form.non_field_errors }}
                             {% if invalid_email %}
                                 please use reputated email provider like gmail or yahoo
+                            {% endif %}
+
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <span class="text-{{ message.tags }}">{{ message }}</span>
+                                {% endfor %}
                             {% endif %}
                         </small>
                     </div>
@@ -146,7 +154,7 @@
                         Sign up with Github
                     </a>
                     <div class="flex flex-row justify-end mt-4">
-                        <a href="{% url 'login' %}" class="btn btn-sm md:btn-md btn-accent">Login instead</a>
+                        <a href="{% url 'login' %}" class="btn btn-sm md:btn-md btn-outline">Login instead</a>
                     </div>
                 </div>
             </div>

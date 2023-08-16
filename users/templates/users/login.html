@@ -15,6 +15,8 @@
 <!-- navbar block to remove its contents -->
 {% block navbar %}
 {% endblock navbar %}
+{% block toast %}
+{% endblock toast %}
 {% block content %}
     <div class="w-screen landscape:min-h-screen portrait:h-screen flex justify-center items-center">
         <div class="card lg:card-side bg-base-100 bg-opacity-70 backdrop-blur-3xl shadow-xl w-11/12 md:w-5/6 h-fit lg:h-5/6 lg:grid lg:grid-cols-2">
@@ -40,6 +42,13 @@
                     <h2 class="card-title">
                         Login
                     </h2>
+                    <small class="text-error ml-1">{{ form.non_field_errors }}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <span class="text-{{ message.tags }}">{{ message }}</span>
+                            {% endfor %}
+                        {% endif %}
+                    </small>
                     <form action="{% url 'login' %}" method="POST">
                         {% csrf_token %}
                         <input type="hidden" name="next" value="{{ next }}">
@@ -83,7 +92,7 @@
                             <br>
                             <a href="{% url 'request-new-link-from-email' %}" class="link mt-1">Need new verification email?</a>
                         </p>
-                        <a href="{% url 'register' %}" class="btn btn-sm md:btn-md btn-accent">Register</a>
+                        <a href="{% url 'register' %}" class="btn btn-sm md:btn-md btn-outline">Register Instead</a>
                     </div>
                 </div>
             </div>
