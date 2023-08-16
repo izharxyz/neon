@@ -2615,6 +2615,14 @@ html {
   min-height: 1.875rem;
   font-size: 0.875rem;
 }
+.input-md {
+  height: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  line-height: 2;
+}
 .input-lg {
   height: 4rem;
   padding-left: 1.5rem;
@@ -3211,9 +3219,6 @@ html {
 .p-16 {
   padding: 4rem;
 }
-.p-20 {
-  padding: 5rem;
-}
 .p-5 {
   padding: 1.25rem;
 }
@@ -3231,6 +3236,9 @@ html {
 }
 .pl-16 {
   padding-left: 4rem;
+}
+.pl-20 {
+  padding-left: 5rem;
 }
 .pr-16 {
   padding-right: 4rem;
@@ -3344,6 +3352,10 @@ html {
 .text-secondary-focus {
   --tw-text-opacity: 1;
   color: hsl(var(--sf) / var(--tw-text-opacity));
+}
+.text-success {
+  --tw-text-opacity: 1;
+  color: hsl(var(--su) / var(--tw-text-opacity));
 }
 .text-transparent {
   color: transparent;
@@ -3528,6 +3540,10 @@ html {
     width: 20rem;
   }
 
+  .md\:w-\[30rem\] {
+    width: 30rem;
+  }
+
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -3630,6 +3646,10 @@ html {
     width: 30rem;
   }
 
+  .lg\:w-\[80rem\] {
+    width: 80rem;
+  }
+
   .lg\:max-w-\[30rem\] {
     max-width: 30rem;
   }
@@ -3664,6 +3684,10 @@ html {
 
   .lg\:p-16 {
     padding: 4rem;
+  }
+
+  .lg\:p-20 {
+    padding: 5rem;
   }
 
   .lg\:text-5xl {
