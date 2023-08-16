@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
 
     'social_django',
+    'verify_email.apps.VerifyEmailConfig',
 
     'blog',
     'users'
@@ -219,3 +220,16 @@ EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+# verify email config
+EXPIRE_AFTER = '15m'
+MAX_RETRIES = 5
+SUBJECT = 'Verify your email'
+
+# HTML_MESSAGE_TEMPLATE = "path/to/html_template.html"
+HTML_MESSAGE_TEMPLATE = 'verification/email_message.html'
+VERIFICATION_SUCCESS_TEMPLATE = None
+VERIFICATION_FAILED_TEMPLATE = 'verification/failed.html'
+REQUEST_NEW_EMAIL_TEMPLATE = 'verification/new_email_request.html'
+LINK_EXPIRED_TEMPLATE = 'verification/link_expired.html'
+NEW_EMAIL_SENT_TEMPLATE = 'verification/new_email_sent.html'

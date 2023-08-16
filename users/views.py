@@ -6,6 +6,7 @@ from django.shortcuts import HttpResponse, get_object_or_404, redirect, render
 from django.urls import reverse
 from django.utils.text import slugify
 from django.views import View
+from verify_email.email_handler import send_verification_email
 
 from users.forms import UserProfileForm, UserRegisterForm
 from users.models import Profile
@@ -35,9 +36,9 @@ class RegisterView(View):
         if form.is_valid():
             user = form.save(commit=False)
             user.username = slugify(user.username)
-            user.is_active = False
-            user.save()
-            messages.success(request, 'Account created successfully.')
+            send_verification_email(request, form)
+            messages.success(
+                request, 'Account created! Please verify your email before login')
             return redirect('login')
         else:
             return render(request, 'users/register.html', {'form': form})
