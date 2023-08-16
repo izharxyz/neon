@@ -5,7 +5,8 @@ from django.contrib.auth.views import (LogoutView, PasswordResetCompleteView,
 from django.urls import include, path
 
 from users.views import (CheckUsernameExists, CustomLoginView,
-                         ProfileUpdateView, ProfileView, RegisterView)
+                         ProfileRedirectView, ProfileUpdateView, ProfileView,
+                         RegisterView)
 
 urlpatterns = [
 
@@ -30,6 +31,8 @@ urlpatterns = [
         template_name='users/password_reset_complete.html'), name='password_reset_complete'),
 
     # profile
+    path('profile/', ProfileRedirectView.as_view(),
+         name='profile'),  # redirect to user-profile
     path('profile/<slug:username>/', ProfileView.as_view(), name='user-profile'),
     path('profile/<slug:username>/update/',
          ProfileUpdateView.as_view(), name='user-profile-update')

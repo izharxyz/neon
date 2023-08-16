@@ -34,7 +34,8 @@ class RegisterView(View):
                           {'form': form, 'invalid_email': inavlid_email})
         if form.is_valid():
             user = form.save(commit=False)
-            user.username = user.username.lower()
+            user.username = slugify(user.username)
+            user.is_active = False
             user.save()
             messages.success(request, 'Account created successfully.')
             return redirect('login')
@@ -90,6 +91,11 @@ class ProfileView(View):
             'profile': profile
         }
         return render(request, 'users/profile.html', ctx)
+
+
+class ProfileRedirectView(LoginRequiredMixin, View):
+    def get(self, request):
+        return redirect('user-profile', request.user.username)
 
 
 class ProfileUpdateView(LoginRequiredMixin, UserPassesTestMixin, View):
