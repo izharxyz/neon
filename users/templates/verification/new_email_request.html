@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+    <meta name="description"
+          property="og:description"
+          content="Request new email">
+    <meta name="robots" content="noindex, nofollow">
+{% endblock meta %}
+
+{% block header %}
+    <title>Request new email</title>
+{% endblock header %}
+{% block content %}
+    <div class="max-w-7xl mx-auto p-5 min-h-screen text-primary-content flex items-center justify-center">
+        <div class="p-5 md:p-10 lg:p-20 w-full lg:w-[80rem] rounded-box bg-base-100 bg-opacity-70 backdrop-blur-3xl text-base-content">
+            <form method="post"
+                  class="w-full flex flex-col gap-5 justify-center items-center">
+                {% csrf_token %}
+ 
+                <h2 class="text-left text-xl md:text-2xl lg:text-3xl font-bold">
+                    Request new verification email
+                </h2>
+                <p>
+                    Enter your email address which is associated with your account. We will send you email verification link which will expire after 15 minutes.
+                </p>
+	
+                {% for field in form %}
+                    <div class="relative">
+                        <input type="email"
+                               name="{{ field.html_name }}"
+                               id="{{ field.id_for_label }}"
+                               class="input input-bordered input-md input-ghost w-full md:w-[30rem] pl-20 {% if field.errors %} input-error {% endif %}" />
+                        <div class="btn btn-primary btn-md absolute top-0 left-0 rounded-r-none">
+                            {{ field.html_name }}
+                        </div>
+                    </div>
+
+                    {% if field.errors %}
+                        <small class="text-error mt-1">{{ field.errors|striptags }}</small>
+                    {% endif %}
+                {% endfor %}
+	
+                <div class="flex items-center justify-center flex-wrap gap-5 w-full">
+	
+                    <button type="submit" class="btn btn-accent">
+                        Send Email
+                    </button>
+                    <a href="{% url 'login' %}" class="btn btn-secondary">Back to login</a>
+	
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
