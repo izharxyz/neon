@@ -4,18 +4,18 @@
 {% block meta %}
     <meta name="description"
           property="og:description"
-          content="Email verification Filed">
+          content="Email verification Failed">
     <meta name="robots" content="noindex, nofollow">
 {% endblock meta %}
 
 {% block header %}
-    <title>Email verification Filed</title>
+    <title>Email verification Failed</title>
 {% endblock header %}
 {% block content %}
     <div class="max-w-7xl mx-auto p-5 min-h-screen text-primary-content flex items-center justify-center">
         <div class="p-5 md:p-10 lg:p-20 w-full lg:w-[80rem] rounded-box bg-base-100 bg-opacity-70 backdrop-blur-3xl text-base-content">
             <h2 class="text-left text-xl md:text-2xl lg:text-3xl font-bold text-error">
-                Email verification Filed
+                Email verification Failed
             </h2>
             <p class="mt-5">
                 Uh oh! Something went wrong,
@@ -25,7 +25,7 @@
                 or
                 <a href="{% url 'login' %}" class="link link-primary">Login here</a>.
                 <br>
-                Error: {{ mgs }}
+                Error: {{ msg }}
             </p>
         </div>
     </div>

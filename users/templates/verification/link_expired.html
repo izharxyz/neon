@@ -17,7 +17,7 @@
             </h2>
             <p class="mt-5">
                 Uh oh! It seems like your link has been expired. Don't worry you can
-                <a href="{% url 'request-new-link-from-email' %}"
+                <a href="{% url 'request-new-link-from-token' encoded_email encoded_token %}"
                    class="link text-primary">request new link here
                 </a>
                 or
