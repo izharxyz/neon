@@ -224,7 +224,7 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 # verify email config
 EXPIRE_AFTER = '15m'
 MAX_RETRIES = 5
-SUBJECT = 'Verify your email'
+SUBJECT = 'Please verify your email'
 
 # HTML_MESSAGE_TEMPLATE = "path/to/html_template.html"
 HTML_MESSAGE_TEMPLATE = 'verification/email_message.html'
