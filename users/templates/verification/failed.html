@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+    <meta name="description"
+          property="og:description"
+          content="Email verification Filed">
+    <meta name="robots" content="noindex, nofollow">
+{% endblock meta %}
+
+{% block header %}
+    <title>Email verification Filed</title>
+{% endblock header %}
+{% block content %}
+    <div class="max-w-7xl mx-auto p-5 min-h-screen text-primary-content flex items-center justify-center">
+        <div class="p-5 md:p-10 lg:p-20 w-full lg:w-[80rem] rounded-box bg-base-100 bg-opacity-70 backdrop-blur-3xl text-base-content">
+            <h2 class="text-left text-xl md:text-2xl lg:text-3xl font-bold text-error">
+                Email verification Filed
+            </h2>
+            <p class="mt-5">
+                Uh oh! Something went wrong,
+                <a href="{% url 'request-new-link-from-email' %}"
+                   class="link link-primary">request new link here
+                </a>
+                or
+                <a href="{% url 'login' %}" class="link link-primary">Login here</a>.
+                <br>
+                Error: {{ mgs }}
+            </p>
+        </div>
+    </div>
+{% endblock content %}
