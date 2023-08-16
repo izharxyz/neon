@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+    <meta name="description" property="og:description" content="Link expired">
+    <meta name="robots" content="noindex, nofollow">
+{% endblock meta %}
+
+{% block header %}
+    <title>Link expired</title>
+{% endblock header %}
+{% block content %}
+    <div class="max-w-7xl mx-auto p-5 min-h-screen text-primary-content flex items-center justify-center">
+        <div class="p-5 md:p-10 lg:p-20 w-full lg:w-[80rem] rounded-box bg-base-100 bg-opacity-70 backdrop-blur-3xl text-base-content">
+            <h2 class="text-left text-xl md:text-2xl lg:text-3xl font-bold text-error">
+                Your link has been expired
+            </h2>
+            <p class="mt-5">
+                Uh oh! It seems like your link has been expired. Don't worry you can
+                <a href="{% url 'request-new-link-from-email' %}"
+                   class="link text-primary">request new link here
+                </a>
+                or
+                <a href="{% url 'login' %}" class="link link-primary">login here</a>.
+            </p>
+        </div>
+    </div>
+{% endblock content %}
