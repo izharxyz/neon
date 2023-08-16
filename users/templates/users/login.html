@@ -78,7 +78,11 @@
                         Sign up with Github
                     </a>
                     <div class="flex flex-row justify-between mt-4">
-                        <a href="{% url 'password-reset' %}" class="link text-md mt-2">Forgot password?</a>
+                        <p class="text-xs">
+                            <a href="{% url 'password-reset' %}" class="link mt-2">Forgot password?</a>
+                            <br>
+                            <a href="{% url 'request-new-link-from-email' %}" class="link mt-1">Need new verification email?</a>
+                        </p>
                         <a href="{% url 'register' %}" class="btn btn-sm md:btn-md btn-accent">Register</a>
                     </div>
                 </div>
