@@ -15,6 +15,14 @@
 
 {% block header %}
     <title>{{ post.title }}</title>
+ 
+    <!-- default.css is required for highlightjs code highlight; theme is customised github dark -->
+    <link rel="stylesheet" href="{% static 'css/code.highlight.css' %}">
+    <script src="{% static 'js/highlight.min.js' %}"></script>
+
+    <script>
+        hljs.highlightAll();
+    </script>
 {% endblock header %}
 
 {% block content %}

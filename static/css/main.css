@@ -18,4 +18,9 @@
     .prose img {
         @apply rounded-box w-full object-cover;
     }
+
+    /* hljs code highligh theme ovveride */
+    .hljs {
+        @apply bg-transparent w-full text-neutral-content;
+    }
 }

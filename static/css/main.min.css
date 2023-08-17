@@ -2832,6 +2832,13 @@ html {
   -o-object-fit: cover;
      object-fit: cover;
 }
+/* hljs code highligh theme ovveride */
+.hljs {
+  width: 100%;
+  background-color: transparent;
+  --tw-text-opacity: 1;
+  color: hsl(var(--nc) / var(--tw-text-opacity));
+}
 .static {
   position: static;
 }
@@ -3429,6 +3436,7 @@ html {
 .duration-500 {
   transition-duration: 500ms;
 }
+
 @media (min-width: 768px) {
 
   .md\:btn-md {
@@ -3461,6 +3469,7 @@ html {
     line-height: 2;
   }
 }
+
 @media (min-width: 1024px) {
 
   .lg\:card-side {
@@ -3495,22 +3504,27 @@ html {
        object-fit: cover;
   }
 }
+
 .hover\:text-accent:hover {
   --tw-text-opacity: 1;
   color: hsl(var(--a) / var(--tw-text-opacity));
 }
+
 .group:hover .group-hover\:translate-x-5 {
   --tw-translate-x: 1.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+
 .group:hover .group-hover\:translate-y-0 {
   --tw-translate-y: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+
 .group:hover .group-hover\:scale-x-flip {
   --tw-scale-x: -1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+
 @media (min-width: 768px) {
 
   .md\:col-span-3 {
@@ -3614,6 +3628,7 @@ html {
     line-height: 1.75rem;
   }
 }
+
 @media (min-width: 1024px) {
 
   .lg\:col-span-4 {
@@ -3718,6 +3733,7 @@ html {
     line-height: 1;
   }
 }
+
 @media (orientation: portrait) {
 
   .portrait\:h-screen {
@@ -3725,6 +3741,7 @@ html {
     height: 100dvh;
   }
 }
+
 @media (orientation: landscape) {
 
   .landscape\:min-h-screen {
