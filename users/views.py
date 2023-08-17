@@ -57,15 +57,16 @@ class CustomLoginView(LoginView):
 class CheckUsernameExists(View):
     def post(self, request):
         username = request.POST.get('username')
+        username = slugify(username)
 
         if not len(username) > 2:
             return HttpResponse('<small style="color: red; padding-left: 4px">username too short</small>')
         else:
             invalid_chars = [' ', '!', '@', '#', '$',
                              '^', '&', '*', '(', ')', '-', '=', '+']
-            if any(char in invalid_chars for char in username.strip()):
+            if any(char in invalid_chars for char in username):
                 return HttpResponse('<small style="color: red; padding-left: 4px">invalid username</small>')
-            user = User.objects.filter(username=username.strip()).exists()
+            user = User.objects.filter(username=username).exists()
             if user:
                 return HttpResponse('<small style="color: red; padding-left: 4px">username already taken</small>')
 
