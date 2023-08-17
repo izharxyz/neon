@@ -74,12 +74,6 @@ class CheckUsernameExists(View):
                 return HttpResponse('<small style="color: green; padding-left: 4px">username avlaible</small>')
 
 
-class PasswordResetView(View):
-    def get(self, request):
-        messages.error(request, 'mujhe bhi nhi pata, tu gaand mara!')
-        return redirect('login')
-
-
 class ProfileView(View):
     def get(self, request, username):
         user = get_object_or_404(User, username=username)
