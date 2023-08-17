@@ -53,8 +53,15 @@ class PostDetailView(View):
         post.views = post.views + 1
         post.save()
 
+        related_posts = Post.objects.filter(category=post.category)[:5]
         profile = get_object_or_404(Profile, user=post.author)
-        return render(request, 'blog/detail.html', {'post': post, 'profile': profile})
+
+        ctx = {
+            'post': post,
+            'profile': profile,
+            'related_posts': related_posts
+        }
+        return render(request, 'blog/detail.html', ctx)
 
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
