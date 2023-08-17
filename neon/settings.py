@@ -226,7 +226,6 @@ EXPIRE_AFTER = '15m'
 MAX_RETRIES = 5
 SUBJECT = 'Please verify your email'
 
-# HTML_MESSAGE_TEMPLATE = "path/to/html_template.html"
 HTML_MESSAGE_TEMPLATE = 'verification/email_message.html'
 VERIFICATION_SUCCESS_TEMPLATE = None
 VERIFICATION_FAILED_TEMPLATE = 'verification/failed.html'
