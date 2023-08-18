@@ -21,31 +21,7 @@
  
 {% block content %}
     <div class="h-screen w-screen">
-        <div class="absolute top-5 left-5 flex gap-2">
-            <a href="{% url 'index' %}"
-               class="btn btn-sm btn-ghost btn-circle btn-active">
-                <svg class="h-5 w-5"
-                     xmlns="http://www.w3.org/2000/svg"
-                     width="24"
-                     height="24"
-                     viewBox="0 0 24 24">
-                    <path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 19v-8.5a1 1 0 0 0-.4-.8l-7-5.25a1 1 0 0 0-1.2 0l-7 5.25a1 1 0 0 0-.4.8V19a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1z" />
-                </svg>
-            </a>
-            <a href="{% url 'user-profile' profile.user.username %}"
-               class="btn btn-sm btn-ghost btn-circle btn-active">
-                <svg class="h-5 w-5"
-                     xmlns="http://www.w3.org/2000/svg"
-                     width="48"
-                     height="48"
-                     viewBox="0 0 48 48">
-                    <mask id="ipSBack0">
-                    <path fill="#fff" fill-rule="evenodd" stroke="#fff" stroke-linejoin="round" stroke-width="4" d="M44 40.836c-4.893-5.973-9.238-9.362-13.036-10.168c-3.797-.805-7.412-.927-10.846-.365V41L4 23.545L20.118 7v10.167c6.349.05 11.746 2.328 16.192 6.833c4.445 4.505 7.009 10.117 7.69 16.836Z" clip-rule="evenodd" />
-                    </mask>
-                    <path fill="currentColor" d="M0 0h48v48H0z" mask="url(#ipSBack0)" />
-                </svg>
-            </a>
-        </div>
+        {% include 'partials/mobile_navbar.html' %}
         <div class="max-w-7xl h-full mx-auto flex items-center justify-center px-5">
             <div class="h-fit lg:h-4/6 grow p-5 lg:p-16 rounded-box lg:rounded-tr-none lg:rounded-br-none bg-base-100 bg-opacity-70 backdrop-blur-3xl text-base-content overflow-hidden">
  
