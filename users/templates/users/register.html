@@ -71,7 +71,7 @@
                                    hx-post="{% url 'check-username-exixts' %}"
                                    hx-target="#username-check"
                                    hx-trigger="keyup" />
-                            <input type="text"
+                            <input type="email"
                                    name="email"
                                    placeholder="Email"
                                    {% if form.email.value != None %} value="{{ form.email.value }}" {% endif %}
