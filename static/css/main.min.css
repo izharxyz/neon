@@ -2793,33 +2793,6 @@ html {
   border-radius: 9999px;
   padding: 0px;
 }
-.card-side {
-  align-items: stretch;
-  flex-direction: row;
-}
-.card-side :where(figure:first-child) {
-  overflow: hidden;
-  border-start-start-radius: inherit;
-  border-start-end-radius: unset;
-  border-end-start-radius: inherit;
-  border-end-end-radius: unset;
-}
-.card-side :where(figure:last-child) {
-  overflow: hidden;
-  border-start-start-radius: unset;
-  border-start-end-radius: inherit;
-  border-end-start-radius: unset;
-  border-end-end-radius: inherit;
-}
-.card-side figure > * {
-  max-width: unset;
-}
-:where(.card-side figure > *) {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
 .file-input-sm {
   height: 2rem;
   padding-right: 0.75rem;
@@ -3702,6 +3675,38 @@ html {
     padding: 0px;
   }
 
+  .md\:card-side {
+    align-items: stretch;
+    flex-direction: row;
+  }
+
+  .md\:card-side :where(figure:first-child) {
+    overflow: hidden;
+    border-start-start-radius: inherit;
+    border-start-end-radius: unset;
+    border-end-start-radius: inherit;
+    border-end-end-radius: unset;
+  }
+
+  .md\:card-side :where(figure:last-child) {
+    overflow: hidden;
+    border-start-start-radius: unset;
+    border-start-end-radius: inherit;
+    border-end-start-radius: unset;
+    border-end-end-radius: inherit;
+  }
+
+  .md\:card-side figure > * {
+    max-width: unset;
+  }
+
+  :where(.md\:card-side figure > *) {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+
   .md\:input-md {
     height: 3rem;
     padding-left: 1rem;
@@ -3769,6 +3774,12 @@ html {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
 }
+@media (min-width: 640px) {
+
+  .sm\:h-72 {
+    height: 18rem;
+  }
+}
 @media (min-width: 768px) {
 
   .md\:col-span-3 {
@@ -3781,6 +3792,13 @@ html {
 
   .md\:mt-5 {
     margin-top: 1.25rem;
+  }
+
+  .md\:line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
   }
 
   .md\:block {
@@ -3799,12 +3817,28 @@ html {
     height: 6rem;
   }
 
+  .md\:h-64 {
+    height: 16rem;
+  }
+
+  .md\:h-96 {
+    height: 24rem;
+  }
+
   .md\:w-24 {
     width: 6rem;
   }
 
+  .md\:w-4\/6 {
+    width: 66.666667%;
+  }
+
   .md\:w-5\/6 {
     width: 83.333333%;
+  }
+
+  .md\:w-64 {
+    width: 16rem;
   }
 
   .md\:w-80 {
@@ -3912,6 +3946,10 @@ html {
 
   .lg\:h-5\/6 {
     height: 83.333333%;
+  }
+
+  .lg\:h-full {
+    height: 100%;
   }
 
   .lg\:w-96 {

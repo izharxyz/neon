@@ -62,7 +62,7 @@
                               placeholder="Bio"
                               id="{{ form.bio.id_for_label }}"
                               maxlength="1000"
-                              class="textarea textarea-bordered textarea-ghost textarea-sm rounded-box {% if form.title.errors %} textarea-error {% endif %}"> {% if form.bio.value != None %} {{ form.bio.value }} {% endif %}</textarea>
+                              class="textarea textarea-bordered textarea-ghost textarea-sm rounded-box {% if form.bio.errors %} textarea-error {% endif %}"> {% if form.bio.value != None %} {{ form.bio.value }} {% endif %}</textarea>
  
                     <div class="relative">
                         <input type="text"
