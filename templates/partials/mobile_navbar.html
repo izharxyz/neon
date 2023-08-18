@@ -1,7 +1,7 @@
 <!-- this navbar is for those pages which does not requires no header/nav and footer for design purposes -->
-
+{% load static %}
 <label onchange="toggle()"
-       class="btn btn-circle btn-ghost btn-active btn-sm swap swap-rotate z-30 absolute top-5 right-5">
+       class="btn btn-circle btn-secondary btn-active btn-sm swap swap-rotate z-30 absolute top-5 right-5">
     <!-- this hidden checkbox controls the state -->
     <input type="checkbox" id="hamburger" />
     <!-- hamburger icon -->
@@ -50,6 +50,37 @@
     </div>
 
     <div class="flex flex-col gap-5 items-end p-5 mt-28 text-secondary-content">
+        <div class="relative group rounded-btn overflow-hidden">
+            <div class="join rounded-btn translate-x-80 group-hover:translate-x-0 transition-all duration-500">
+                <!-- Theme changer buttons -->
+                <button data-set-theme="night"
+                        data-act-class="btn-active"
+                        class="btn btn-ghost btn-sm join-item">
+                    Dark
+                </button>
+                <button data-set-theme="winter"
+                        data-act-class="btn-active"
+                        class="btn btn-ghost btn-sm join-item">
+                    Light
+                </button>
+                <button data-set-theme="forest"
+                        data-act-class="btn-active"
+                        class="btn btn-ghost btn-sm join-item">
+                    Forest
+                </button>
+                <button data-set-theme="valentine"
+                        data-act-class="btn-active"
+                        class="btn btn-ghost btn-sm join-item">
+                    Rose
+                </button>
+                <button class="btn btn-sm btn-ghost">
+                    Theme
+                </button>
+            </div>
+            <button class="btn btn-primary btn-sm absolute top-0 right-0 group-hover:rounded-l-none transition-all duration-500">
+                Theme
+            </button>
+        </div>
         <a href="/" class="text-xl uppercase font-bold">
             HOME
         </a>
@@ -87,6 +118,7 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="{% static 'js/themeChanger.js' %}"></script>
 <script>
     const hamburger = document.getElementById('hamburger');
 
