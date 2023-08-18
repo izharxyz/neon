@@ -51,7 +51,7 @@ class CheckUsernameExists(View):
         if not len(username) > 2:
             return HttpResponse('<small class="text-error pl-1">Username too short</small>')
         elif not slugify(username) == username:
-            return HttpResponse('<small class="text-error pl-1">Invalid username, special characters will be removed if submitted</small>')
+            return HttpResponse('<small class="text-error pl-1">Invalid username</small>')
         else:
             user = User.objects.filter(username=username).exists()
             if user:
