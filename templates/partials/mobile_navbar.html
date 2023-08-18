@@ -1,3 +1,5 @@
+<!-- this navbar is for those pages which does not requires no header/nav and footer for design purposes -->
+
 <label onchange="toggle()"
        class="btn btn-circle btn-ghost btn-active btn-sm swap swap-rotate z-30 absolute top-5 right-5">
     <!-- this hidden checkbox controls the state -->
@@ -78,6 +80,8 @@
                 Register
             </a>
         {% endif %}
+
+
  
     </div>
 </div>
@@ -101,10 +105,8 @@
 
     function toggle() {
         if (hamburger.checked) {
-            /* mobileMenu.style.display = 'revert'; */
             tl.play();
         } else {
-            /* mobileMenu.style.display = 'none'; */
             tl.reverse(0.9);
         }
     }
