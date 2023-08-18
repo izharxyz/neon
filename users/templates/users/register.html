@@ -46,11 +46,13 @@
                         Register
                     </h2>
                     <div id="username-check" class="h-4 flex flex-row gap-1">
-                        <small class="text-error ml-1">{{ form.non_field_errors }}
-                            {% if invalid_email %}
-                                please use reputated email provider like gmail or yahoo
-                            {% endif %}
-
+                        <small class="text-error ml-1">
+                            {{ form.non_field_errors }}
+ 
+                            {% for error in form.email.errors %}
+                                {{ error }}
+                            {% endfor %}
+ 
                             {% if messages %}
                                 {% for message in messages %}
                                     <span class="text-{{ message.tags }}">{{ message }}</span>
@@ -61,72 +63,29 @@
                     <form action="{% url 'register' %}" method="post">
                         {% csrf_token %}
                         <div class="md:flex md:flex-row md:gap-4 lg:block">
-                            {% if form.username.errors %}
-                                <input type="text"
-                                       name="username"
-                                       placeholder="Username"
-                                       class="input input-bordered input-ghost input-error input-sm md:input-md w-full mt-4"
-                                       value="{{ form.username.value }}"
-                                       hx-post="{% url 'check-username-exixts' %}"
-                                       hx-target="#username-check"
-                                       hx-trigger="keyup" />
-                            {% elif form.username.value %}
-                                <input type="text"
-                                       name="username"
-                                       placeholder="Username"
-                                       class="input input-bordered input-ghost input-sm md:input-md w-full mt-4"
-                                       value="{{ form.username.value }}"
-                                       hx-post="{% url 'check-username-exixts' %}"
-                                       hx-target="#username-check"
-                                       hx-trigger="keyup" />
-                            {% else %}
-                                <input type="text"
-                                       name="username"
-                                       placeholder="Username"
-                                       class="input input-bordered input-ghost input-sm md:input-md w-full mt-4"
-                                       hx-post="{% url 'check-username-exixts' %}"
-                                       hx-target="#username-check"
-                                       hx-trigger="keyup" />
-                            {% endif %}
-                            {% if form.email.errors %}
-                                <input type="text"
-                                       name="email"
-                                       placeholder="Email"
-                                       class="input input-bordered input-ghost input-error input-sm md:input-md w-full mt-4"
-                                       value="{{ form.email.value }}" />
-                            {% elif form.email.value %}
-                                <input type="text"
-                                       name="email"
-                                       placeholder="Email"
-                                       class="input input-bordered input-ghost input-sm md:input-md w-full mt-4"
-                                       value="{{ form.email.value }}" />
-                            {% else %}
-                                <input type="text"
-                                       name="email"
-                                       placeholder="Email"
-                                       class="input input-bordered input-ghost input-sm md:input-md w-full mt-4" />
-                            {% endif %}
+                            <input type="text"
+                                   name="username"
+                                   placeholder="Username"
+                                   {% if form.username.value != None %} value="{{ form.username.value }}" {% endif %}
+                                   class="input input-bordered input-ghost input-sm md:input-md w-full mt-4 {% if form.username.errors %} input-error {% endif %}"
+                                   hx-post="{% url 'check-username-exixts' %}"
+                                   hx-target="#username-check"
+                                   hx-trigger="keyup" />
+                            <input type="text"
+                                   name="email"
+                                   placeholder="Email"
+                                   {% if form.email.value != None %} value="{{ form.email.value }}" {% endif %}
+                                   class="input input-bordered input-ghost input-sm md:input-md w-full mt-4 {% if form.email.errors %} input-error {% endif %}" />
                         </div>
                         <div class="flex flex-row gap-4 lg:block">
-                            {% if form.password2.errors %}
-                                <input type="password"
-                                       name="password1"
-                                       placeholder="Password"
-                                       class="input input-bordered input-ghost input-error input-sm md:input-md w-full mt-4" />
-                                <input type="password"
-                                       name="password2"
-                                       placeholder="Confirm password"
-                                       class="input input-bordered input-ghost input-error input-sm md:input-md w-full mt-4" />
-                            {% else %}
-                                <input type="password"
-                                       name="password1"
-                                       placeholder="Password"
-                                       class="input input-bordered input-ghost input-sm md:input-md w-full mt-4" />
-                                <input type="password"
-                                       name="password2"
-                                       placeholder="Confirm password"
-                                       class="input input-bordered input-ghost input-sm md:input-md w-full mt-4" />
-                            {% endif %}
+                            <input type="password"
+                                   name="password1"
+                                   placeholder="Password"
+                                   class="input input-bordered input-ghost input-sm md:input-md w-full mt-4 {% if form.password2.errors %} input-error {% endif %}" />
+                            <input type="password"
+                                   name="password2"
+                                   placeholder="Confirm password"
+                                   class="input input-bordered input-ghost input-sm md:input-md w-full mt-4 {% if form.password2.errors %} input-error {% endif %}" />
                         </div>
                         <button type="submit" class="btn btn-sm md:btn-md btn-primary w-full mt-4">
                             Register Now
