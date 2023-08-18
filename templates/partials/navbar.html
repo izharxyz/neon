@@ -24,7 +24,7 @@
                 <span class="font-extrabold font-mono">Poeticcode</span>
             </a>
         </div>
-        <div class="hidden md:flex md:gap-2 navbar-center">
+        <div class="hidden lg:flex md:gap-2 navbar-center">
             <a href="/" class="btn join-item btn-ghost btn-sm">
                 Home
             </a>
@@ -47,7 +47,7 @@
                 </svg>
             </button>
             <label onchange="toggle()"
-                   class="btn btn-circle btn-ghost btn-active btn-sm swap swap-rotate z-30 md:hidden">
+                   class="btn btn-circle btn-ghost btn-active btn-sm swap swap-rotate z-30 lg:hidden">
                 <!-- this hidden checkbox controls the state -->
                 <input type="checkbox" id="hamburger" />
                 <!-- hamburger icon -->
@@ -67,7 +67,7 @@
                     <polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
                 </svg>
             </label>
-            <div class="hidden md:flex md:gap-2 items-center">
+            <div class="hidden lg:flex md:gap-2 items-center">
                 {% if user.is_authenticated %}
                     <a href="{% url 'post-create' %}" class="btn btn-sm btn-primary">
                         <!-- write (pen) icon -->
@@ -114,7 +114,7 @@
         </div>
     </div>
     <div id="mobileMenu"
-         class="absolute flex items-start justify-end top-0 w-screen h-screen bg-gradient-to-bl from-secondary to-accent md:hidden z-20 overflow-hidden"
+         class="absolute flex items-start justify-end top-0 w-screen h-screen bg-gradient-to-bl from-secondary to-accent lg:hidden z-20 overflow-hidden"
          style="clip-path: circle(0% at 100% 0%)">
         <div class="absolute top-3 left-5 text-secondary-content">
             <a href="/" class="flex items-center gap-1">
@@ -194,10 +194,8 @@
 
     function toggle() {
         if (hamburger.checked) {
-            /* mobileMenu.style.display = 'revert'; */
             tl.play();
         } else {
-            /* mobileMenu.style.display = 'none'; */
             tl.reverse(0.9);
         }
     }
