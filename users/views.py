@@ -25,17 +25,7 @@ class RegisterView(View):
 
     def post(self, request):
         form = UserRegisterForm(request.POST)
-        email = str(request.POST.get('email'))
-        valid_email_providers = ('gmail.com', 'protonmail.com', 'pm.me',
-                                 'yahoo.com', 'myyahoo.com', 'outlook.com', 'hotmail.com')
-        if not email.endswith(valid_email_providers):
-            inavlid_email = True
-            messages.error(request, 'bad email provider')
-            return render(request, 'users/register.html',
-                          {'form': form, 'invalid_email': inavlid_email})
         if form.is_valid():
-            user = form.save(commit=False)
-            user.username = slugify(user.username)
             send_verification_email(request, form)
             messages.success(
                 request, 'Account created! Please verify your email before login')
@@ -57,21 +47,18 @@ class CustomLoginView(LoginView):
 class CheckUsernameExists(View):
     def post(self, request):
         username = request.POST.get('username')
-        username = slugify(username)
 
         if not len(username) > 2:
-            return HttpResponse('<small style="color: red; padding-left: 4px">username too short</small>')
+            return HttpResponse('<small class="text-error pl-1">Username too short</small>')
+        elif not slugify(username) == username:
+            return HttpResponse('<small class="text-error pl-1">Invalid username, special characters will be removed if submitted</small>')
         else:
-            invalid_chars = [' ', '!', '@', '#', '$',
-                             '^', '&', '*', '(', ')', '-', '=', '+']
-            if any(char in invalid_chars for char in username):
-                return HttpResponse('<small style="color: red; padding-left: 4px">invalid username</small>')
             user = User.objects.filter(username=username).exists()
             if user:
-                return HttpResponse('<small style="color: red; padding-left: 4px">username already taken</small>')
+                return HttpResponse('<small class="text-error pl-1">Username already taken</small>')
 
             else:
-                return HttpResponse('<small style="color: green; padding-left: 4px">username avlaible</small>')
+                return HttpResponse('<small class="text-success pl-1">Username available</small>')
 
 
 class ProfileView(View):
