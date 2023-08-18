@@ -2,7 +2,6 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import HttpResponse, get_object_or_404, redirect, render
 from django.urls import reverse_lazy
-from django.utils.text import slugify
 from django.views import View
 from django.views.generic.edit import DeleteView, UpdateView
 
@@ -39,7 +38,6 @@ class PostCreateView(LoginRequiredMixin, View):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
-            post.slug = slugify(post.title)
             post.save()
             messages.success(request, 'Blog post created successfully')
             return redirect('post-detail', post.slug)
@@ -53,7 +51,8 @@ class PostDetailView(View):
         post.views = post.views + 1
         post.save()
 
-        related_posts = Post.objects.filter(category=post.category)[:5]
+        related_posts = Post.objects.filter(
+            category=post.category).exclude(slug=slug)[:5]
         profile = get_object_or_404(Profile, user=post.author)
 
         ctx = {
@@ -66,7 +65,7 @@ class PostDetailView(View):
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
-    fields = ['title', 'excerpt', 'thumbnail', 'category', 'content']
+    form_class = PostCreationForm
     template_name = 'blog/form.html'
 
     def test_func(self):
