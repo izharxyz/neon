@@ -89,3 +89,14 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def get_success_url(self):
         messages.success(self.request, 'Blog post deleted successfully')
         return reverse_lazy('index')
+
+
+class CategoryView(View):
+    def get(self, request, slug):
+        category = get_object_or_404(Category, name=slug)
+        posts = Post.objects.filter(category=category)
+        ctx = {
+            'category': category,
+            'posts': posts
+        }
+        return render(request, 'blog/category.html', ctx)
