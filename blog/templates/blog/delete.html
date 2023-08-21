@@ -16,12 +16,12 @@
 {% endblock header %}
 {% block content %}
     <div class="max-w-7xl mx-auto p-5 min-h-screen text-primary-content flex items-center justify-center">
-        <div class="p-5 md:p-10 lg:p-20 w-full lg:w-[80rem] rounded-box bg-base-100 bg-opacity-70 backdrop-blur-3xl">
+        <div class="p-5 md:p-10 lg:p-20 w-full lg:w-[80rem] rounded-box bg-base-100 bg-opacity-70 backdrop-blur-3xl text-base-content">
             <form method="post" class="w-full">
                 {% csrf_token %}
-                <p class="text-base-content text-lg">
+                <h2 class="text-left text-xl md:text-2xl lg:text-3xl">
                     Are you sure you want to delete <span class="font-bold">"{{ object }}"</span>?
-                </p>
+                </h2>
                 {{ form }}
                 <div class="flex flex-row justify-between items-center mt-5">
                     <a href="{% url 'index' %}" class="btn btn-info">Go back</a>
