@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+    <meta name="description"
+          property="og:description"
+          content="Dive into Immersive World of Reading Where Bytes and Brilliance Unite">
+    <meta name="keywords"
+          content="home, Poeticcode Home, home page, index, blog, post, articles, Poeticcode, poetic, code, poetic code">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index follow">
+{% endblock meta %}
+
+{% block header %}
+    <title>
+        {% if category %}
+            {{ category.name }}
+        {% else %}
+            Blog
+        {% endif %}
+        | Poetic Code
+    </title>
+{% endblock header %}
+
+{% block content %}
+    <div class="container max-w-7xl p-5 mx-auto">
+        <div class="w-full h-fit mt-48 p-5 md:p-20 rounded-box bg-base-100 bg-opacity-70 backdrop-blur-3xl text-base-content">
+            <h2 class="text-xl md:text-2xl lg:text-3xl font-bold">
+                Browse <span class="text-primary"> {{ category.name }} </span> Posts
+            </h2>
+            <p class="text-base mt-2 mb-5">
+                There are {{ posts.count }} posts in {{ category.name }} category.
+            </p>
+            <div class="flex flex-col gap-5">
+                {% for post in posts %}
+                    {% include 'partials/post_card.html' %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}
