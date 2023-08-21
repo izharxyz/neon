@@ -93,7 +93,7 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 class CategoryView(View):
     def get(self, request, slug):
-        category = get_object_or_404(Category, name=slug)
+        category = get_object_or_404(Category, slug=slug)
         posts = Post.objects.filter(category=category)
         ctx = {
             'category': category,
