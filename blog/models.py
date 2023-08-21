@@ -6,11 +6,16 @@ from django.utils.text import slugify
 
 class Category(models.Model):
     name = models.CharField(max_length=64, null=False)
+    slug = models.SlugField(null=True, max_length=64, unique=True)
     image = models.ImageField(
         upload_to='blog/categories/', default='blog/categories/default.webp')
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super(Category, self).save(*args, **kwargs)
 
 
 class Post(models.Model):
