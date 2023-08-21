@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.shortcuts import HttpResponse, get_object_or_404, redirect, render
+from django.db.models import Q
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic.edit import DeleteView, UpdateView
@@ -100,3 +101,17 @@ class CategoryView(View):
             'posts': posts
         }
         return render(request, 'blog/category.html', ctx)
+
+
+class PostSearchView(View):
+    def post(self, request):
+        query = request.POST.get('search')
+        ctx = {}
+        if len(query) > 2:
+            posts = Post.objects.filter(
+                Q(title__icontains=query) | Q(excerpt__icontains=query)
+            )
+            ctx = {
+                'posts': posts
+            }
+        return render(request, 'blog/search.html', ctx)
