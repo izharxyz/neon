@@ -36,7 +36,9 @@
             </button>
         </div>
         <div class="navbar-end">
-            <button class="btn btn-circle btn-ghost btn-active btn-sm mr-2">
+            <button id="search"
+                    onclick="search_model.showModal()"
+                    class="btn btn-circle btn-ghost btn-active btn-sm mr-2">
                 <!-- search icon -->
                 <svg class="fill-base-content h-5 w-5"
                      xmlns="http://www.w3.org/2000/svg"
@@ -206,8 +208,31 @@
 
     </div>
 </div>
+
+<!-- the search modal -->
+<dialog id="search_model"
+        class="modal bg-base-100 bg-opacity-30 backdrop-blur-sm">
+
+    <div class="modal-box max-w-4xl bg-base-100 bg-opacity-50 backdrop-blur-3xl text-base-content">
+        <form>
+            {% csrf_token %}
+            <input type="text"
+                   name="search"
+                   placeholder="Search"
+                   class="input input-ghost input-sm input-bordered w-full my-5"
+                   hx-post="{% url 'post-search' %}"
+                   hx-target="#search_results"
+                   hx-trigger="keyup delay:50ms" />
+        </form>
+        <div id="search_results"
+             class="flex flex-col gap-5 max-h-96 rounded-box overflow-scroll">
+        </div>
+    </div>
+</dialog>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="{% static 'js/themeChanger.js' %}"></script>
+<script defer src="{% static 'js/htmx.min.js' %}"></script>
 <script>
     const hamburger = document.getElementById('hamburger');
 
