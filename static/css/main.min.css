@@ -3443,6 +3443,9 @@ html {
 .overflow-scroll {
   overflow: scroll;
 }
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
 .text-clip {
   text-overflow: clip;
 }
@@ -3787,6 +3790,7 @@ html {
 .duration-500 {
   transition-duration: 500ms;
 }
+
 @media (min-width: 768px) {
 
   .md\:btn-md {
@@ -3851,6 +3855,7 @@ html {
     line-height: 2;
   }
 }
+
 @media (min-width: 1024px) {
 
   .lg\:card-side {
@@ -3885,36 +3890,44 @@ html {
        object-fit: cover;
   }
 }
+
 .hover\:text-accent:hover {
   --tw-text-opacity: 1;
   color: hsl(var(--a) / var(--tw-text-opacity));
 }
+
 .group:hover .group-hover\:translate-x-0 {
   --tw-translate-x: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+
 .group:hover .group-hover\:translate-x-5 {
   --tw-translate-x: 1.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+
 .group:hover .group-hover\:translate-y-0 {
   --tw-translate-y: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+
 .group:hover .group-hover\:scale-x-flip {
   --tw-scale-x: -1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+
 .group:hover .group-hover\:rounded-l-none {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
 }
+
 @media (min-width: 640px) {
 
   .sm\:h-72 {
     height: 18rem;
   }
 }
+
 @media (min-width: 768px) {
 
   .md\:col-span-3 {
@@ -4041,6 +4054,7 @@ html {
     line-height: 1.75rem;
   }
 }
+
 @media (min-width: 1024px) {
 
   .lg\:col-span-4 {
@@ -4153,6 +4167,7 @@ html {
     line-height: 1;
   }
 }
+
 @media (orientation: portrait) {
 
   .portrait\:h-screen {
@@ -4160,6 +4175,7 @@ html {
     height: 100dvh;
   }
 }
+
 @media (orientation: landscape) {
 
   .landscape\:min-h-screen {
