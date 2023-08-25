@@ -120,20 +120,20 @@ class ProfileUpdateView(LoginRequiredMixin, UserPassesTestMixin, View):
         return render(request, 'users/profile_update.html', {'form': form, 'profile': profile})
 
 
-class NewsletterView(View):
-    def post(self, request):
-        email = request.POST.get('email')
+class NewsletterView(LoginRequiredMixin, View):
+    def get(self, request):
+        email = request.user.email
         template = render_to_string(
-            'partials/email.html', {'username': 'poet'})
-        if email:
+            'partials/email.html', {'username': request.user.username})
+        profile = get_object_or_404(Profile, user=request.user)
+        if not profile.subscribed:
+            profile.subscribed = True
+            profile.save()
             send_mail(
-                # Welcome to PoeticCode - Your Journey into the World of Creative Coding!
                 'Thank you for subscribing to Poeticcode',
                 template,
                 settings.EMAIL_HOST_USER,
                 [email],
             )
 
-            return HttpResponse('<p class="text-success">Thank you for subscribing!</p>')
-        else:
-            return HttpResponse('<p class="text-error">Please use a reputated email.</p>')
+        return redirect('index')

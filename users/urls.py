@@ -4,9 +4,9 @@ from django.contrib.auth.views import (LogoutView, PasswordResetCompleteView,
                                        PasswordResetView)
 from django.urls import include, path
 
-from users.views import (CheckUsernameExists, CustomLoginView, NewsletterView,
+from users.views import (CheckUsernameExists, CustomLoginView,
                          ProfileRedirectView, ProfileUpdateView, ProfileView,
-                         RegisterView)
+                         RegisterView, SubscribeView)
 
 urlpatterns = [
 
@@ -38,5 +38,6 @@ urlpatterns = [
          ProfileUpdateView.as_view(), name='user-profile-update'),
 
     # subscribe to newsletter
-    path('newsletter/', NewsletterView.as_view(), name='newsletter'),
+    path('subscribe-newsletter/', SubscribeView.as_view(),
+         name='subscribe-newsletter'),
 ]
