@@ -36,4 +36,7 @@ urlpatterns = [
     path('profile/<slug:username>/', ProfileView.as_view(), name='user-profile'),
     path('profile/<slug:username>/update/',
          ProfileUpdateView.as_view(), name='user-profile-update'),
+
+    # subscribe to newsletter
+    path('newsletter/', NewsletterView.as_view(), name='newsletter'),
 ]
