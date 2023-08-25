@@ -12,6 +12,7 @@ class Profile(models.Model):
         upload_to='user/profiles', default='user/profiles/default')
     bio = models.CharField(max_length=1000, null=True,
                            default='user is too lazy to set bio')
+    subscribed = models.BooleanField(default=False)
 
     github = models.URLField(null=True, max_length=64,
                              default='https://github.com/')
