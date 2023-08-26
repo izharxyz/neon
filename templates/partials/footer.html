@@ -1,3 +1,4 @@
+{% load static %}
 <div class="w-full bg-base-100 bg-opacity-70 backdrop-blur-3xl p-5">
     <div class="max-w-7xl container mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
         <div class="col-span-1">
@@ -51,7 +52,7 @@
                 Membership
             </p>
         </div>
-        <div class="col-span-1">
+        <div id="newsletter" class="col-span-1">
             <h1 class="font-semibold text-base md:text-lg">
                 Newsletter
             </h1>
@@ -59,19 +60,9 @@
                 Sign up to be first to receive the latest stories inspiring us, case studies, and industry
                 news.
             </p>
-            <form action="" class="mt-5">
-                <label for="">
-                    Enter your email address
-                </label>
-                <div class="mt-5 relative">
-                    <input type="text"
-                           placeholder="username@site.com"
-                           class="input input-bordered input-sm input-ghost w-full pr-16" />
-                    <button class="btn btn-primary btn-sm absolute top-0 right-0 rounded-l-none">
-                        Subscribe
-                    </button>
-                </div>
-            </form>
+            <a href="/#subscribe" class="btn btn-primary btn-sm w-full mt-5">
+                Subscribe
+            </a>
         </div>
         <div class="col-span-1 md:col-span-3 flex flex-row justify-between items-center pt-5 md:pt-20 md:mt-5">
             <p class="flex items-center text-sm md:text-base">
