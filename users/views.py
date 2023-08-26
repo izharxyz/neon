@@ -120,7 +120,7 @@ class ProfileUpdateView(LoginRequiredMixin, UserPassesTestMixin, View):
         return render(request, 'users/profile_update.html', {'form': form, 'profile': profile})
 
 
-class NewsletterView(LoginRequiredMixin, View):
+class SubscribeView(LoginRequiredMixin, View):
     def get(self, request):
         email = request.user.email
         template = render_to_string(
