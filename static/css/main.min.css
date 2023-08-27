@@ -1160,6 +1160,11 @@ html {
     --tw-text-opacity: 1;
     color: hsl(var(--bc) / var(--tw-text-opacity));
   }
+
+  .link-primary:hover {
+    --tw-text-opacity: 1;
+    color: hsl(var(--pf) / var(--tw-text-opacity));
+  }
 }
 .btn {
   display: inline-flex;
@@ -2451,6 +2456,10 @@ html {
 }
 .join-item:focus {
   isolation: isolate;
+}
+.link-primary {
+  --tw-text-opacity: 1;
+  color: hsl(var(--p) / var(--tw-text-opacity));
 }
 .link:focus {
   outline: 2px solid transparent;
