@@ -1,4 +1,4 @@
-<a href="{% url 'category' category.slug %}">
+<a id="categories" href="{% url 'category' category.slug %}">
     <div class="bg-base-100 bg-opacity-70 backdrop-blur-3xl rounded-box h-32 w-full p-5 mt-5 flex items-center">
         <figure>
             <img src="{{ category.image.url }}"
