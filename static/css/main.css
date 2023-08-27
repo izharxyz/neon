@@ -18,14 +18,20 @@
     .prose img {
         @apply rounded-box w-full object-cover;
     }
+    .text-mobile-nav {
+        @apply text-secondary-content;
+    }
     [data-theme="night"] body {
-        @apply bg-secondary-content bg-opacity-70;
+        @apply bg-gradient-to-tr from-primary from-20% via-accent via-50% to-secondary to-100% scroll-smooth;
     }
-    [data-theme="night"] .category-card {
-        @apply border border-accent border-opacity-10;
+    [data-theme="night"] #theme_filter {
+        @apply bg-base-100 bg-opacity-70;
     }
-    [data-theme="night"] .trending-post {
-        @apply border border-accent border-opacity-10;
+    [data-theme="night"] #mobileMenu {
+        @apply absolute flex items-start justify-end top-0 w-screen h-screen bg-gradient-to-bl from-accent-content to-primary-content text-accent lg:hidden z-20 overflow-hidden;
+    }
+    [data-theme="night"] .text-mobile-nav {
+        @apply text-accent;
     }
     [data-theme="forest"] body {
         @apply bg-gradient-to-tr from-primary from-20% via-accent via-50% to-secondary to-100% scroll-smooth;
