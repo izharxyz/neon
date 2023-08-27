@@ -3141,14 +3141,12 @@ html {
 [data-theme="night"] #mobileMenu {
   position: absolute;
   top: 0px;
-  z-index: 20;
   display: flex;
   height: 100vh;
   height: 100dvh;
   width: 100vw;
   align-items: flex-start;
   justify-content: flex-end;
-  overflow: hidden;
   background-image: linear-gradient(to bottom left, var(--tw-gradient-stops));
   --tw-gradient-from: hsl(var(--ac) / 1) var(--tw-gradient-from-position);
   --tw-gradient-to: hsl(var(--ac) / 0) var(--tw-gradient-to-position);
@@ -3156,12 +3154,6 @@ html {
   --tw-gradient-to: hsl(var(--pc) / 1) var(--tw-gradient-to-position);
   --tw-text-opacity: 1;
   color: hsl(var(--a) / var(--tw-text-opacity));
-}
-@media (min-width: 1024px) {
-
-  [data-theme="night"] #mobileMenu {
-    display: none;
-  }
 }
 [data-theme="night"] .text-mobile-nav {
   --tw-text-opacity: 1;

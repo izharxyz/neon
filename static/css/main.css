@@ -28,7 +28,7 @@
         @apply bg-base-100 bg-opacity-70;
     }
     [data-theme="night"] #mobileMenu {
-        @apply absolute flex items-start justify-end top-0 w-screen h-screen bg-gradient-to-bl from-accent-content to-primary-content text-accent lg:hidden z-20 overflow-hidden;
+        @apply absolute flex items-start justify-end top-0 w-screen h-screen bg-gradient-to-bl from-accent-content to-primary-content text-accent;
     }
     [data-theme="night"] .text-mobile-nav {
         @apply text-accent;
