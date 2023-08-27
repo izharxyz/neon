@@ -26,14 +26,12 @@
                 </p>
 	
                 {% for field in form %}
-                    <div class="relative">
+                    <div class="relative w-full md:w-4/5">
                         <input type="email"
                                name="{{ field.html_name }}"
                                id="{{ field.id_for_label }}"
-                               class="input input-bordered input-md input-ghost w-full md:w-[30rem] pl-20 {% if field.errors %} input-error {% endif %}" />
-                        <div class="btn btn-primary btn-md absolute top-0 left-0 rounded-r-none">
-                            {{ field.html_name }}
-                        </div>
+                               placeholder="Enter your email address"
+                               class="input input-bordered input-md input-ghost w-full {% if field.errors %} input-error {% endif %}" />
                     </div>
 
                     {% if field.errors %}
