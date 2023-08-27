@@ -11,6 +11,7 @@ from django.utils.text import slugify
 from django.views import View
 from verify_email.email_handler import send_verification_email
 
+from blog.models import Post
 from users.forms import UserProfileForm, UserRegisterForm
 from users.models import Profile
 
@@ -71,10 +72,12 @@ class ProfileView(View):
         if user == request.user:
             user_is_owner = True
         profile = get_object_or_404(Profile, user=user)
+        posts_count = Post.objects.filter(author=user).count()
 
         ctx = {
             'user_is_owner': user_is_owner,
-            'profile': profile
+            'profile': profile,
+            'posts_count': posts_count,
         }
         return render(request, 'users/profile.html', ctx)
 
