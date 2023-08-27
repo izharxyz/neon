@@ -15,7 +15,8 @@
     <div class="container max-w-7xl p-5 mx-auto">
         <div id="subscribe"
              class="w-full h-fit mt-48 mb-5 p-10 md:p-20 rounded-box bg-base-100 bg-opacity-70 backdrop-blur-3xl flex flex-col gap-10 items-center justify-center">
-            <h1 class="text-3xl text-center md:text-4xl lg:text-5xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent bg-opacity-100 backdrop-blur-0">
+            <h1 id="hero_quote"
+                class="text-3xl text-center md:text-4xl lg:text-5xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent bg-opacity-100 backdrop-blur-0">
                 Dive into Immersive World of Reading Where Bytes and Brilliance Unite
             </h1>
  
@@ -95,7 +96,8 @@
                 </div>
             </div>
             <div class="col-span-1 lg:col-span-4 h-fit w-full">
-                <div class="w-full rounded-box p-5 bg-base-100 bg-opacity-70 backdrop-blur-3xl">
+                <div id="trending_posts"
+                     class="w-full rounded-box p-5 bg-base-100 bg-opacity-70 backdrop-blur-3xl">
                     <div class="flex items-center gap-2">
                         <svg class="fill-primary text-primary h-5 w-5"
                              xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +112,8 @@
                         {% include 'partials/trending_post_card.html' %}
                     {% endfor %}
                 </div>
-                <div class="w-full rounded-box p-5 bg-base-100 bg-opacity-70 backdrop-blur-3xl mt-5">
+                <div id="categories"
+                     class="w-full rounded-box p-5 bg-base-100 bg-opacity-70 backdrop-blur-3xl mt-5">
                     <div class="flex items-center gap-2">
                         <svg class="fill-primary text-primary h-5 w-5"
                              xmlns="http://www.w3.org/2000/svg"

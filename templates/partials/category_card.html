@@ -1,5 +1,5 @@
-<a id="categories" href="{% url 'category' category.slug %}">
-    <div class="bg-base-100 bg-opacity-70 backdrop-blur-3xl rounded-box h-32 w-full p-5 mt-5 flex items-center">
+<a href="{% url 'category' category.slug %}">
+    <div class="bg-base-100 bg-opacity-70 backdrop-blur-3xl rounded-box h-32 w-full p-5 mt-5 flex items-center category-card">
         <figure>
             <img src="{{ category.image.url }}"
                  class="h-20 w-20 md:h-24 md:w-24 rounded-full object-cover"

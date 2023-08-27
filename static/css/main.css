@@ -18,6 +18,27 @@
     .prose img {
         @apply rounded-box w-full object-cover;
     }
+    [data-theme="night"] body {
+        @apply bg-secondary-content bg-opacity-70;
+    }
+    [data-theme="night"] .category-card {
+        @apply border border-accent border-opacity-10;
+    }
+    [data-theme="night"] .trending-post {
+        @apply border border-accent border-opacity-10;
+    }
+    [data-theme="forest"] body {
+        @apply bg-gradient-to-tr from-primary from-20% via-accent via-50% to-secondary to-100% scroll-smooth;
+    }
+    [data-theme="winter"] body {
+        @apply bg-gradient-to-tr from-primary from-20% via-accent via-50% to-secondary to-100% scroll-smooth;
+    }
+    [data-theme="valentine"] body {
+        @apply bg-gradient-to-tr from-primary from-20% via-accent via-50% to-secondary to-100% scroll-smooth;
+    }
+    [data-theme="valentine"] #hero_quote {
+        @apply text-3xl text-center md:text-4xl lg:text-5xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary-focus bg-opacity-100 backdrop-blur-0;
+    }
 
     /* hljs code highligh theme ovveride */
     .hljs {

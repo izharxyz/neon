@@ -1,5 +1,5 @@
-<a id="trending_posts" href="{% url 'post-detail' post.slug %}">
-    <div class="bg-base-100 bg-opacity-70 backdrop-blur-3xl rounded-box h-32 w-full p-5 mt-5 flex items-center">
+<a href="{% url 'post-detail' post.slug %}">
+    <div class="bg-base-100 bg-opacity-70 backdrop-blur-3xl rounded-box h-32 w-full p-5 mt-5 flex items-center trending-post">
         <figure>
             <img src="{{ post.thumbnail.url }}"
                  class="h-20 w-20 md:h-24 md:w-24 rounded-full object-cover"
