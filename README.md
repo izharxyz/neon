@@ -1,9 +1,8 @@
 # NEON
 
-### The Ultimate blog writing website
+### The Ultimate Blog Writing Website
 
-Fast, responsive site developed using bleeding edge technologies and tools with an amazing UI and User Experience.
-This project is still in continuous development.
+Fast, responsive site developed using bleeding-edge technologies and tools with an amazing UI and User Experience. This project is still in continuous development.
 
 ## Table of Contents
 
@@ -32,36 +31,28 @@ Detailed instructions on how to use the project.
 
 ### Demo
 
-Explore the live demo of the project [here](#).
+Explore the live demo of the project [here](https://poeticcode.xyz/).
 
 ## Tech Stack
 
 -   Backend: Django
 -   Frontend: Tailwind CSS, HTMX
 -   Database: [Database Name]
--   Hosting: [Hosting Platform]
+-   Hosting: [Vercel](https://vercel.com/)
 
 ## Features
 
--   User authentication and registration
+-   User authentication and registration with email verification and password reset
+-   Oauth authentication with Google and GitHub
 -   Create, edit, and delete blog posts
 -   Responsive design for mobile and desktop
-
-## Contributing
-
-We welcome contributions! Please read our [contribution guidelines](CONTRIBUTING.md) before getting started.
+-   Multiple themes
+-   Intuitive UI and UX with animations
+-   Advanced search
 
 ## License
 
-This project is licensed under the [License Name](LICENSE) - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
--   Mention any contributors, libraries, or resources that helped you in your project.
-
-## Contact
-
-For any questions or feedback, feel free to contact me at [your-email@example.com] or connect with me on [LinkedIn](https://www.linkedin.com/in/your-profile/).
+This project is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/) - see the [LICENSE](LICENSE) file for details.
 
 ## Project Status
 
