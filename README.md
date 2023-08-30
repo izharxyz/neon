@@ -37,7 +37,7 @@ Explore the live demo of the project [here](https://poeticcode.xyz/).
 
 -   Backend: Django
 -   Frontend: Tailwind CSS, HTMX
--   Database: [Database Name]
+-   Database: PostgreSQL
 -   Hosting: [Vercel](https://vercel.com/)
 
 ## Features
