@@ -49,10 +49,21 @@ Explore the live demo of the project [here](https://poeticcode.xyz/).
 -   Multiple themes
 -   Intuitive UI and UX with animations
 -   Advanced search
+-   User profiles with profile picture and bio
 
 ## License
 
 This project is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/) - see the [LICENSE](LICENSE) file for details.
+
+## Future Plans
+
+-   Fully featured commenting system
+-   Social features like following users, liking posts, etc.
+-   Share posts on social media
+-   Better search with filters
+-   Better Search engine optimization
+-   More themes
+-   Bug fixes and performance improvements
 
 ## Project Status
 
