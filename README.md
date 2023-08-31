@@ -69,7 +69,7 @@ Explore the live demo of the project [here](https://poeticcode.xyz/).
 
 This project is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/) - see the [LICENSE](LICENSE) file for details.
 
-## Future Plans
+## Roadmap
 
 -   Fully featured commenting system
 -   Social features like following users, liking posts, etc.
