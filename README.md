@@ -21,9 +21,17 @@ Fast, responsive site developed using bleeding-edge technologies and tools with 
 
 To set up this project locally, follow these steps:
 
-1. Clone the repository.
-2. Install the required dependencies.
-3. Run the project locally.
+1. Clone the repository by running the following command in your terminal.
+
+`git clone https://github.com/zzedddd/neon.git`
+
+2.  Install the required dependencies.
+
+`pip install -r requirements.txt`
+
+3.  Run the project locally.
+
+`python manage.py runserver`
 
 ### Usage
 
