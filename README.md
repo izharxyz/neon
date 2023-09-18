@@ -9,10 +9,8 @@ Fast, responsive site developed using bleeding-edge technologies and tools with 
 -   [Getting Started](#getting-started)
 -   [Tech Stack](#tech-stack)
 -   [Features](#features)
--   [Contributing](#contributing)
 -   [License](#license)
--   [Acknowledgments](#acknowledgments)
--   [Contact](#contact)
+-   [Roadmap](#roadmap)
 -   [Project Status](#project-status)
 
 ## Getting Started
